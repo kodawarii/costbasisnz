@@ -1,0 +1,17 @@
+{
+    "username": "thesiyu",
+    "brokers": [
+        {
+            "name": "Interactive Brokers"
+        },
+        {
+            "name": "Hatch"
+        }
+    ],
+    "log": [
+        {
+            "date": "2020-02-02",
+            "action": "topup"
+        }
+    ]
+}
