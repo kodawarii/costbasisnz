@@ -1,0 +1,17 @@
+.Nav{
+
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 33vw 32vw 33vw;
+}
+
+.Title{
+
+}
+
+.hamburger{
+    float: right;
+    transition: transform 0.25s linear;
+}

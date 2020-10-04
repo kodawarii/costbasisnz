@@ -7,9 +7,15 @@ import '../styles/Home.css';
 import { fetchBrokers } from '../actions/brokerActions';
 
 // Components
-import TestComponent from '../components/testcomponent';
+
 
 class Home extends Component{
+
+    // props
+    // this.props.fetchBrokers()
+    // this.props.updateScreenName()
+    // this.props.currentScreenName
+
     constructor(props){
         super(props);
         this.state={
@@ -18,7 +24,13 @@ class Home extends Component{
     }
 
     componentDidMount(){
+        console.log("home-mounted");
         this.props.fetchBrokers();
+    }
+
+    componentDidUpdate(){
+        console.log("home-updated");
+        this.props.updateScreenName("home"); // todo1: create constants
     }
 
     setBrokers = (brokers) => {
@@ -28,6 +40,23 @@ class Home extends Component{
     render(){
         return(
             <div className="Home">
+                <div className="Brokers">
+                    <ul>
+                        <li>
+                            Interactive Brokers
+                        </li>
+                        <li>
+                            Hatch
+                        </li>
+                    </ul>
+                </div>
+                <div className="Add">
+                    +
+                </div>
+                <div className="Footer">
+                    Copyright
+                </div>
+
                 Home works
                 Brokers: {this.state.brokers.toString()}
                 <button onClick={() => this.setBrokers(this.props.brokers)}> click </button>

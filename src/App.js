@@ -2,7 +2,7 @@
 import './App.css';
 import React, {Component} from 'react';
 import { Provider } from 'react-redux';
-import { HashRouter, Switch, Route} from 'react-router-dom';
+import { HashRouter, Switch, Route, Redirect} from 'react-router-dom';
 
 
 // Redux
@@ -14,28 +14,43 @@ import Edit from './routes/Edit';
 import Home from './routes/Home';
 import Login from './routes/Login';
 import Portfolio from './routes/Portfolio';
+import Nav from './components/Nav';
 
 class App extends Component{
   constructor(props){
     super(props);
     this.state ={
-      a: "b"
+      screen: "home"
     }
+  }
+
+  updateScreenName(screen){
+    console.log("screen: " + screen);
+    if(this.state.screen !== screen) this.setState({screen});
   }
   
   render(){
     return (
       <Provider store={store}>
         <HashRouter>
-            <Switch>
-              <Route exact path='/' component = {
-                () => <Home />
-              }/>
+            <div className="App">
+              
+              <Nav 
+              screen={this.state.screen}/>
 
-              <Route exact path='/portfolio' component = {
-                () => <Portfolio />
-              }/>
-            </Switch>
+              <Switch>
+                <Route exact path='/' component = {
+                  () => <Home updateScreenName={this.updateScreenName.bind(this)}/>
+                }/>
+
+                <Route exact path='/portfolio' component = {
+                  () => <Portfolio updateScreenName={this.updateScreenName.bind(this)}/>
+                }/>
+
+                <Redirect from="*" to="/" />
+              </Switch>
+
+            </div>
         </HashRouter>
       </Provider>
     );
