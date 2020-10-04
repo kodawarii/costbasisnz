@@ -1,4 +1,4 @@
-import { FETCH_BROKERS } from "../actions";
+import { FETCH_BROKERS } from "../reduxtypes";
 
 export const brokersReducer = (state = {}, action) => {
     switch(action.type){

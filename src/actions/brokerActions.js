@@ -1,5 +1,5 @@
-import { FETCH_BROKERS } from "../reduxtypes";
-import { user1 } from "../mockdata";
+import { FETCH_BROKERS } from '../reduxtypes';
+import { user1 } from '../mockdata';
 
 export const fetchBrokers = () => dispatch => {
     dispatch({
