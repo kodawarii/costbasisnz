@@ -27,7 +27,6 @@ class App extends Component{
     return (
       <Provider store={store}>
         <HashRouter>
-          <div className="App">
             <Switch>
               <Route exact path='/' component = {
                 () => <Home />
@@ -37,7 +36,6 @@ class App extends Component{
                 () => <Portfolio />
               }/>
             </Switch>
-          </div>
         </HashRouter>
       </Provider>
     );
