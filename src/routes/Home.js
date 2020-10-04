@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import TestComponent from '../components/testcomponent';
+
 class Home extends Component{
     constructor(props){
         super(props);
@@ -9,6 +11,7 @@ class Home extends Component{
         return(
             <div>
                 Home works
+                <TestComponent/>
             </div>
         );
     }

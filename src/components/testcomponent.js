@@ -22,7 +22,7 @@ class TestComponent extends Component{
     render(){
         return(
             <div>
-                redux test
+                test component
                 <p>the brokers: {this.state.brokers.toString()}</p>
 
                 <button onClick={() => this.setBrokers(this.props.brokers)}> click </button>
