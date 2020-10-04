@@ -1,17 +1,30 @@
-import React from 'react';
-import store from './store';
+import React, {Component} from 'react';
 import { Provider } from 'react-redux';
 
-function App() {
-  return (
-    <Provider store={store}>
-      <div className="App">
-        <header className="App-header">
-          app header
-        </header>
-      </div>
-    </Provider>
-  );
+import store from './store';
+
+import TestComponent from './components/testcomponent';
+
+class App extends Component{
+  constructor(props){
+    super(props);
+    this.state ={
+      a: "b"
+    }
+  }
+  
+  render(){
+    return (
+      <Provider store={store}>
+        <div className="App">
+          <header className="App-header">
+            app header
+            <TestComponent />
+          </header>
+        </div>
+      </Provider>
+    );
+  }
 }
 
 export default App;
