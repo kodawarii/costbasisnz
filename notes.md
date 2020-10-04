@@ -13,3 +13,14 @@
 - create TestComponent to connect to redux
 
 - Add this.props.fetchBrokers() in componentDidMount in TestComponent
+
+
+## Git Branching and merging
+- git branch feature1
+- git checkout feature1
+- (develop features in feature1 branch)
+- git commit 
+- git checkout main
+- git merge feature1 == merge feature1 into main
+- git push origin master
+- git branch -d feature1

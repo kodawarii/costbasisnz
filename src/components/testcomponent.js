@@ -15,7 +15,7 @@ class TestComponent extends Component{
         this.props.fetchBrokers();
     }
 
-    openModal = (brokers) => {
+    setBrokers = (brokers) => {
         this.setState({brokers});
     }
 
@@ -25,7 +25,7 @@ class TestComponent extends Component{
                 redux test
                 <p>the brokers: {this.state.brokers.toString()}</p>
 
-                <button onClick={() => this.openModal(this.props.brokers)}> click </button>
+                <button onClick={() => this.setBrokers(this.props.brokers)}> click </button>
             </div>
         );
     }
