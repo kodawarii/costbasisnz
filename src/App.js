@@ -21,8 +21,14 @@ class App extends Component{
   constructor(props){
     super(props);
     this.state ={
-      screen: "home"
+      screen: "home",
+      portfolio: "default"
     }
+  }
+
+  updatePortfolio(portfolio){
+    //this.setState({portfolio});
+    console.log(">>> " + portfolio);
   }
 
   updateScreenName(screen){
@@ -41,15 +47,23 @@ class App extends Component{
 
               <Switch>
                 <Route exact path='/' component = {
-                  () => <Home updateScreenName={this.updateScreenName.bind(this)}/>
+                  () => <Home 
+                  updateScreenName={this.updateScreenName.bind(this)}
+                  updatePortfolio={this.updatePortfolio.bind(this)}
+                  />
                 }/>
 
-                <Route exact path='/portfolio' component = {
-                  () => <Portfolio updateScreenName={this.updateScreenName.bind(this)}/>
+                <Route exact path='/Portfolio' component = {
+                  () => <Portfolio 
+                  updateScreenName={this.updateScreenName.bind(this)}
+                  portfolio={this.state.portfolio}
+                  />
                 }/>
 
                 <Route exact path='/Add' component = {
-                  () => <Add updateScreenName={this.updateScreenName.bind(this)}/>
+                  () => <Add 
+                  updateScreenName={this.updateScreenName.bind(this)}
+                  />
                 }/>
 
                 <Redirect from="*" to="/" />

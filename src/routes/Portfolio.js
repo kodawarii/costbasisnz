@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
+import '../styles/Portfolio.css';
 
 class Portfolio extends Component{
 
     // props
+    // this.props.<redux-store>
     // this.props.updateScreenName()
+    // this.props.portfolio
 
     constructor(props){
         super(props);
@@ -21,8 +24,8 @@ class Portfolio extends Component{
 
     render(){
         return(
-            <div className="Portfolio"> 
-                Portfolio works
+            <div className="Portfolio Screen"> 
+                {this.props.portfolio}
             </div>
         );
     }

@@ -17,6 +17,7 @@ class Home extends Component{
     // this.props.fetchBrokers()
     // this.props.updateScreenName()
     // this.props.currentScreenName
+    // this.props.updatePortfolio()
 
     constructor(props){
         super(props);
@@ -28,6 +29,7 @@ class Home extends Component{
     componentDidMount(){
         console.log("home-mounted");
         this.props.fetchBrokers();
+        this.props.updateScreenName("home");
     }
 
     componentDidUpdate(){
@@ -43,14 +45,16 @@ class Home extends Component{
         return this.state.brokers.map( (broker, i) => {
             console.log(broker);
             return <ul key={i} className="Brokers">
-                <li className="Broker">{broker.name}</li>
+                <Link to={'/Portfolio'}>
+                    <li onClick={this.props.updatePortfolio} className="Broker">{broker.name}</li>
+                </Link>
             </ul>
         });
     }
 
     render(){
         return(
-            <div className="Home">
+            <div className="Home Screen">
                 <div className="Activator">
                     <button onClick={() => this.setBrokers(this.props.brokers)} className="Activator-btn"> Fetch </button>
                 </div>
