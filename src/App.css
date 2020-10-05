@@ -4,3 +4,12 @@
   font-size: calc(10px + 1.5vmin);
   font-family: 'Kanit', sans-serif;
 }
+
+button{
+  outline: none;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(212, 212, 212);
+}

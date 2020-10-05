@@ -48,6 +48,10 @@ class App extends Component{
                   () => <Portfolio updateScreenName={this.updateScreenName.bind(this)}/>
                 }/>
 
+                <Route exact path='/Add' component = {
+                  () => <Add updateScreenName={this.updateScreenName.bind(this)}/>
+                }/>
+
                 <Redirect from="*" to="/" />
               </Switch>
 

@@ -3,15 +3,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
 .wrapper{
     display: grid;
-    grid-template-columns: 15vw 40vw 15vw;
+    grid-template-columns: 15vw 60vw 15vw;
 }
 
 .Title{
-
+    
 }
 
 .hamburger{

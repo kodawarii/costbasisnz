@@ -1,6 +1,7 @@
 // Packages
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import { HashLink as Link } from 'react-router-hash-link';
 import '../styles/Home.css';
 
 // Redux
@@ -41,8 +42,8 @@ class Home extends Component{
     renderBrokers(){
         return this.state.brokers.map( (broker, i) => {
             console.log(broker);
-            return <ul key={i}>
-                <li>{broker.name}</li>
+            return <ul key={i} className="Brokers">
+                <li className="Broker">{broker.name}</li>
             </ul>
         });
     }
@@ -50,13 +51,17 @@ class Home extends Component{
     render(){
         return(
             <div className="Home">
+                <div className="Activator">
+                    <button onClick={() => this.setBrokers(this.props.brokers)} className="Activator-btn"> Fetch </button>
+                </div>
                 <div className="Brokers">
                     {this.renderBrokers()}
                 </div>
                 <div className="Add">
-                    +
+                    <Link to={'/Add'}>
+                        <button className="Add-btn">+</button>
+                    </Link>
                 </div>
-                <button onClick={() => this.setBrokers(this.props.brokers)}> click </button>
             </div>
         );
     }

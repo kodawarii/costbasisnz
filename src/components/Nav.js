@@ -1,4 +1,6 @@
+// Packages
 import React, {Component} from 'react';
+import {HashLink as Link} from 'react-router-hash-link';
 import '../styles/Nav.css';
 
 class Nav extends Component{
@@ -24,7 +26,9 @@ class Nav extends Component{
             <div className="Nav">
                 <div className="wrapper">
                     <div className="col Padding">
-                        <div></div>
+                        <Link to={'/'}>
+                            <div> ↶ </div>
+                        </Link>
                     </div>
                     <div className="col Title">
                         {title}
