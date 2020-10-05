@@ -32,6 +32,7 @@ class Nav extends Component{
                     <div className="col MenuBtn">
                         <div className="hamburger"> ☰ </div>
                     </div>
+                    
                 </div>
             </div>
         );

@@ -1,10 +1,13 @@
 .Nav{
-
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .wrapper{
     display: grid;
-    grid-template-columns: 33vw 32vw 33vw;
+    grid-template-columns: 15vw 40vw 15vw;
 }
 
 .Title{
@@ -12,6 +15,6 @@
 }
 
 .hamburger{
-    float: right;
+    
     transition: transform 0.25s linear;
 }

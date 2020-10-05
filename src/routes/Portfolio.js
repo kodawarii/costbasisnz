@@ -16,7 +16,7 @@ class Portfolio extends Component{
 
     componentDidUpdate(){
         console.log("portfolio-updated");
-        this.props.updateScreenName("portfolio"); // todo: create constants
+        this.props.updateScreenName("portfolio"); // todo1: create constants
     }
 
     render(){

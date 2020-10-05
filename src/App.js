@@ -15,6 +15,7 @@ import Home from './routes/Home';
 import Login from './routes/Login';
 import Portfolio from './routes/Portfolio';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 
 class App extends Component{
   constructor(props){
@@ -49,6 +50,8 @@ class App extends Component{
 
                 <Redirect from="*" to="/" />
               </Switch>
+
+              <Footer />
 
             </div>
         </HashRouter>

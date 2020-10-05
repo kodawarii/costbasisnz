@@ -12,6 +12,7 @@ import { fetchBrokers } from '../actions/brokerActions';
 class Home extends Component{
 
     // props
+    // this.props.<redux-store>
     // this.props.fetchBrokers()
     // this.props.updateScreenName()
     // this.props.currentScreenName
@@ -37,28 +38,24 @@ class Home extends Component{
         this.setState({brokers});
     }
 
+    renderBrokers(){
+        return this.state.brokers.map( (broker, i) => {
+            console.log(broker);
+            return <ul key={i}>
+                <li>{broker.name}</li>
+            </ul>
+        });
+    }
+
     render(){
         return(
             <div className="Home">
                 <div className="Brokers">
-                    <ul>
-                        <li>
-                            Interactive Brokers
-                        </li>
-                        <li>
-                            Hatch
-                        </li>
-                    </ul>
+                    {this.renderBrokers()}
                 </div>
                 <div className="Add">
                     +
                 </div>
-                <div className="Footer">
-                    Copyright
-                </div>
-
-                Home works
-                Brokers: {this.state.brokers.toString()}
                 <button onClick={() => this.setBrokers(this.props.brokers)}> click </button>
             </div>
         );
