@@ -1,28 +1,26 @@
+// Packages
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import '../styles/Portfolio.css';
 
 class Portfolio extends Component{
 
     // props
     // this.props.<redux-store>
-    // this.props.updateScreenName()
-    // this.props.portfolio
-
-    constructor(props){
-        super(props);
-    }
+        // this.props.portfolio
 
     componentDidMount(){
-        console.log("portfolio-mounted");
         this.props.updateScreenName("portfolio"); // Hacky
     }
-
+    
     componentDidUpdate(){
-        console.log("portfolio-updated");
         this.props.updateScreenName("portfolio"); // todo1: create constants
     }
 
     render(){
+        //console.log("fucking: " + this.props.brokers[0].name);
+        
+
         return(
             <div className="Portfolio Screen"> 
                 {this.props.portfolio}
@@ -31,4 +29,12 @@ class Portfolio extends Component{
     }
 }
 
-export default Portfolio;
+export default connect(
+    (state) => ({ 
+        brokers: state.brokers.brokers,
+        portfolio: state.portfolio.portfolio
+    }),
+    {
+        
+    }
+)(Portfolio);

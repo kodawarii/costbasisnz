@@ -21,18 +21,11 @@ class App extends Component{
   constructor(props){
     super(props);
     this.state ={
-      screen: "home",
-      portfolio: "default"
+      screen: "home"
     }
   }
 
-  updatePortfolio(portfolio){
-    //this.setState({portfolio});
-    console.log(">>> " + portfolio);
-  }
-
   updateScreenName(screen){
-    console.log("screen: " + screen);
     if(this.state.screen !== screen) this.setState({screen});
   }
   
@@ -49,14 +42,12 @@ class App extends Component{
                 <Route exact path='/' component = {
                   () => <Home 
                   updateScreenName={this.updateScreenName.bind(this)}
-                  updatePortfolio={this.updatePortfolio.bind(this)}
                   />
                 }/>
 
                 <Route exact path='/Portfolio' component = {
                   () => <Portfolio 
                   updateScreenName={this.updateScreenName.bind(this)}
-                  portfolio={this.state.portfolio}
                   />
                 }/>
 

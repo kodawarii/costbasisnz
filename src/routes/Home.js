@@ -6,6 +6,7 @@ import '../styles/Home.css';
 
 // Redux
 import { fetchBrokers } from '../actions/brokerActions';
+import { fetchPortfolio, updatePortfolio } from '../actions/portfolioActions';
 
 // Components
 
@@ -14,10 +15,10 @@ class Home extends Component{
 
     // props
     // this.props.<redux-store>
-    // this.props.fetchBrokers()
+        // this.props.fetchBrokers()
+        // this.props.updatePortfolio()
     // this.props.updateScreenName()
     // this.props.currentScreenName
-    // this.props.updatePortfolio()
 
     constructor(props){
         super(props);
@@ -27,13 +28,12 @@ class Home extends Component{
     }
 
     componentDidMount(){
-        console.log("home-mounted");
         this.props.fetchBrokers();
+        this.props.fetchPortfolio();
         this.props.updateScreenName("home");
     }
 
     componentDidUpdate(){
-        console.log("home-updated");
         this.props.updateScreenName("home"); // todo1: create constants
     }
 
@@ -43,10 +43,10 @@ class Home extends Component{
 
     renderBrokers(){
         return this.state.brokers.map( (broker, i) => {
-            console.log(broker);
+            console.log("BROKER: " + broker);
             return <ul key={i} className="Brokers">
                 <Link to={'/Portfolio'}>
-                    <li onClick={this.props.updatePortfolio} className="Broker">{broker.name}</li>
+                    <li onClick={ () => this.props.updatePortfolio(broker.name)} className="Broker">{broker.name}</li>
                 </Link>
             </ul>
         });
@@ -72,8 +72,11 @@ class Home extends Component{
 }
 
 export default connect(
-    (state) => ({ brokers: state.brokers.items}),
+    (state) => ({ 
+        brokers: state.brokers.brokers,
+        portfolio: state.portfolio.portfolio
+    }),
     {
-        fetchBrokers
+        fetchBrokers, fetchPortfolio, updatePortfolio
     }
 )(Home);
