@@ -2,16 +2,94 @@
     "username": "thesiyu",
     "brokers": [
         {
-            "name": "Interactive Brokers"
+            "name": "Interactive Brokers",
+            "id": 1
         },
         {
-            "name": "Hatch"
+            "name": "Hatch",
+            "id": 2
         }
     ],
-    "log": [
-        {
-            "date": "2020-02-02",
-            "action": "topup"
-        }
-    ]
+    "1": {
+        "master":[
+            
+        ],
+        "holdings": [
+
+        ],
+        "log": [
+            {
+                "type": "start",
+                "pkey": 0,
+                "period": "2020 FEB"
+            },
+            {
+                "type": "reg",
+                "pkey": 1,
+                "date": "2020-02-02",
+                "action": "topup"
+            },
+            {
+                "type": "reg",
+                "pkey": 2,
+                "date": "2020-02-03",
+                "action": "topup"
+            },
+            {
+                "type": "reg",
+                "pkey": 3,
+                "date": "2020-02-04",
+                "action": "buy",
+                "ticker": "TSLA"
+            },
+            {
+                "type": "reg",
+                "pkey": 4,
+                "date": "2020-02-05",
+                "action": "buy",
+                "ticker": "TSLA"
+            },
+            {
+                "type": "end",
+                "pkey": 5,
+                "bought": "2000",
+                "sold": "200"
+            }
+        ],
+        "topupwithdraw":[
+
+        ],
+        "buysell":[
+
+        ],
+        "fees":[
+
+        ],
+        "dividends":[
+
+        ]
+    },
+    "2":{
+        "master":[
+            
+        ],
+        "holdings": [
+
+        ],
+        "log": [
+            
+        ],
+        "topupwithdraw":[
+
+        ],
+        "buysell":[
+
+        ],
+        "fees":[
+
+        ],
+        "dividends":[
+
+        ]
+    }
 }

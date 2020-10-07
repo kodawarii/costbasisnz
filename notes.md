@@ -14,6 +14,9 @@
 
 - Add this.props.fetchBrokers() in componentDidMount in TestComponent
 
+### Things to note
+- store is accessed through connecting the component using export default connect(), which also references the actions
+
 
 ## Git Branching and merging
 - git branch feature1

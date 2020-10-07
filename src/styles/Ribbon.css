@@ -1,0 +1,26 @@
+.Ribbon{
+    
+}
+
+.Tabs{
+    
+}
+
+/* Default/Mobile */
+.Tab{
+    list-style: none;
+    text-align: left;
+    padding: 4px 16px 4px 16px;
+}
+
+/* For Desktop */
+@media only screen and (min-width: 768px) {
+    .Tab{
+        display: inline;
+    }
+}
+
+.Tab:Hover{
+    cursor: pointer;
+    color: rgb(255, 36, 102);
+}

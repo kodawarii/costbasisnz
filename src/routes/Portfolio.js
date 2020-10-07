@@ -3,6 +3,10 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import '../styles/Portfolio.css';
 
+// Components
+import Ribbon from '../components/Ribbon';
+import DataTable from '../components/DataTable';
+
 class Portfolio extends Component{
 
     // props
@@ -19,11 +23,12 @@ class Portfolio extends Component{
 
     render(){
         //console.log("fucking: " + this.props.brokers[0].name);
-        
 
         return(
             <div className="Portfolio Screen"> 
                 {this.props.portfolio}
+                <Ribbon />
+                <DataTable />
             </div>
         );
     }
@@ -31,7 +36,6 @@ class Portfolio extends Component{
 
 export default connect(
     (state) => ({ 
-        brokers: state.brokers.brokers,
         portfolio: state.portfolio.portfolio
     }),
     {

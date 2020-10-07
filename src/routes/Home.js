@@ -43,7 +43,6 @@ class Home extends Component{
 
     renderBrokers(){
         return this.state.brokers.map( (broker, i) => {
-            console.log("BROKER: " + broker);
             return <ul key={i} className="Brokers">
                 <Link to={'/Portfolio'}>
                     <li onClick={ () => this.props.updatePortfolio(broker.name)} className="Broker">{broker.name}</li>
@@ -74,7 +73,6 @@ class Home extends Component{
 export default connect(
     (state) => ({ 
         brokers: state.brokers.brokers,
-        portfolio: state.portfolio.portfolio
     }),
     {
         fetchBrokers, fetchPortfolio, updatePortfolio
