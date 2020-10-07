@@ -27,13 +27,15 @@
                 "type": "reg",
                 "pkey": 1,
                 "date": "2020-02-02",
-                "action": "topup"
+                "action": "topup",
+                "ticker": ""
             },
             {
                 "type": "reg",
                 "pkey": 2,
                 "date": "2020-02-03",
-                "action": "topup"
+                "action": "topup",
+                "ticker": ""
             },
             {
                 "type": "reg",
@@ -50,9 +52,13 @@
                 "ticker": "TSLA"
             },
             {
-                "type": "end",
+                "type": "end1",
                 "pkey": 5,
-                "bought": "2000",
+                "bought": "2000"
+            },
+            {
+                "type": "end2",
+                "pkey": 6,
                 "sold": "200"
             }
         ],

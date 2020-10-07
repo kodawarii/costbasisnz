@@ -13,13 +13,39 @@ class Log extends Component {
     }
 
     getData(){
-        if(this.props.data === undefined) return "need to fetch data";
-        
+        if(this.props.data === undefined) return <tr><td>must fetch first</td></tr>;
+
         return this.props.data.map( (entry, i) => {
-            return <div key={i}>
-                <div>{entry.type}</div>
-                <div>{entry.pkey}</div>
-            </div>
+            if(entry.type === "start"){
+                return <tr key={i}>
+                    <td>{entry.pkey}</td>
+                    <td>{entry.period}</td>
+                </tr>
+            }
+            else if(entry.type === "reg"){
+                return <tr key={i}>
+                    <td>{entry.pkey}</td>
+                    <td>{entry.date}</td>
+                    <td>{entry.action}</td>
+                    <td>{entry.ticker}</td>
+                </tr>
+            }
+            else if(entry.type === "end1"){
+                return <tr key={i}>
+                    <td>{entry.pkey}</td>
+                    <td></td>
+                    <td>BOUGHT</td>
+                    <td>{entry.bought}</td>
+                </tr>
+            }
+            else if(entry.type === "end2"){
+                return <tr key={i}>
+                    <td>{entry.pkey}</td>
+                    <td></td>
+                    <td>SOLD</td>
+                    <td>{entry.sold}</td>
+                </tr>
+            }
         });
     }
 
@@ -29,23 +55,17 @@ class Log extends Component {
                 <table>
                     <thead>
                         <tr>
-                            <th>test</th>
-                            <th>test</th>
-                            <th>test</th>
-                            <th>test</th>
+                            <th>pk</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                            <th>Symbol</th>
+                            <th>Notes</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>bodytest</td>
-                            <td>bodytest</td>
-                            <td>bodytest</td>
-                            <td>bodytest</td>
-                        </tr>
+                        {this.getData()}
                     </tbody>
                 </table>
-
-                {this.getData()}
             </div>
         );
     }
