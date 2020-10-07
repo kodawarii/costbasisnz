@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/costbasisnz/static/css/main.b88956a1.chunk.css",
+    "main.js": "/costbasisnz/static/js/main.69987d64.chunk.js",
+    "main.js.map": "/costbasisnz/static/js/main.69987d64.chunk.js.map",
+    "runtime-main.js": "/costbasisnz/static/js/runtime-main.eb054fe2.js",
+    "runtime-main.js.map": "/costbasisnz/static/js/runtime-main.eb054fe2.js.map",
+    "static/js/2.e455d391.chunk.js": "/costbasisnz/static/js/2.e455d391.chunk.js",
+    "static/js/2.e455d391.chunk.js.map": "/costbasisnz/static/js/2.e455d391.chunk.js.map",
+    "index.html": "/costbasisnz/index.html",
+    "precache-manifest.bedf3d18254ce3551c0651a88b3e15ba.js": "/costbasisnz/precache-manifest.bedf3d18254ce3551c0651a88b3e15ba.js",
+    "service-worker.js": "/costbasisnz/service-worker.js",
+    "static/css/main.b88956a1.chunk.css.map": "/costbasisnz/static/css/main.b88956a1.chunk.css.map",
+    "static/js/2.e455d391.chunk.js.LICENSE.txt": "/costbasisnz/static/js/2.e455d391.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eb054fe2.js",
+    "static/js/2.e455d391.chunk.js",
+    "static/css/main.b88956a1.chunk.css",
+    "static/js/main.69987d64.chunk.js"
+  ]
+}
