@@ -13,6 +13,18 @@ class Portfolio extends Component{
     // this.props.<redux-store>
         // this.props.portfolio
 
+    constructor(props){
+        super(props);
+
+        this.state = {
+            currentTab: "Log"
+        }
+    }
+
+    updateCurrentTab(tab){
+        this.setState({currentTab: tab});
+    }
+
     componentDidMount(){
         this.props.updateScreenName("portfolio"); // Hacky
     }
@@ -22,13 +34,16 @@ class Portfolio extends Component{
     }
 
     render(){
-        //console.log("fucking: " + this.props.brokers[0].name);
-
         return(
             <div className="Portfolio Screen"> 
                 {this.props.portfolio}
-                <Ribbon />
-                <DataTable />
+                <Ribbon 
+                updateCurrentTab={this.updateCurrentTab.bind(this)} 
+                />
+
+                <DataTable 
+                currentTab={this.state.currentTab}
+                />
             </div>
         );
     }

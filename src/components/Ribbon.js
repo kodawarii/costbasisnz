@@ -3,6 +3,8 @@ import '../styles/Ribbon.css';
 
 class Ribbon extends Component {
 
+    // this.props.updateCurrentTab()
+
     constructor(props){
         super(props);
         this.state = {
@@ -12,22 +14,23 @@ class Ribbon extends Component {
                 "Holdings",
                 "Log",
                 "Topup / Withdraw",
-                "Buy",
+                "Buy / Sell",
                 "Fees",
                 "Dividends"
             ]
         }
     }
 
-    updateTab(tab){
+    updateCurrentTab(tab){
         this.setState({currentTab: tab});
+        this.props.updateCurrentTab(tab);
     }
 
     getTabs(){
         let defaultClass = "Tab-inner ";
         let highlightedClass = " Tab-inner-highlighted";
         return this.state.tabs.map((tabName, i) => {
-            return <li onClick={ () => this.updateTab(tabName)} className="Tab" key={i}>
+            return <li onClick={ () => this.updateCurrentTab(tabName)} className="Tab" key={i}>
                 <span className={defaultClass + (tabName === this.state.currentTab ? highlightedClass : "")}>{tabName}</span>
             </li>
         });
