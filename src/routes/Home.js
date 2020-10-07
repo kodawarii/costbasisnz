@@ -7,6 +7,7 @@ import '../styles/Home.css';
 // Redux
 import { fetchBrokers } from '../actions/brokerActions';
 import { fetchPortfolio, updatePortfolio } from '../actions/portfolioActions';
+import { fetchLogs } from '../actions/DataTableActions';
 
 // Components
 
@@ -17,6 +18,7 @@ class Home extends Component{
     // this.props.<redux-store>
         // this.props.fetchBrokers()
         // this.props.updatePortfolio()
+        // this.props.fetchLogs();
     // this.props.updateScreenName()
     // this.props.currentScreenName
 
@@ -30,6 +32,7 @@ class Home extends Component{
     componentDidMount(){
         this.props.fetchBrokers();
         this.props.fetchPortfolio();
+        this.props.fetchLogs();
         this.props.updateScreenName("home");
     }
 
@@ -75,6 +78,8 @@ export default connect(
         brokers: state.brokers.brokers,
     }),
     {
-        fetchBrokers, fetchPortfolio, updatePortfolio
+        fetchBrokers, 
+        fetchPortfolio, updatePortfolio,
+        fetchLogs
     }
 )(Home);

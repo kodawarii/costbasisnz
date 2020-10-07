@@ -7,6 +7,7 @@ import Log from './Log';
 class DataTable extends Component {
 
     // this.props.currentTab
+    // this.props.data
 
     constructor(props){
         super(props);
@@ -20,7 +21,7 @@ class DataTable extends Component {
         
         switch(this.props.currentTab){
             case "Log":
-                showTable = () => { return <Log /> }
+                showTable = () => { return <Log data={this.props.data}/> }
                 break;
             default:
                 showTable = () => { return "Invalid Choice" }

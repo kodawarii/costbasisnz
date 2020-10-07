@@ -43,6 +43,7 @@ class Portfolio extends Component{
 
                 <DataTable 
                 currentTab={this.state.currentTab}
+                data={this.props.logs}
                 />
             </div>
         );
@@ -51,7 +52,8 @@ class Portfolio extends Component{
 
 export default connect(
     (state) => ({ 
-        portfolio: state.portfolio.portfolio
+        portfolio: state.portfolio.portfolio,
+        logs: state.logs.logs
     }),
     {
         
