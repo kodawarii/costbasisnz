@@ -27,3 +27,13 @@
 - git merge feature1 == merge feature1 into main
 - git push origin master
 - git branch -d feature1
+
+## How to gh-pages
+- npm install gh-pages
+- Add to package.json: "homepage": "https://kodawarii.github.io/{reponame}"
+- Add to scripts:
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build"
+- npm run deploy
+
+- If needed, go to repo > Settings > scroll down to gh-pages > Source > gh-pages
