@@ -6,11 +6,28 @@
     
 }
 
-/* Default/Mobile */
+/* Common */
 .Tab{
     list-style: none;
     text-align: left;
     padding: 4px 16px 4px 16px;
+}
+
+.Tab:Hover{
+    cursor: pointer;
+    color: rgb(255, 36, 102);
+}
+
+/* For Mobile */
+@media only screen and (max-width: 768px) {
+    .Tab-inner{
+        padding-left: 10px;
+    }
+    
+    .Tab-inner-highlighted{
+        border-left: 2px solid white;
+        color: rgb(255, 36, 102);
+    }
 }
 
 /* For Desktop */
@@ -18,9 +35,13 @@
     .Tab{
         display: inline;
     }
-}
 
-.Tab:Hover{
-    cursor: pointer;
-    color: rgb(255, 36, 102);
+    .Tab-inner{
+
+    }
+
+    .Tab-inner-highlighted{
+        border-bottom: 2px solid white;
+        color: rgb(255, 36, 102);
+    }
 }

@@ -7,7 +7,7 @@ class Ribbon extends Component {
         super(props);
         this.state = {
             currentTab: "Log",
-            tabs: [
+            tabs: [ // todo: Get from user data
                 "Master",
                 "Holdings",
                 "Log",
@@ -19,14 +19,16 @@ class Ribbon extends Component {
         }
     }
 
-    updateTab(s){
-        console.log(s);
+    updateTab(tab){
+        this.setState({currentTab: tab});
     }
 
     getTabs(){
+        let defaultClass = "Tab-inner ";
+        let highlightedClass = " Tab-inner-highlighted";
         return this.state.tabs.map((tabName, i) => {
             return <li onClick={ () => this.updateTab(tabName)} className="Tab" key={i}>
-                {tabName}
+                <span className={defaultClass + (tabName === this.state.currentTab ? highlightedClass : "")}>{tabName}</span>
             </li>
         });
     }
