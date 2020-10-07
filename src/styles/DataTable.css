@@ -3,5 +3,10 @@
 }
 
 table{
-    border: solid 1px rgb(38, 255, 38);
+    border-collapse: collapse;    
+}
+
+tbody td{
+    padding: 0 16px 0 16px;
+    border: 1px solid white;
 }

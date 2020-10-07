@@ -20,6 +20,9 @@ class Log extends Component {
                 return <tr key={i}>
                     <td>{entry.pkey}</td>
                     <td>{entry.period}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             }
             else if(entry.type === "reg"){
@@ -28,6 +31,7 @@ class Log extends Component {
                     <td>{entry.date}</td>
                     <td>{entry.action}</td>
                     <td>{entry.ticker}</td>
+                    <td>{entry.notes}</td>
                 </tr>
             }
             else if(entry.type === "end1"){
@@ -36,6 +40,7 @@ class Log extends Component {
                     <td></td>
                     <td>BOUGHT</td>
                     <td>{entry.bought}</td>
+                    <td></td>
                 </tr>
             }
             else if(entry.type === "end2"){
@@ -44,6 +49,7 @@ class Log extends Component {
                     <td></td>
                     <td>SOLD</td>
                     <td>{entry.sold}</td>
+                    <td></td>
                 </tr>
             }
         });
@@ -55,7 +61,7 @@ class Log extends Component {
                 <table>
                     <thead>
                         <tr>
-                            <th>pk</th>
+                            <th>Ref</th>
                             <th>Date</th>
                             <th>Action</th>
                             <th>Symbol</th>
