@@ -26,7 +26,7 @@
             {
                 "type": "reg",
                 "pkey": 1,
-                "date": "2020-02-02",
+                "date": "20-02-02",
                 "action": "Topup",
                 "ticker": "",
                 "notes": "This is a long noteThis is a long noteThis is a long noteThis is a long noteThis is a long noteThis is a long noteThis is a long noteThis is a long noteThis is a long note"
@@ -34,7 +34,7 @@
             {
                 "type": "reg",
                 "pkey": 2,
-                "date": "2020-02-03",
+                "date": "20-02-03",
                 "action": "Topup",
                 "ticker": "",
                 "notes": ""
@@ -42,15 +42,31 @@
             {
                 "type": "reg",
                 "pkey": 3,
-                "date": "2020-02-04",
+                "date": "20-02-04",
                 "action": "BUY",
                 "ticker": "TSLA",
                 "notes": ""
             },
             {
                 "type": "reg",
+                "pkey": 3,
+                "date": "20-02-04",
+                "action": "SELL",
+                "ticker": "TSLA",
+                "notes": ""
+            },
+            {
+                "type": "reg",
+                "pkey": 3,
+                "date": "20-02-04",
+                "action": "Withdraw",
+                "ticker": "",
+                "notes": ""
+            },
+            {
+                "type": "reg",
                 "pkey": 4,
-                "date": "2020-02-05",
+                "date": "20-02-05",
                 "action": "BUY",
                 "ticker": "TSLA",
                 "notes": ""
@@ -58,9 +74,33 @@
             {
                 "type": "reg",
                 "pkey": 5,
-                "date": "2020-02-05",
+                "date": "20-02-05",
                 "action": "SELL",
                 "ticker": "NVDA",
+                "notes": ""
+            },
+            {
+                "type": "reg",
+                "pkey": 3,
+                "date": "20-02-04",
+                "action": "Dividend",
+                "ticker": "MSFT",
+                "notes": ""
+            },
+            {
+                "type": "reg",
+                "pkey": 3,
+                "date": "20-02-04",
+                "action": "Topup Liq nvda",
+                "ticker": "",
+                "notes": ""
+            },
+            {
+                "type": "reg",
+                "pkey": 3,
+                "date": "20-02-04",
+                "action": "Monthly Fee",
+                "ticker": "",
                 "notes": ""
             },
             {

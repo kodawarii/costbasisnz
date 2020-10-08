@@ -16,8 +16,6 @@ class Log extends Component {
         if(this.props.data === undefined) return <tr><td>must fetch first</td></tr>;
 
         return this.props.data.map( (entry, i) => {
-            let class_topup = " Topup ";
-            
             if(entry.type === "start"){
                 return <tr key={i}>
                     <td>{entry.pkey}</td>
@@ -28,10 +26,33 @@ class Log extends Component {
                 </tr>
             }
             else if(entry.type === "reg"){
+                let actionStringClassName = " ";
+
+                if(entry.action.includes("Topup")){
+                    actionStringClassName = " Topup ";
+                }
+                else if(entry.action.includes("BUY")){
+                    actionStringClassName = " Buy ";
+                }
+                else if(entry.action.includes("SELL")){
+                    actionStringClassName = " Sell ";
+                }
+                else if(entry.action.includes("Withdraw")){
+                    actionStringClassName = " Withdraw ";
+                }
+                else if(entry.action.includes("Dividend")){
+                    actionStringClassName = " Dividend ";
+                }
+                else if(entry.action.includes("Fee")){
+                    actionStringClassName = " Fee ";
+                }
+
                 return <tr key={i}>
                     <td>{entry.pkey}</td>
                     <td>{entry.date}</td>
-                    <td>{entry.action}</td>
+                    
+                    <td className={actionStringClassName}>{entry.action}</td>
+                    
                     <td>{entry.ticker}</td>
                     <td> x </td>
                 </tr>
