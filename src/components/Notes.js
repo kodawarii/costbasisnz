@@ -4,14 +4,20 @@ import '../styles/Notes.css';
 export default class Notes extends Component {
     
     // this.props.notes
-    // this.props.show
+    // this.props.isVisible
+    // this.props.closeNotes
 
     render(){
-        let show = this.props.show ? "Notes " : "Notes-hide ";
+        let isModalVisibleClass = this.props.isVisible ? " Notes " : " Notes-hide ";
 
         return(
-            <div className={show}>
-                {this.props.notes}
+            <div className={isModalVisibleClass}>
+                <div className=" Notes-exit " onClick={this.props.closeNotes}>
+                    x
+                </div>
+                <div className=" Notes-content ">
+                    {this.props.notes}
+                </div>
             </div>
         );
     }

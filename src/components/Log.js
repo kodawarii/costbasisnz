@@ -17,7 +17,7 @@ class Log extends Component {
     }
 
     closeNotes(){
-        this.setState({showNotes: false, notes: ""});
+        this.setState({showNotes: false});
     }
 
     openNotes(notes){
@@ -111,7 +111,7 @@ class Log extends Component {
                     ADD +
                 </div>
                 
-                <Notes notes={this.state.notes} show={this.state.showNotes}/>
+                <Notes notes={this.state.notes} isVisible={this.state.showNotes} closeNotes={this.closeNotes.bind(this)}/>
             </div>
         );
     }
