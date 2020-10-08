@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import '../styles/DataTable.css';
 
+// components 
+import Note from './Note';
+
 class Log extends Component {
     
     // this.props.data
@@ -8,8 +11,17 @@ class Log extends Component {
     constructor(props){
         super(props);
         this.state = {
-            a: 1
+            showNote: false,
+            notes: ""
         }
+    }
+
+    closeNote(){
+        this.setState({showNote: false, notes: ""});
+    }
+
+    openNotes(notes){
+        this.setState({showNote: true, notes});
     }
 
     getData(){
@@ -54,7 +66,7 @@ class Log extends Component {
                     <td className={actionStringClassName}>{entry.action}</td>
                     
                     <td>{entry.ticker}</td>
-                    <td> x </td>
+                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes)}> x </td>
                 </tr>
             }
             else if(entry.type === "end1"){
@@ -79,6 +91,8 @@ class Log extends Component {
     }
 
     render(){
+        let note = this.state.showNote ? <Note /> : "";
+
         return(
             <div>
                 <table>
@@ -95,6 +109,12 @@ class Log extends Component {
                         {this.getData()}
                     </tbody>
                 </table>
+                <div className="Note">
+                    {note}
+                </div>
+                <div className="AddLog">
+                    ADD +
+                </div>
             </div>
         );
     }
