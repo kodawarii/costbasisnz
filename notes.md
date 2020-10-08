@@ -37,3 +37,6 @@
 - npm run deploy
 
 - If needed, go to repo > Settings > scroll down to gh-pages > Source > gh-pages
+
+## How to make a modal
+- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal

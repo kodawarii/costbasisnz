@@ -73,6 +73,102 @@
             },
             {
                 "type": "reg",
+                "pkey": 4,
+                "date": "20-02-05",
+                "action": "BUY",
+                "ticker": "TSLA",
+                "notes": ""
+            },
+            {
+                "type": "reg",
+                "pkey": 4,
+                "date": "20-02-05",
+                "action": "BUY",
+                "ticker": "TSLA",
+                "notes": ""
+            },
+            {
+                "type": "reg",
+                "pkey": 4,
+                "date": "20-02-05",
+                "action": "BUY",
+                "ticker": "TSLA",
+                "notes": ""
+            },
+            {
+                "type": "reg",
+                "pkey": 4,
+                "date": "20-02-05",
+                "action": "BUY",
+                "ticker": "TSLA",
+                "notes": ""
+            },
+            {
+                "type": "reg",
+                "pkey": 4,
+                "date": "20-02-05",
+                "action": "BUY",
+                "ticker": "TSLA",
+                "notes": ""
+            },
+            {
+                "type": "reg",
+                "pkey": 4,
+                "date": "20-02-05",
+                "action": "BUY",
+                "ticker": "TSLA",
+                "notes": ""
+            },
+            {
+                "type": "reg",
+                "pkey": 4,
+                "date": "20-02-05",
+                "action": "BUY",
+                "ticker": "TSLA",
+                "notes": ""
+            },
+            {
+                "type": "reg",
+                "pkey": 4,
+                "date": "20-02-05",
+                "action": "BUY",
+                "ticker": "TSLA",
+                "notes": ""
+            },
+            {
+                "type": "reg",
+                "pkey": 4,
+                "date": "20-02-05",
+                "action": "BUY",
+                "ticker": "TSLA",
+                "notes": ""
+            },
+            {
+                "type": "reg",
+                "pkey": 4,
+                "date": "20-02-05",
+                "action": "BUY",
+                "ticker": "TSLA",
+                "notes": ""
+            },
+            {
+                "type": "reg",
+                "pkey": 4,
+                "date": "20-02-05",
+                "action": "BUY",
+                "ticker": "TSLA",
+                "notes": ""
+            },
+            {
+                "type": "reg",
+                "pkey": 4,
+                "date": "20-02-05",
+                "action": "BUY",
+                "ticker": "TSLA",
+                "notes": ""
+            },
+            {
+                "type": "reg",
                 "pkey": 5,
                 "date": "20-02-05",
                 "action": "SELL",

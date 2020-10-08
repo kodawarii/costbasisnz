@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import '../styles/DataTable.css';
 
 // components 
-import Note from './Note';
+import Notes from './Notes';
 
 class Log extends Component {
     
@@ -11,17 +11,17 @@ class Log extends Component {
     constructor(props){
         super(props);
         this.state = {
-            showNote: false,
+            showNotes: false,
             notes: ""
         }
     }
 
-    closeNote(){
-        this.setState({showNote: false, notes: ""});
+    closeNotes(){
+        this.setState({showNotes: false, notes: ""});
     }
 
     openNotes(notes){
-        this.setState({showNote: true, notes});
+        this.setState({showNotes: true, notes});
     }
 
     getData(){
@@ -91,8 +91,6 @@ class Log extends Component {
     }
 
     render(){
-        let note = this.state.showNote ? <Note /> : "";
-
         return(
             <div>
                 <table>
@@ -109,12 +107,11 @@ class Log extends Component {
                         {this.getData()}
                     </tbody>
                 </table>
-                <div className="Note">
-                    {note}
-                </div>
                 <div className="AddLog">
                     ADD +
                 </div>
+                
+                <Notes notes={this.state.notes} show={this.state.showNotes}/>
             </div>
         );
     }
