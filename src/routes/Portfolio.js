@@ -36,7 +36,7 @@ class Portfolio extends Component{
     render(){
         return(
             <div className="Portfolio Screen"> 
-                {this.props.portfolio}
+                <div className="BrokerName"> {this.props.portfolio} </div>
                 <Ribbon 
                 updateCurrentTab={this.updateCurrentTab.bind(this)} 
                 />

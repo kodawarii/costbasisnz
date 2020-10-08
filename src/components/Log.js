@@ -16,10 +16,12 @@ class Log extends Component {
         if(this.props.data === undefined) return <tr><td>must fetch first</td></tr>;
 
         return this.props.data.map( (entry, i) => {
+            let class_topup = " Topup ";
+            
             if(entry.type === "start"){
                 return <tr key={i}>
                     <td>{entry.pkey}</td>
-                    <td>{entry.period}</td>
+                    <td><b>{entry.period}</b></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -31,14 +33,14 @@ class Log extends Component {
                     <td>{entry.date}</td>
                     <td>{entry.action}</td>
                     <td>{entry.ticker}</td>
-                    <td>{entry.notes}</td>
+                    <td> x </td>
                 </tr>
             }
             else if(entry.type === "end1"){
                 return <tr key={i}>
                     <td>{entry.pkey}</td>
                     <td></td>
-                    <td>BOUGHT</td>
+                    <td><b>BOUGHT</b></td>
                     <td>{entry.bought}</td>
                     <td></td>
                 </tr>
@@ -47,7 +49,7 @@ class Log extends Component {
                 return <tr key={i}>
                     <td>{entry.pkey}</td>
                     <td></td>
-                    <td>SOLD</td>
+                    <td><b>SOLD</b></td>
                     <td>{entry.sold}</td>
                     <td></td>
                 </tr>

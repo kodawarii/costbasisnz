@@ -1,12 +1,32 @@
 .DataTable{
-    
+    width: 100%;
+    overflow: auto;
 }
 
 table{
-    border-collapse: collapse;    
+    border-collapse: collapse;
+    margin: 0 auto; /* Align table within a div */
 }
 
-tbody td{
-    padding: 0 16px 0 16px;
-    border: 1px solid white;
+table th{
+    font-size: calc(10px + 1.1vmin);
+    font-weight: 100;
+    color: rgb(172, 172, 172);
+}
+
+/* For Mobile */
+@media only screen and (max-width: 768px) {
+    tbody td{
+        font-size: 10px;
+        padding: 0 12px 0 12px;
+        border: 1px solid rgb(30, 30, 30);
+    }
+}
+
+/* For Desktop */
+@media only screen and (min-width: 768px) {
+    tbody td{
+        padding: 0 20px 0 20px;
+        border: 1px solid rgb(30, 30, 30);
+    }
 }
