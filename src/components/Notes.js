@@ -8,7 +8,6 @@ export default class Notes extends Component {
     // this.props.closeNotes
 
     render(){
-        console.log(">> " + this.props.isVisible);
         let isModalVisibleClass = this.props.isVisible ? " Notes " : " Notes-hide ";
 
         return(
