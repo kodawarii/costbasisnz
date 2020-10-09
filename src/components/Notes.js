@@ -8,6 +8,7 @@ export default class Notes extends Component {
     // this.props.closeNotes
 
     render(){
+        console.log(">> " + this.props.isVisible);
         let isModalVisibleClass = this.props.isVisible ? " Notes " : " Notes-hide ";
 
         return(
@@ -15,7 +16,7 @@ export default class Notes extends Component {
                 <div className=" Notes-exit " onClick={this.props.closeNotes}>
                     x
                 </div>
-                <div className=" Notes-content ">
+                <div className="Notes-content">
                     {this.props.notes}
                 </div>
             </div>
