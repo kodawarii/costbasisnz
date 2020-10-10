@@ -24,7 +24,7 @@ class Home extends Component{
     // this.props.setBrokers()
 
     componentDidMount(){
-        this.props.fetchBrokers();
+        // this.props.fetchBrokers(); // API Version
         this.props.fetchPortfolioNameToShow();
         this.props.fetchLogs();
         this.props.updateScreenName("home");
@@ -64,7 +64,7 @@ class Home extends Component{
 
 export default connect(
     (state) => ({ 
-        brokers: state.brokers.items
+        brokers: state.brokers.brokers
     }),
     {
         fetchPortfolioNameToShow, updatePortfolioNameToShow,

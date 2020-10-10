@@ -5,12 +5,14 @@ import {
     ADD_TO_LOGS
 } from "../reduxtypes";
 
-export const brokersReducer = (state = {}, action) => {
+import user1 from '../mockdata/user1'; // Mock/Fake DB
+
+export const brokersReducer = (state = {brokers: user1.brokers}, action) => { // state = {}
     switch(action.type){
         case FETCH_BROKERS:
-            return { items: action.payload };
+            return { brokers: action.payload };
         case ADD_TO_BROKERS:
-            return { items: action.payload };
+            return { brokers: action.payload };
         default:
             return state;
     }
@@ -19,7 +21,7 @@ export const brokersReducer = (state = {}, action) => {
 export const logsReducer = ( state = {}, action ) => {
     switch(action.type){
         case FETCH_LOGS:
-            return { items: action.payload };
+            return { logs: action.payload };
         default: 
             return state;
     }

@@ -63,7 +63,7 @@ class AddBroker extends Component{
 
 export default connect(
     (state) => ({ 
-        brokers: state.brokers.items
+        brokers: state.brokers.brokers
     }),
     {
         addToBrokers

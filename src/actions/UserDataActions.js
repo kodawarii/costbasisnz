@@ -5,7 +5,7 @@ import {
     ADD_TO_LOGS
 } from '../reduxtypes';
 
-import user1 from '../mockdata/user1';
+import user1 from '../mockdata/user1'; // Mock/Fake DB
 
 export const fetchBrokers = () => dispatch => {
     dispatch({
@@ -14,8 +14,7 @@ export const fetchBrokers = () => dispatch => {
     });
 }
 
-export const addToBrokers = (oldBrokers, newBroker) => dispatch => {
-    console.log([...oldBrokers, newBroker]);
+export const addToBrokers = (oldBrokers, newBroker) => dispatch => { // Front end MVP only
     dispatch({
         type: ADD_TO_BROKERS,
         payload: [

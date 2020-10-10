@@ -17,7 +17,6 @@
 ### Things to note
 - store is accessed through connecting the component using export default connect(), which also references the actions
 
-
 ## Git Branching and merging
 - git branch feature1
 - git checkout feature1
@@ -40,3 +39,16 @@
 
 ## How to make a modal
 - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal
+
+## Notes on the app
+### Broker List
+- Initial Implementation was fetchBrokers() from user1.json(fake db) in ComponentDidMount() in Home component
+- When we addBroker(), only the store is updated and not the actual user1.json(fake db)
+- So when we render the Home page after addBroker(), fetchBrokers() is getting called - does not get the updated store
+- We could append to user1.json but infosec exposure danger
+
+- addBroker() will make a API call to the backend in the Full stack app
+- That way fetchBrokers() will also work correctly
+
+- For the front-end mvp app, we can import user1.json in UserDataReducers and set the list of brokers as the default store there
+- The full stack app does not use this action/reducer - purely a front end mechanism
