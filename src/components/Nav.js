@@ -13,10 +13,6 @@ class Nav extends Component{
     // this.props.isMenuHidden
     // this.props.toggleMenu
 
-    constructor(props){
-        super(props);
-    }
-
     render(){
         let title;
         let backBtnClassName = " back-btn ";

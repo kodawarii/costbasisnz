@@ -92,6 +92,7 @@ class Log extends Component {
             }
             else{
                 console.log("> ERROR: LOG TYPE DOES NOT EXIST: " + entry.type);
+                return <tr><td>ERROR</td></tr>;
             }
         });
     }
