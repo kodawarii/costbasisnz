@@ -34,11 +34,49 @@ class TopupWithdraw extends Component{
                 <td>User</td>
                 <td>ok</td>
             </tr>
+
+        return this.props.data.map ((entry, i) => {
+            if(entry.type === "start" ||
+            entry.type === "end1" ||
+            entry.type === "end2") {
+                // Continue;
+            }
+
+            else if(entry.action.includes("Topup") ||
+            entry.action.includes("Withdraw") ||
+            entry.action.includes("FX")){ // TODO: KEEP CONSTANTS AND SCHEMA AS CASE SENSITIVE
+                let actionStringClassName = " "; // TODO: REFACTOR ACROSS ALL SCREENS
+
+                if(entry.action.includes("Topup")){
+                    actionStringClassName = " Topup ";
+                }
+                else if(entry.action.includes("Withdraw")){
+                    actionStringClassName = " Withdraw ";
+                }
+                else if(entry.action.includes("FX")){
+                    actionStringClassName = " FX ";
+                }
+
+                return <tr key={i}>
+                    <td>{entry.pkey}</td>
+                    <td>{entry.date}</td>
+                    <td className={actionStringClassName}>{entry.action}</td>
+                    <td>{entry.amountAUD}</td>
+                    <td>{entry.rate}</td>
+                    <td>{entry.amountUSD}</td>
+                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes2)}> x </td>
+                </tr>
+            }
+        });
     }
 
     render(){
         return(
             <div>
+                <div>
+                    <p>Total AUD= </p>
+                    <p>Total USD= </p>
+                </div>
                 <table>
                     <thead>
                         <tr>

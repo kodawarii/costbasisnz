@@ -38,7 +38,7 @@ class Log extends Component {
                 </tr>
             }
             else if(entry.type === "reg"){
-                let actionStringClassName = " ";
+                let actionStringClassName = " "; // TODO: REFACTOR ACROSS ALL SCREENS
 
                 if(entry.action.includes("Topup")){
                     actionStringClassName = " Topup ";
