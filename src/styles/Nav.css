@@ -1,14 +1,32 @@
 .Nav{
+    background-color: inherit;
+    border-bottom: 2px solid rgb(31, 31, 31);
+
+    width: 100%;
+    position: fixed;
+    padding: 12px;
+
     text-align: center;
-    display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
 }
 
-.wrapper{
-    display: grid;
-    grid-template-columns: 15vw 60vw 15vw;
+@media only screen and (min-width: 768px) {
+    .wrapper{
+        margin: 0 auto;
+        width: 760px;
+        
+        display: grid;
+        grid-template-columns: 250px 250px 250px;
+    }
+}
+
+/* For Mobile */
+@media only screen and (max-width: 768px) {
+    .wrapper{
+        display: grid;
+        grid-template-columns: 15vw 60vw 15vw;
+    }
 }
 
 .Title{
@@ -17,5 +35,4 @@
 
 .hamburger{
     
-    transition: transform 0.25s linear;
 }

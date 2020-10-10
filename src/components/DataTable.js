@@ -3,6 +3,7 @@ import '../styles/DataTable.css';
 
 // Components
 import Log from './Log';
+import TopupWithdraw from './TopupWithdraw';
 
 class DataTable extends Component {
 
@@ -18,10 +19,13 @@ class DataTable extends Component {
 
     render(){
         let showTable = () => { return "n/a" };
-        
+    
         switch(this.props.currentTab){
             case "Log":
                 showTable = () => { return <Log data={this.props.data}/> }
+                break;
+            case "Topup / Withdraw":
+                showTable = () => { return <TopupWithdraw data={this.props.data}/> }
                 break;
             default:
                 showTable = () => { return "Invalid Choice" }
