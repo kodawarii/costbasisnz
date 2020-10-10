@@ -36,10 +36,20 @@ class TopupWithdraw extends Component{
             </tr>
 
         return this.props.data.map ((entry, i) => {
-            if(entry.type === "start" ||
-            entry.type === "end1" ||
-            entry.type === "end2") {
+            if(entry.type === "end1" || entry.type === "end2") {
                 // Continue;
+            }
+
+            else if(entry.type === "start"){ // TODO: REFACTOR START ROWS
+                return <tr key={i}>
+                    <td>{entry.pkey}</td>
+                    <td><b>{entry.period}</b></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> x </td>
+            </tr>
             }
 
             else if(entry.action.includes("Topup") ||
@@ -81,7 +91,7 @@ class TopupWithdraw extends Component{
                     <thead>
                         <tr>
                             <th>Ref</th>
-                            <th>Date</th>
+                            <th className="Date-topup-withdraw">Date</th>
                             <th>Action</th>
                             <th>AUD</th>
                             <th>Rate</th>
