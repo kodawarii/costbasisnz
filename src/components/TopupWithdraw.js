@@ -78,7 +78,7 @@ class TopupWithdraw extends Component{
                 </tr>
             }
 
-            console.log(">> ERROR: TYPE DOES NOT EXIST <TopupWithdraw>");
+            console.log(">> ERROR: TYPE DOES NOT EXIST. in TopupWithdraw.js");
             return <tr><td>ERROR</td></tr>
         });
     }
