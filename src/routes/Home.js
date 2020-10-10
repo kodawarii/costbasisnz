@@ -6,7 +6,7 @@ import '../styles/Home.css';
 
 // Redux
 import { fetchBrokers } from '../actions/brokerActions';
-import { fetchPortfolio, updatePortfolio } from '../actions/portfolioActions';
+import { fetchPortfolioNameToShow, updatePortfolioNameToShow } from '../actions/ProgramActions';
 import { fetchLogs } from '../actions/DataTableActions';
 
 // Components
@@ -31,7 +31,7 @@ class Home extends Component{
 
     componentDidMount(){
         this.props.fetchBrokers();
-        this.props.fetchPortfolio();
+        this.props.fetchPortfolioNameToShow();
         this.props.fetchLogs();
         this.props.updateScreenName("home");
     }
@@ -48,7 +48,7 @@ class Home extends Component{
         return this.state.brokers.map( (broker, i) => {
             return <ul key={i} className="Brokers">
                 <Link to={'/Portfolio'}>
-                    <li onClick={ () => this.props.updatePortfolio(broker.name)} className="Broker">{broker.name}</li>
+                    <li onClick={ () => this.props.updatePortfolioNameToShow(broker.name)} className="Broker">{broker.name}</li>
                 </Link>
             </ul>
         });
@@ -79,7 +79,7 @@ export default connect(
     }),
     {
         fetchBrokers, 
-        fetchPortfolio, updatePortfolio,
+        fetchPortfolioNameToShow, updatePortfolioNameToShow,
         fetchLogs
     }
 )(Home);

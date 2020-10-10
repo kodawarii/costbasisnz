@@ -12,6 +12,10 @@
     color: rgb(255, 36, 102);
 }
 
+.AddBrokerTextBox:focus{
+    border: 1px solid rgb(255, 36, 102);;
+}
+
 .AddBroker-submit{
     outline: none;
     background: none;

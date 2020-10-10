@@ -53,7 +53,7 @@ class Portfolio extends Component{
 
 export default connect(
     (state) => ({ 
-        portfolio: state.portfolio.portfolio,
+        portfolio: state.portfolioToShow.portfolioName,
         logs: state.logs.logs
     }),
     {
