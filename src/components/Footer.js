@@ -4,7 +4,7 @@ import '../styles/Footer.css';
 export default function Footer(){
     return(
         <div className="Footer">
-            foot
+            Created by Paul / This is not a Sponsored Product / Recognized_Unrecognized © 2020
         </div>
     );
 }
