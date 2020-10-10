@@ -90,6 +90,9 @@ class Log extends Component {
                     <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> x </td>
                 </tr>
             }
+            else{
+                console.log("> ERROR: LOG TYPE DOES NOT EXIST: " + entry.type);
+            }
         });
     }
 
