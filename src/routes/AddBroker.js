@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import '../styles/AddBroker.css';
+
+// Redux
+import { 
+    addToBrokers
+} from '../actions/UserDataActions';
 
 class AddBroker extends Component{
 
-    // this.props
-    
+    // this.props.addBroker()
+
     constructor(props){
         super(props);
 
@@ -17,12 +23,24 @@ class AddBroker extends Component{
     }
 
     handleChange(event){
-        console.log(this.state.value);
         this.setState({value: event.target.value});
     }
 
     handleSubmit(event){
-        console.log("SUBMIT: " +this.state.value);
+        function uuidv4() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+              var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+              return v.toString(16);
+            });
+        }
+
+        let brokerToAdd = {
+            name: this.state.value,
+            id: uuidv4().substring(0, 8)
+        }
+        
+        this.props.addToBrokers(this.props.brokers, brokerToAdd);
+        
         event.preventDefault();
     }
 
@@ -43,4 +61,11 @@ class AddBroker extends Component{
     }
 }
 
-export default AddBroker;
+export default connect(
+    (state) => ({ 
+        brokers: state.brokers.items
+    }),
+    {
+        addToBrokers
+    }
+)(AddBroker);

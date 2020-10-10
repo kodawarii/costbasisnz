@@ -14,10 +14,14 @@ export const fetchBrokers = () => dispatch => {
     });
 }
 
-export const addToBrokers = (brokerToAdd) => dispatch => {
+export const addToBrokers = (oldBrokers, newBroker) => dispatch => {
+    console.log([...oldBrokers, newBroker]);
     dispatch({
         type: ADD_TO_BROKERS,
-        payload: brokerToAdd
+        payload: [
+            ...oldBrokers,
+            newBroker
+        ]
     });
 }
 

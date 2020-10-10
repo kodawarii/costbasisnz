@@ -4,7 +4,6 @@ import React, {Component} from 'react';
 import { Provider } from 'react-redux';
 import { HashRouter, Switch, Route, Redirect} from 'react-router-dom';
 
-
 // Redux
 import store from './store';
 
@@ -24,11 +23,9 @@ class App extends Component{
         screen: "home",
         brokers: []
       }
-  }
 
-  addBroker(brokerToAdd){
-    // TODO: Backend call here
-    this.props.addToBrokers(brokerToAdd);
+    this.updateScreenName = this.updateScreenName.bind(this);
+    this.setBrokers = this.setBrokers.bind(this);
   }
 
   setBrokers = (brokers) => {
@@ -51,21 +48,21 @@ class App extends Component{
               <Switch>
                 <Route exact path='/' component = {
                   () => <Home 
-                  updateScreenName={this.updateScreenName.bind(this)}
+                  updateScreenName={this.updateScreenName}
                   brokers={this.state.brokers}
-                  setBrokers={this.setBrokers.bind(this)}
+                  setBrokers={this.setBrokers}
                   />
                 }/>
 
                 <Route exact path='/Portfolio' component = {
                   () => <Portfolio 
-                  updateScreenName={this.updateScreenName.bind(this)}
+                  updateScreenName={this.updateScreenName}
                   />
                 }/>
 
                 <Route exact path='/AddBroker' component = {
                   () => <AddBroker 
-                  updateScreenName={this.updateScreenName.bind(this)}
+                  updateScreenName={this.updateScreenName}
                   />
                 }/>
 

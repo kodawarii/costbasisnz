@@ -16,9 +16,6 @@ import {
     updatePortfolioNameToShow 
 } from '../actions/ProgramActions';
 
-// Components
-
-
 class Home extends Component{
 
     // this.props.<redux>
