@@ -54,7 +54,7 @@ class Nav extends Component{
                     <div className="col Padding">
                         <div className={backBtnClassName}>
                             <Link to={'/'}>
-                                <div> ↶ </div>
+                                <div className="back-btn-btn"> ↶ </div>
                             </Link>
                         </div>
                     </div>

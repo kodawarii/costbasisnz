@@ -33,6 +33,10 @@
     display: block;
 }
 
+.back-btn-btn:hover{
+    color: red;
+}
+
 .back-btn-hide{
     display: none;
 }
@@ -107,4 +111,8 @@
 .menu-exit-btn:hover{
     cursor: pointer;
     color: red;
+}
+
+.settings-link:hover{
+    color: skyblue;
 }
