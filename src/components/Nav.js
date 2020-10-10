@@ -26,8 +26,26 @@ class Nav extends Component{
             title = "Select Portfolio";
             backBtnClassName = " back-btn-hide ";
         }
-        if(this.props.screen === "portfolio"){
+        else if(this.props.screen === "portfolio"){
             title = "Portfolio";
+        }
+        else if(this.props.screen === "addBroker"){
+            title = "Add Broker";
+        }
+        else if(this.props.screen === "login"){
+            title = "Login";
+        }
+        else if(this.props.screen === "logout"){
+            title = "Logout";
+        }
+        else if(this.props.screen === "settings"){
+            title = "Settings";
+        }
+        else if(this.props.screen === "register"){
+            title = "Register";
+        }
+        else if(this.props.screen === "about"){
+            title = "About";
         }
 
         return(

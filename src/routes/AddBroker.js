@@ -44,6 +44,14 @@ class AddBroker extends Component{
         event.preventDefault();
     }
 
+    componentDidMount(){
+        this.props.updateScreenName("addBroker"); // Hacky
+    }
+    
+    componentDidUpdate(){
+        this.props.updateScreenName("addBroker"); // todo1: create constants
+    }
+
     render(){
         return(
             <div className="AddBroker Screen">

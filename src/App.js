@@ -12,7 +12,12 @@ import AddBroker from './routes/AddBroker';
 import Edit from './routes/Edit';
 import Home from './routes/Home';
 import Login from './routes/Login';
+import Logout from './routes/Logout';
 import Portfolio from './routes/Portfolio';
+import Settings from './routes/Settings';
+import About from './routes/About';
+import Register from './routes/Register';
+
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 
@@ -71,6 +76,42 @@ class App extends Component{
 
                 <Route exact path='/AddBroker' component = {
                   () => <AddBroker 
+                  updateScreenName={this.updateScreenName}
+                  />
+                }/>
+
+                <Route exact path='/Login' component = {
+                  () => <Login 
+                  updateScreenName={this.updateScreenName}
+                  />
+                }/>
+
+                <Route exact path='/Logout' component = {
+                  () => <Logout 
+                  updateScreenName={this.updateScreenName}
+                  />
+                }/>
+
+                <Route exact path='/Edit' component = {
+                  () => <Edit 
+                  updateScreenName={this.updateScreenName}
+                  />
+                }/>
+
+                <Route exact path='/Settings' component = {
+                  () => <Settings 
+                  updateScreenName={this.updateScreenName}
+                  />
+                }/>
+
+                <Route exact path='/About' component = {
+                  () => <About 
+                  updateScreenName={this.updateScreenName}
+                  />
+                }/>
+
+                <Route exact path='/Register' component = {
+                  () => <Register 
                   updateScreenName={this.updateScreenName}
                   />
                 }/>

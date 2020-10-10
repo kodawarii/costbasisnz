@@ -5,6 +5,14 @@ class Login extends Component{
         super(props);
     }
 
+    componentDidMount(){
+        this.props.updateScreenName("login"); // Hacky
+    }
+    
+    componentDidUpdate(){
+        this.props.updateScreenName("login"); // todo1: create constants
+    }
+
     render(){
         return(
             <div className="Login Screen">

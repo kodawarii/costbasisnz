@@ -41,8 +41,27 @@
     
 }
 
+.hamburger{
+    transition: transform 0.25s linear;
+}
+
 .hamburger:hover{
     cursor: pointer;
+
+    animation: MenuAnimation 0.3s;
+    opacity: 0.25;
+    transform: scale(0.8) rotate(90deg);
+}
+
+@keyframes MenuAnimation {
+    0%{
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+    100%{
+        opacity: 0.25;
+        transform: scale(0.8) rotate(90deg);
+    }
 }
 
 .menu-outer{
@@ -61,6 +80,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    animation: loadAnimation ease-in-out 0.2s;
+}
+
+@keyframes loadAnimation {
+    0%{
+        opacity: 0;
+        -webkit-transform:translate(0,-20px); 
+        
+    }
+    100%{
+        opacity: 100;
+        -webkit-transform:translate(0,-0);
+    }
 }
 
 .menu-outer-hidden{
@@ -73,4 +106,5 @@
 
 .menu-exit-btn:hover{
     cursor: pointer;
+    color: red;
 }
