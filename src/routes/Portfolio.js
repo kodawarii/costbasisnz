@@ -17,7 +17,7 @@ class Portfolio extends Component{
         super(props);
 
         this.state = {
-            currentTab: "Log"
+            currentTab: "Topup / Withdraw"
         }
     }
 
@@ -38,6 +38,7 @@ class Portfolio extends Component{
             <div className="Portfolio Screen"> 
                 <div className="BrokerName"> {this.props.portfolio} </div>
                 <Ribbon 
+                currentTab={this.state.currentTab}
                 updateCurrentTab={this.updateCurrentTab.bind(this)} 
                 />
 

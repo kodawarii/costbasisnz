@@ -37,12 +37,15 @@ class TopupWithdraw extends Component{
                             <th>Ref</th>
                             <th>Date</th>
                             <th>Action</th>
-                            <th>Symbol</th>
+                            <th>AUD</th>
+                            <th>Rate</th>
+                            <th>USD</th>
                             <th>Notes</th>
                         </tr>
                     </thead>
                     <tbody>
                         {this.getData()}
+                        asdsasada
                     </tbody>
                 </table>
                 <div className="AddLog">

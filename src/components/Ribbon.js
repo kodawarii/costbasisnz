@@ -4,11 +4,12 @@ import '../styles/Ribbon.css';
 class Ribbon extends Component {
 
     // this.props.updateCurrentTab()
+    // this.props.currentTab
 
     constructor(props){
         super(props);
         this.state = {
-            currentTab: "Log",
+            currentTab: "",
             tabs: [ // todo: Get from user data
                 "Master",
                 "Holdings",
@@ -19,6 +20,10 @@ class Ribbon extends Component {
                 "Dividends"
             ]
         }
+    }
+
+    componentDidMount(){
+        if(this.state.currentTab !== this.props.currentTab) this.setState({currentTab: this.props.currentTab});
     }
 
     updateCurrentTab(tab){
