@@ -25,7 +25,15 @@ class TopupWithdraw extends Component{
     }
 
     getData(){
-
+        if(this.props.data === undefined) return <tr>
+                <td>Must</td>
+                <td>Fetch</td>
+                <td>First</td>
+                <td>From</td>
+                <td>The</td>
+                <td>User</td>
+                <td>ok</td>
+            </tr>
     }
 
     render(){
@@ -45,7 +53,6 @@ class TopupWithdraw extends Component{
                     </thead>
                     <tbody>
                         {this.getData()}
-                        asdsasada
                     </tbody>
                 </table>
                 <div className="AddLog">
