@@ -77,6 +77,9 @@ class TopupWithdraw extends Component{
                     <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes2)}> x </td>
                 </tr>
             }
+
+            console.log(">> ERROR: TYPE DOES NOT EXIST <TopupWithdraw>");
+            return <tr><td>ERROR</td></tr>
         });
     }
 
