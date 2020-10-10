@@ -12,6 +12,7 @@ table th{
     font-size: calc(10px + 1.1vmin);
     font-weight: 100;
     color: rgb(172, 172, 172);
+    padding: 0 30px 0 30px; /* Very hacky */
 }
 
 .Date-topup-withdraw{
