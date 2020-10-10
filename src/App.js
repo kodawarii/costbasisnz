@@ -20,12 +20,18 @@ class App extends Component{
   constructor(props){
     super(props);
       this.state ={
+        isMenuHidden: true,
         screen: "home",
         brokers: []
       }
 
     this.updateScreenName = this.updateScreenName.bind(this);
     this.setBrokers = this.setBrokers.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
+  }
+
+  toggleMenu = () => {
+    this.setState({isMenuHidden: !this.state.isMenuHidden});
   }
 
   setBrokers = (brokers) => {
@@ -43,7 +49,10 @@ class App extends Component{
             <div className="App">
               
               <Nav 
-              screen={this.state.screen}/>
+              screen={this.state.screen}
+              isMenuHidden={this.state.isMenuHidden}
+              toggleMenu={this.toggleMenu}
+              />
 
               <Switch>
                 <Route exact path='/' component = {
