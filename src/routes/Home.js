@@ -5,9 +5,8 @@ import { HashLink as Link } from 'react-router-hash-link';
 import '../styles/Home.css';
 
 // Redux
-import { fetchBrokers } from '../actions/brokerActions';
+import { fetchLogs, fetchBrokers } from '../actions/UserDataActions';
 import { fetchPortfolioNameToShow, updatePortfolioNameToShow } from '../actions/ProgramActions';
-import { fetchLogs } from '../actions/DataTableActions';
 
 // Components
 
@@ -75,11 +74,10 @@ class Home extends Component{
 
 export default connect(
     (state) => ({ 
-        brokers: state.brokers.brokers,
+        brokers: state.brokers.items
     }),
     {
-        fetchBrokers, 
         fetchPortfolioNameToShow, updatePortfolioNameToShow,
-        fetchLogs
+        fetchBrokers, fetchLogs
     }
 )(Home);

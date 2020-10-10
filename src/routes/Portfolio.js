@@ -12,6 +12,7 @@ class Portfolio extends Component{
     // props
     // this.props.<redux-store>
         // this.props.portfolio
+        // this.props.logs
 
     constructor(props){
         super(props);
@@ -53,8 +54,8 @@ class Portfolio extends Component{
 
 export default connect(
     (state) => ({ 
-        portfolio: state.portfolioToShow.portfolioName,
-        logs: state.logs.logs
+        portfolio: state.portfolioNameToShow.name,
+        logs: state.logs.items
     }),
     {
         
