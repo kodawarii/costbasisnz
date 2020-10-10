@@ -14,22 +14,6 @@
     color: rgb(255, 36, 102);
 }
 
-.Activator{
-    margin: 20px;
-}
-
-.Activator-btn{
-    background: none;
-    /* border: 1px solid rgb(170, 170, 170); */
-    color: rgb(199, 199, 199);
-    padding: 8px 16px 8px 16px;
-}
-
-.Activator-btn:hover{
-    border: 1px solid rgb(129, 209, 255);
-    color: rgb(129, 209, 255);
-}
-
 .AddBroker-outer{
     margin: 20px;
 }

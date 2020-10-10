@@ -5,28 +5,26 @@ import { HashLink as Link } from 'react-router-hash-link';
 import '../styles/Home.css';
 
 // Redux
-import { fetchLogs, fetchBrokers } from '../actions/UserDataActions';
-import { fetchPortfolioNameToShow, updatePortfolioNameToShow } from '../actions/ProgramActions';
+import { 
+    fetchBrokers, 
+    addToBrokers,
+    fetchLogs
+} from '../actions/UserDataActions';
+
+import { 
+    fetchPortfolioNameToShow, 
+    updatePortfolioNameToShow 
+} from '../actions/ProgramActions';
 
 // Components
 
 
 class Home extends Component{
 
-    // props
-    // this.props.<redux-store>
-        // this.props.fetchBrokers()
-        // this.props.updatePortfolio()
-        // this.props.fetchLogs();
+    // this.props.<redux>
     // this.props.updateScreenName()
-    // this.props.currentScreenName
-
-    constructor(props){
-        super(props);
-        this.state={
-            brokers: []
-        }
-    }
+    // this.props.brokers
+    // this.props.setBrokers()
 
     componentDidMount(){
         this.props.fetchBrokers();
@@ -39,12 +37,10 @@ class Home extends Component{
         this.props.updateScreenName("home"); // todo1: create constants
     }
 
-    setBrokers = (brokers) => {
-        this.setState({brokers});
-    }
-
     renderBrokers(){
-        return this.state.brokers.map( (broker, i) => {
+        if(this.props.brokers === undefined) return "Loading Brokers";
+        
+        return this.props.brokers.map( (broker, i) => {
             return <ul key={i} className="Brokers">
                 <Link to={'/Portfolio'}>
                     <li onClick={ () => this.props.updatePortfolioNameToShow(broker.name)} className="Broker">{broker.name}</li>
@@ -56,9 +52,6 @@ class Home extends Component{
     render(){
         return(
             <div className="Home Screen">
-                <div className="Activator">
-                    <button onClick={() => this.setBrokers(this.props.brokers)} className="Activator-btn"> Fetch </button>
-                </div>
                 <div className="Brokers">
                     {this.renderBrokers()}
                 </div>
@@ -78,6 +71,6 @@ export default connect(
     }),
     {
         fetchPortfolioNameToShow, updatePortfolioNameToShow,
-        fetchBrokers, fetchLogs
+        fetchBrokers, addToBrokers, fetchLogs
     }
 )(Home);

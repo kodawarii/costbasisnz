@@ -1,5 +1,6 @@
 import { 
     FETCH_BROKERS,
+    ADD_TO_BROKERS,
     FETCH_LOGS,
     ADD_TO_LOGS
 } from '../reduxtypes';
@@ -10,6 +11,13 @@ export const fetchBrokers = () => dispatch => {
     dispatch({
         type: FETCH_BROKERS,
         payload: user1.brokers
+    });
+}
+
+export const addToBrokers = (brokerToAdd) => dispatch => {
+    dispatch({
+        type: ADD_TO_BROKERS,
+        payload: brokerToAdd
     });
 }
 

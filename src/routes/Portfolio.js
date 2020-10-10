@@ -10,9 +10,7 @@ import DataTable from '../components/DataTable';
 class Portfolio extends Component{
 
     // props
-    // this.props.<redux-store>
-        // this.props.portfolio
-        // this.props.logs
+    // this.props.<redux>
 
     constructor(props){
         super(props);

@@ -20,9 +20,19 @@ import Footer from './components/Footer';
 class App extends Component{
   constructor(props){
     super(props);
-    this.state ={
-      screen: "home"
-    }
+      this.state ={
+        screen: "home",
+        brokers: []
+      }
+  }
+
+  addBroker(brokerToAdd){
+    // TODO: Backend call here
+    this.props.addToBrokers(brokerToAdd);
+  }
+
+  setBrokers = (brokers) => {
+    this.setState({brokers});
   }
 
   updateScreenName(screen){
@@ -42,6 +52,8 @@ class App extends Component{
                 <Route exact path='/' component = {
                   () => <Home 
                   updateScreenName={this.updateScreenName.bind(this)}
+                  brokers={this.state.brokers}
+                  setBrokers={this.setBrokers.bind(this)}
                   />
                 }/>
 

@@ -1,5 +1,6 @@
 import { 
     FETCH_BROKERS,
+    ADD_TO_BROKERS,
     FETCH_LOGS,
     ADD_TO_LOGS
 } from "../reduxtypes";
@@ -7,6 +8,8 @@ import {
 export const brokersReducer = (state = {}, action) => {
     switch(action.type){
         case FETCH_BROKERS:
+            return { items: action.payload };
+        case ADD_TO_BROKERS:
             return { items: action.payload };
         default:
             return state;
