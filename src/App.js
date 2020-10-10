@@ -9,7 +9,7 @@ import { HashRouter, Switch, Route, Redirect} from 'react-router-dom';
 import store from './store';
 
 // Components and Routes
-import Add from './routes/Add';
+import AddBroker from './routes/AddBroker';
 import Edit from './routes/Edit';
 import Home from './routes/Home';
 import Login from './routes/Login';
@@ -51,8 +51,8 @@ class App extends Component{
                   />
                 }/>
 
-                <Route exact path='/Add' component = {
-                  () => <Add 
+                <Route exact path='/AddBroker' component = {
+                  () => <AddBroker 
                   updateScreenName={this.updateScreenName.bind(this)}
                   />
                 }/>
