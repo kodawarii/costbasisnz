@@ -39,7 +39,6 @@ class TopupWithdraw extends Component{
             if(entry.type === "end1" || entry.type === "end2") {
                 // Continue;
             }
-
             else if(entry.type === "start"){ // TODO: REFACTOR START ROWS
                 return <tr key={i}>
                     <td>{entry.pkey}</td>
@@ -51,7 +50,6 @@ class TopupWithdraw extends Component{
                 <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> x </td>
             </tr>
             }
-
             else if(entry.action.includes("Topup") ||
             entry.action.includes("Withdraw") ||
             entry.action.includes("FX")){ // TODO: KEEP CONSTANTS AND SCHEMA AS CASE SENSITIVE
@@ -78,8 +76,7 @@ class TopupWithdraw extends Component{
                 </tr>
             }
 
-            console.log(">> ERROR: TYPE DOES NOT EXIST. in TopupWithdraw.js");
-            return <tr><td>ERROR</td></tr>
+            // return something
         });
     }
 
