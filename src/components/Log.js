@@ -91,6 +91,7 @@ class Log extends Component {
                 </tr>
             }
             else{
+                // This can be here since log captures ALL types of activity
                 console.log("> ERROR: LOG TYPE DOES NOT EXIST: " + entry.type);
                 return <tr><td>ERROR</td></tr>;
             }
