@@ -11,30 +11,30 @@
     padding: 8px;
 }
 
-.AddTopup:hover{
+.AddTopup-li:hover{
     color: yellow;
 }
 
-.AddWithdraw:hover{
+.AddWithdraw-li:hover{
     color: cyan;
 }
 
-.AddFX:hover{
+.AddFX-li:hover{
     color: orange;
 }
 
-.AddBuy:hover{
+.AddBuy-li:hover{
     color: lime;
 }
 
-.AddSell:hover{
+.AddSell-li:hover{
     color: rgb(255, 111, 154);
 }
 
-.AddDividend:hover{
+.AddDividend-li:hover{
     color: dodgerblue;
 }
 
-.AddFee:hover{
+.AddFee-li:hover{
     color: red;
 }

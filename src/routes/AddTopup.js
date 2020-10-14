@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 class AddTopup extends Component{
     componentDidMount(){
@@ -12,10 +13,17 @@ class AddTopup extends Component{
     render(){
         return(
             <div className="AddTopup Screen">
-                AddTopup works
+                Adding for = {this.props.portfolio}
             </div>
         );
     }
 }
 
-export default AddTopup;
+export default connect(
+    (state) => ({
+        portfolio: state.portfolioNameToShow.name,
+    }),
+    {
+
+    }
+)(AddTopup);
