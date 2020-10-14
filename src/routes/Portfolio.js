@@ -21,7 +21,7 @@ class Portfolio extends Component{
         super(props);
 
         this.state = {
-            currentTab: "Topup / Withdraw"
+            currentTab: "Log"
         }
     }
 

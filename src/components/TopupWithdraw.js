@@ -104,7 +104,7 @@ class TopupWithdraw extends Component{
                     </tbody>
                 </table>
                 <div className="AddLog">
-                    ADD +
+                    ADD + // go direct to addTopupWithdraw page
                 </div>
                 
                 <Notes notes={this.state.notes} isVisible={this.state.showNotes} closeNotes={this.closeNotes.bind(this)}/>

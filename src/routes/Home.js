@@ -52,9 +52,9 @@ class Home extends Component{
                 <div className="Brokers">
                     {this.renderBrokers()}
                 </div>
-                <div className="AddBroker-outer">
+                <div className="AddBrokerBtn-wrapper">
                     <Link to={'/AddBroker'}>
-                        <button className="Add-broker-btn">+</button>
+                        <button className="AddBtn">+</button>
                     </Link>
                 </div>
             </div>

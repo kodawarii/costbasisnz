@@ -9,6 +9,7 @@ import store from './store';
 
 // Components and Routes
 import AddBroker from './routes/AddBroker';
+import SelectAddType from './routes/SelectAddType';
 import Edit from './routes/Edit';
 import Home from './routes/Home';
 import Login from './routes/Login';
@@ -76,6 +77,12 @@ class App extends Component{
 
                 <Route exact path='/AddBroker' component = {
                   () => <AddBroker 
+                  updateScreenName={this.updateScreenName}
+                  />
+                }/>
+
+                <Route exact path='/SelectAddType' component = {
+                  () => <SelectAddType 
                   updateScreenName={this.updateScreenName}
                   />
                 }/>

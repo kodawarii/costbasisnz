@@ -1,6 +1,6 @@
 // Packages
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import {HashLink as Link} from 'react-router-hash-link';
 import '../styles/DataTable.css';
 
 // Components 
@@ -118,9 +118,12 @@ class Log extends Component {
                         {this.getData()}
                     </tbody>
                 </table>
-                <div className="AddLog">
-                    ADD +
-                </div>
+
+                <Link to={'/SelectAddType'}>
+                    <div className="AddLogBtn-wrapper">
+                        <button className="AddBtn">+</button>
+                    </div>
+                </Link>
                 
                 <Notes notes={this.state.notes} isVisible={this.state.showNotes} closeNotes={this.closeNotes.bind(this)}/>
             </div>
