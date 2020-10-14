@@ -9,6 +9,13 @@ import store from './store';
 
 // Components and Routes
 import AddBroker from './routes/AddBroker';
+import AddTopup from './routes/AddTopup';
+import AddWithdraw from './routes/AddWithdraw';
+import AddBuy from './routes/AddBuy';
+import AddSell from './routes/AddSell';
+import AddFX from './routes/AddFX';
+import AddFee from './routes/AddFee';
+import AddDividend from './routes/AddDividend';
 import SelectAddType from './routes/SelectAddType';
 import Edit from './routes/Edit';
 import Home from './routes/Home';
@@ -77,6 +84,12 @@ class App extends Component{
 
                 <Route exact path='/AddBroker' component = {
                   () => <AddBroker 
+                  updateScreenName={this.updateScreenName}
+                  />
+                }/>
+
+                <Route exact path='/AddTopup' component = {
+                  () => <AddTopup 
                   updateScreenName={this.updateScreenName}
                   />
                 }/>

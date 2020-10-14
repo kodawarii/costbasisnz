@@ -1,0 +1,40 @@
+.SelectAddType{
+    border: 1px solid lime;
+}
+
+.SelectAddType-ul{
+    list-style: none;
+    text-align: left;
+}
+
+.SelectAddType-li{
+    padding: 8px;
+}
+
+.AddTopup:hover{
+    color: yellow;
+}
+
+.AddWithdraw:hover{
+    color: cyan;
+}
+
+.AddFX:hover{
+    color: orange;
+}
+
+.AddBuy:hover{
+    color: lime;
+}
+
+.AddSell:hover{
+    color: rgb(255, 111, 154);
+}
+
+.AddDividend:hover{
+    color: dodgerblue;
+}
+
+.AddFee:hover{
+    color: red;
+}

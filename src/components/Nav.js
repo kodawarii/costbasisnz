@@ -43,6 +43,9 @@ class Nav extends Component{
         else if(this.props.screen === "about"){
             title = "About";
         }
+        else if(this.props.screen === "selectaddtype"){
+            title = "Add a Log item";
+        }
 
         return(
             <div className="Nav">
