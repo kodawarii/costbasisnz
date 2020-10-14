@@ -26,7 +26,7 @@ class Home extends Component{
     componentDidMount(){
         // this.props.fetchBrokers(); // API Version
         this.props.fetchPortfolioNameToShow();
-        this.props.fetchLogs();
+        // this.props.fetchLogs();
         this.props.updateScreenName("home");
     }
 

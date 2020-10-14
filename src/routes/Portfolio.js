@@ -3,13 +3,18 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import '../styles/Portfolio.css';
 
+// Redux
+import {
+    fetchLogs
+} from '../actions/UserDataActions';
+
+
 // Components
 import Ribbon from '../components/Ribbon';
 import DataTable from '../components/DataTable';
 
 class Portfolio extends Component{
 
-    // props
     // this.props.<redux>
 
     constructor(props){
@@ -26,6 +31,7 @@ class Portfolio extends Component{
 
     componentDidMount(){
         this.props.updateScreenName("portfolio"); // Hacky
+        this.props.fetchLogs(this.props.portfolio);
     }
     
     componentDidUpdate(){
@@ -42,6 +48,7 @@ class Portfolio extends Component{
                 />
 
                 <DataTable 
+                portfolio={this.props.portfolio}
                 currentTab={this.state.currentTab}
                 data={this.props.logs}
                 />
@@ -56,6 +63,6 @@ export default connect(
         logs: state.logs.logs
     }),
     {
-        
+        fetchLogs
     }
 )(Portfolio);

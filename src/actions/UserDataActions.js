@@ -24,9 +24,28 @@ export const addToBrokers = (oldBrokers, newBroker) => dispatch => { // Front en
     });
 }
 
-export const fetchLogs = () => dispatch => {
-    dispatch({
-        type: FETCH_LOGS,
-        payload: user1.b1.log
-    });
+export const fetchLogs = (id) => dispatch => {
+    switch(id){
+        case "Interactive Brokers":
+            dispatch({
+                type: FETCH_LOGS,
+                payload: user1.b1.log
+            });
+            break;
+        case "Hatch":
+            dispatch({
+                type: FETCH_LOGS,
+                payload: user1.b2.log
+            });
+            break;
+        case "Sharsies":
+            dispatch({
+                type: FETCH_LOGS,
+                payload: user1.b3.log
+            });
+            break;
+        default:
+            console.log(">> ID DOES NOT EXIST");
+            break;
+    }
 }

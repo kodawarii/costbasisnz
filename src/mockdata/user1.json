@@ -41,13 +41,13 @@
             {
                 "type": "start",
                 "pkey": 0,
-                "period": "2020 FEB",
+                "period": "2022 OCT",
                 "notes1": "start only has 1 note"
             },
             {
                 "type": "reg",
                 "pkey": 1,
-                "date": "20-02-02",
+                "date": "22-10-10",
                 "action": "Topup",
                 "ticker": "",
                 "notes1": "note1=This FX block is only for IBKR - Hatch and Sharsies format will be different",
@@ -298,7 +298,62 @@
 
         ],
         "log": [
+            {
+                "type": "start",
+                "pkey": 0,
+                "period": "2022 OCT",
+                "notes1": "start only has 1 note"
+            },
+            {
+                "type": "start",
+                "pkey": 0,
+                "period": "HATCH check",
+                "notes1": "start only has 1 note"
+            },
+            {
+                "type": "reg",
+                "pkey": 1,
+                "date": "22-10-10",
+                "action": "Topup",
+                "ticker": "",
+                "notes1": "note1=This FX block is only for IBKR - Hatch and Sharsies format will be different",
+                "notes2": "note2=sssss",
+                
+                "amountAUD": 12000
+            }
+        ]
+    },
+    "b3":{
+        "master":[
             
+        ],
+        "holdings": [
+
+        ],
+        "log": [
+            {
+                "type": "start",
+                "pkey": 0,
+                "period": "2022 OCT",
+                "notes1": "start only has 1 note"
+            },
+            {
+                "type": "start",
+                "pkey": 0,
+                "period": "SHARSIES check",
+                "notes1": "start only has 1 note"
+            },
+            {
+                "type": "reg",
+                "pkey": 1,
+                "date": "22-10-10",
+                "action": "Topup",
+                "ticker": "",
+                "notes1": "note1=This FX block is only for IBKR - Hatch and Sharsies format will be different",
+                "notes2": "note2=sssss",
+                
+                "amountAUD": 555
+            }
         ]
     }
 }

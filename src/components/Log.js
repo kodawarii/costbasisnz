@@ -1,12 +1,15 @@
+// Packages
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import '../styles/DataTable.css';
 
-// components 
+// Components 
 import Notes from './Notes';
 
 class Log extends Component {
     
     // this.props.data
+    // this.props.portfolio
 
     constructor(props){
         super(props);
