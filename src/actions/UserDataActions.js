@@ -45,6 +45,13 @@ export const fetchLogs = (id) => dispatch => {
             });
             break;
         default:
+            dispatch({
+                type: FETCH_LOGS, // TODO: have error throwing reducer
+                payload: [{
+                    "type": "start",
+                    "period": "Error - User does not have that portfolio / any entries within that portfolio"
+                }]
+            })
             console.log(">> ID DOES NOT EXIST");
             break;
     }
