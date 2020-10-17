@@ -6,8 +6,11 @@ import {
 } from '../reduxtypes';
 
 import user1 from '../mockdata/user1'; // Mock/Fake DB
+// In order to CRUD this mock data, we need to create a local copy within redux store - phase1=brokers, phase2=logs
+// so 1. we have local copy data
+// 2. when we have backend api and db, no longer local changes
 
-// We will use this in the future when making backend API calls
+// We will use this in the future when making backend API calls // phase1
 export const fetchBrokers = () => dispatch => {
     dispatch({
         type: FETCH_BROKERS,
