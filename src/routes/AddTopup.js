@@ -20,30 +20,109 @@ class AddTopup extends Component{
         super(props);
 
         this.state = {
-            key: "DEFAULT: Retrieve last used, then ++1",
-            date: 'DEFAULT_DATE',
             action: 'Topup', // TODO: Change to Parameter string from external json constants
-            amount: 0,
-            notes: ''
+            amountSent: '',
+            rate: '',
+            amountLanded: '',
+            notes: '' // TODO: Handle notes1 or notes2 - did we arrive on AddTopup Section via log ribbon OR topup/withdraw ribbon ?
         }
+
+        this.getTopupForm_TYPE_CONVERT = this.getTopupForm_TYPE_CONVERT.bind(this);
+        this.getTopupForm_TYPE_NATIVE = this.getTopupForm_TYPE_NATIVE.bind(this);
+        this.handleChangeAmountSent = this.handleChangeAmountSent.bind(this);
+        this.handleChangeAmountLanded = this.handleChangeAmountLanded.bind(this);
+        this.handleChangeConversionRate = this.handleChangeConversionRate.bind(this);
+        this.handleChangeNotes = this.handleChangeNotes.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event){
-
+    handleChangeNotes(event){
+        this.setState({notes: event.target.value});
     }
 
-    handleSubmit(){
-
+    handleChangeConversionRate(event){
+        this.setState({rate: event.target.value});
     }
 
+    handleChangeAmountLanded(event){
+        this.setState({amountLanded: event.target.value});
+    }
+
+    handleChangeAmountSent(event){
+        this.setState({amountSent: event.target.value});
+    }
+
+    handleSubmit(event){
+        console.log(this.state.amountSent);
+        console.log(this.state.rate);
+        console.log(this.state.amountLanded);
+        console.log(this.state.notes);
+
+        if(this.props.topupStyle === 'native'){
+        }
+        else if(this.props.topupStyle === 'convert'){
+        }
+        else{
+            
+        }
+
+        event.preventDefault();
+    }
 
     componentDidMount(){
-        this.props.fetchTopupStyle(this.props.brokers, this.props.portfolio);
+        this.props.fetchTopupStyle(this.props.brokers, this.props.portfolio); // This will be buggy af - assuiming we only access AddTopup after choosing a portfolio - URL injection will crash
         this.props.updateScreenName("AddTopup"); // Hacky
     }
     
     componentDidUpdate(){
         this.props.updateScreenName("AddTopup"); // todo1: create constants
+    }
+
+    getTopupForm_TYPE_NATIVE(currency){
+        return <form onSubmit={this.handleSubmit}>
+            <label>
+                
+                Topup Amount ({currency})
+                <br/><br/>
+                <input type="text" name="amountLanded" value={this.state.amountLanded} onChange={this.handleChangeAmountLanded} className="AddDataTextBox"/>
+                <br/><br/>
+
+                Notes
+                <br/><br/>
+                <input type="text" name="amountLanded" value={this.state.notes} onChange={this.handleChangeNotes} className="AddDataTextBox"/>
+            
+            </label>
+            <br/><br/>
+            <input type="submit" value="Add" className="submit-btn" />
+        </form> 
+    }
+
+    getTopupForm_TYPE_CONVERT(currency){
+        return <form onSubmit={this.handleSubmit}>
+            <label>
+                
+                Amount sent 
+                <br/><br/>
+                <input type="text" name="amountSent" value={this.state.amountSent} onChange={this.handleChangeAmountSent} className="AddDataTextBox"/>
+                <br/><br/>
+
+                Conversion Rate 
+                <br/><br/>
+                <input type="text" name="rate" value={this.state.rate} onChange={this.handleChangeConversionRate} className="AddDataTextBox"/>
+                <br/><br/>
+                
+                Amount Recieved ({currency})
+                <br/><br/>
+                <input type="text" name="amountLanded" value={this.state.amountLanded} onChange={this.handleChangeAmountLanded} className="AddDataTextBox"/>
+
+                Notes
+                <br/><br/>
+                <input type="text" name="amountLanded" value={this.state.notes} onChange={this.handleChangeNotes} className="AddDataTextBox"/>
+
+            </label>
+            <br/><br/>
+            <input type="submit" value="Add" className="submit-btn" />
+        </form>
     }
 
     render(){
@@ -59,19 +138,23 @@ class AddTopup extends Component{
         else if(this.props.portfolio === 'Sharsies'){
             currency = 'NZD';
         }
+        
+        let formToShow;
+        if(this.props.topupStyle === 'native'){
+            formToShow = () => this.getTopupForm_TYPE_NATIVE(currency);
+        }
+        else if(this.props.topupStyle === 'convert'){
+            formToShow = () => this.getTopupForm_TYPE_CONVERT(currency);
+        }
+        else{
+            console.log('>> THAT TOPUP STYLE DOES NOT EXIST');
+            formToShow = () => <div> ERROR </div>;
+        }
 
         return(
             <div className="AddData AddTopup Screen">
                 <h4>{this.props.portfolio}</h4>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Topup Amount ({currency})<br/><br/>
-                        {this.props.topupStyle}
-                        <input type="text" name="name" value={this.state.value} onChange={this.handleChange} className="AddDataTextBox"/>
-                    </label>
-                    <br/><br/>
-                    <input type="submit" value="Add" className="submit-btn" />
-                </form> 
+                {formToShow()}
             </div>
         );
     }

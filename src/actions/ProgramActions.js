@@ -18,7 +18,7 @@ export const updatePortfolioNameToShow = (portfolioNameToShow) => dispatch => {
     });
 }
 
-export const fetchTopupStyle = (brokers, currentBroker) => dispatch => {
+export const fetchTopupStyle = (brokers, currentBroker) => dispatch => { // TODO Test action, heavily exposed to bugs
     let topupStyle = '';
     for(let i = 0; i < brokers.length; i++){
         if(brokers[i].name === currentBroker){ // TODO Create Broker Name <> ID Converter 
