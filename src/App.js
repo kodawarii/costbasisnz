@@ -33,8 +33,8 @@ class App extends Component{
   constructor(props){
     super(props);
       this.state ={
-        isMenuHidden: true,
-        screen: "home",
+        isMenuHidden: true, // TODO Move this into redux store
+        screen: "home", // TODO Move this into redux store also and connect each child Component to store
       }
 
     this.updateScreenName = this.updateScreenName.bind(this);

@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 
 // Reducers
 import { brokersReducer, logsReducer } from './reducers/UserDataReducers';
-import { portfolioNameToShowReducer } from './reducers/ProgramReducers';
+import { portfolioNameToShowReducer, topupStyleReducer } from './reducers/ProgramReducers';
 
 const initialState = {};
 
@@ -13,6 +13,7 @@ const store = createStore(
     combineReducers({
         // Program Data
         portfolioNameToShow: portfolioNameToShowReducer,
+        topupStyle: topupStyleReducer,
 
         // User Data
         brokers: brokersReducer,

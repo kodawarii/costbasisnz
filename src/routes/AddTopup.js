@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import '../styles/AddDataScreens.css';
 
+// Redux
+import { 
+    fetchTopupStyle
+} from '../actions/ProgramActions';
+
 class AddTopup extends Component{
 
     // this.props.
@@ -33,6 +38,7 @@ class AddTopup extends Component{
 
 
     componentDidMount(){
+        this.props.fetchTopupStyle(this.props.brokers, this.props.portfolio);
         this.props.updateScreenName("AddTopup"); // Hacky
     }
     
@@ -60,6 +66,7 @@ class AddTopup extends Component{
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Topup Amount ({currency})<br/><br/>
+                        {this.props.topupStyle}
                         <input type="text" name="name" value={this.state.value} onChange={this.handleChange} className="AddDataTextBox"/>
                     </label>
                     <br/><br/>
@@ -73,9 +80,10 @@ class AddTopup extends Component{
 export default connect(
     (state) => ({
         portfolio: state.portfolioNameToShow.name,
-        brokers: state.brokers.brokers
+        brokers: state.brokers.brokers,
+        topupStyle: state.topupStyle.topupStyle
     }),
     {
-
+        fetchTopupStyle
     }
 )(AddTopup);
