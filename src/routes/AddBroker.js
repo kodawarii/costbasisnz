@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import '../styles/AddItemScreens.css';
+import '../styles/AddDataScreens.css';
 
 // Redux
 import { 
@@ -54,11 +54,11 @@ class AddBroker extends Component{
 
     render(){
         return(
-            <div className="AddBroker Screen">
+            <div className="AddData AddBroker Screen">
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Enter Broker <br/><br/>
-                        <input type="text" name="name" value={this.state.value} onChange={this.handleChange} className="AddBrokerTextBox"/>
+                        <input type="text" name="name" value={this.state.value} onChange={this.handleChange} className="AddDataTextBox"/>
                     </label>
                     <br/><br/>
                     <p className="msg"> Broker Portfolio Deletion in Settings (Todo: 1. Delete All Data, or 2. Hide from Home) </p>

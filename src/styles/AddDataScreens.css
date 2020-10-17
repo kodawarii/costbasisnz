@@ -1,8 +1,8 @@
-.AddBroker{
+.AddData{
   
 }
 
-.AddBrokerTextBox{
+.AddDataTextBox{
     outline: none;
     background: none;
     padding: 8px 20px;
@@ -12,7 +12,7 @@
     color: rgb(255, 36, 102);
 }
 
-.AddBrokerTextBox:focus{
+.AddDataTextBox:focus{
     border: 1px solid rgb(255, 36, 102);;
 }
 

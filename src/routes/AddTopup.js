@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import '../styles/AddItemScreens.css';
+import '../styles/AddDataScreens.css';
 
 class AddTopup extends Component{
     constructor(props){
@@ -47,12 +47,12 @@ class AddTopup extends Component{
         }
 
         return(
-            <div className="AddTopup Screen">
+            <div className="AddData AddTopup Screen">
                 <h4>{this.props.portfolio}</h4>
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Topup Amount ({currency})<br/><br/>
-                        <input type="text" name="name" value={this.state.value} onChange={this.handleChange} className="AddBrokerTextBox"/>
+                        <input type="text" name="name" value={this.state.value} onChange={this.handleChange} className="AddDataTextBox"/>
                     </label>
                     <br/><br/>
                     <input type="submit" value="Add" className="submit-btn" />
