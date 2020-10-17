@@ -63,7 +63,7 @@ class AddTopup extends Component{
         else if(this.props.topupStyle === 'convert'){
         }
         else{
-            
+
         }
 
         event.preventDefault();
@@ -78,6 +78,7 @@ class AddTopup extends Component{
         this.props.updateScreenName("AddTopup"); // todo1: create constants
     }
 
+    // TODO: Add Number Validations
     getTopupForm_TYPE_NATIVE(currency){
         return <form onSubmit={this.handleSubmit}>
             <label>
@@ -97,6 +98,7 @@ class AddTopup extends Component{
         </form> 
     }
 
+    // TODO: Add Number Validations
     getTopupForm_TYPE_CONVERT(currency){
         return <form onSubmit={this.handleSubmit}>
             <label>
@@ -114,6 +116,7 @@ class AddTopup extends Component{
                 Amount Recieved ({currency})
                 <br/><br/>
                 <input type="text" name="amountLanded" value={this.state.amountLanded} onChange={this.handleChangeAmountLanded} className="AddDataTextBox"/>
+                <br/><br/>
 
                 Notes
                 <br/><br/>
