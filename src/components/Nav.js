@@ -46,6 +46,9 @@ class Nav extends Component{
         else if(this.props.screen === "selectaddtype"){
             title = "Add a Log item";
         }
+        else if(this.props.screen === "AddTopup"){
+            title = "Add Topup Event";
+        }
 
         return(
             <div className="Nav">

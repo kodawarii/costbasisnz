@@ -1,7 +1,29 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import '../styles/AddItemScreens.css';
 
 class AddTopup extends Component{
+    constructor(props){
+        super(props);
+
+        this.state = {
+            key: "DEFAULT: Retrieve last used, then ++1",
+            date: 'DEFAULT_DATE',
+            action: 'Topup', // TODO: Change to Parameter string from external json constants
+            amount: 0,
+            notes: ''
+        }
+    }
+
+    handleChange(event){
+
+    }
+
+    handleSubmit(){
+
+    }
+
+
     componentDidMount(){
         this.props.updateScreenName("AddTopup"); // Hacky
     }
@@ -11,9 +33,30 @@ class AddTopup extends Component{
     }
 
     render(){
+
+        // TODO: add Base Currency to user1 data against the broker
+        let currency = '';
+        if(this.props.portfolio === 'Interactive Brokers'){
+            currency = 'AUD';
+        }
+        else if(this.props.portfolio === 'Hatch'){
+            currency = 'USD';
+        }
+        else if(this.props.portfolio === 'Sharsies'){
+            currency = 'NZD';
+        }
+
         return(
             <div className="AddTopup Screen">
-                Adding for = {this.props.portfolio}
+                <h4>{this.props.portfolio}</h4>
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        Topup Amount ({currency})<br/><br/>
+                        <input type="text" name="name" value={this.state.value} onChange={this.handleChange} className="AddBrokerTextBox"/>
+                    </label>
+                    <br/><br/>
+                    <input type="submit" value="Add" className="submit-btn" />
+                </form> 
             </div>
         );
     }

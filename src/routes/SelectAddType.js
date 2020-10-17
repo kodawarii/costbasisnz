@@ -19,13 +19,13 @@ class SelectAddType extends Component{
             <div className="SelectAddType Screen">
                 <h4> Select Type of Log </h4>
                 <ul className="SelectAddType-ul">
-                    <Link to={'/AddTopup'}><li className={liClassName+" AddTopup-li"}> Topup </li></Link>
-                    <Link to={'/AddWithdraw'}><li className={liClassName+" AddWithdraw-li"}> Withdraw </li></Link>
-                    <Link to={'/AddFX'}><li className={liClassName+" AddFX-li"}> FX </li></Link>
-                    <Link to={'/AddBuy'}><li className={liClassName+" AddBuy-li"}> Buy </li></Link>
-                    <Link to={'/AddSell'}><li className={liClassName+" AddSell-li"}> Sell </li></Link>
-                    <Link to={'/AddDividend'}><li className={liClassName+" AddDividend-li"}> Dividend </li></Link>
-                    <Link to={'/AddFee'}><li className={liClassName+" AddFee-li"}> Fee </li></Link>
+                    <Link to={'/AddTopup'}><li className={liClassName+" AddTopup-li"}> 1. Topup </li></Link>
+                    <Link to={'/AddWithdraw'}><li className={liClassName+" AddWithdraw-li"}> 2. Withdraw </li></Link>
+                    <Link to={'/AddFX'}><li className={liClassName+" AddFX-li"}> 3. FX </li></Link>
+                    <Link to={'/AddBuy'}><li className={liClassName+" AddBuy-li"}> 4. Buy </li></Link>
+                    <Link to={'/AddSell'}><li className={liClassName+" AddSell-li"}> 5. Sell </li></Link>
+                    <Link to={'/AddDividend'}><li className={liClassName+" AddDividend-li"}> 6. Dividend </li></Link>
+                    <Link to={'/AddFee'}><li className={liClassName+" AddFee-li"}> 7. Fee </li></Link>
                 </ul>
             </div>
         );

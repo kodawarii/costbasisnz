@@ -64,7 +64,11 @@ class TopupWithdraw extends Component{
                 else if(entry.action.includes("FX")){
                     actionStringClassName = " FX ";
                 }
+                
 
+                // TODO: IBKR HATCH AND SHARIES WILL HAVE DIFFERENT FORMAT
+                // --.amountAUD no longer applies here
+                // 1. native topup 2. convert topup
                 return <tr key={i}>
                     <td>{entry.pkey}</td>
                     <td>{entry.date}</td>
