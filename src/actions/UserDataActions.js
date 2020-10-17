@@ -7,6 +7,7 @@ import {
 
 import user1 from '../mockdata/user1'; // Mock/Fake DB
 
+// We will use this in the future when making backend API calls
 export const fetchBrokers = () => dispatch => {
     dispatch({
         type: FETCH_BROKERS,
@@ -14,7 +15,7 @@ export const fetchBrokers = () => dispatch => {
     });
 }
 
-export const addToBrokers = (oldBrokers, newBroker) => dispatch => { // Front end MVP only
+export const addToBrokers = (oldBrokers, newBroker) => dispatch => { // We are only adding the new broker to the local client redux front end store (will be different when we have backend API)
     dispatch({
         type: ADD_TO_BROKERS,
         payload: [

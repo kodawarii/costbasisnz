@@ -5,15 +5,22 @@
             "name": "Interactive Brokers",
             "id": "b1",
             "baseCurrency": "AUD",
-            "lastKey": 0
+            "lastKey": 0,
+            "topupStyle": "native"
         },
         {
             "name": "Hatch",
-            "id": "b2"
+            "id": "b2",
+            "baseCurrency": "USD",
+            "lastKey": 0,
+            "topupStyle": "convert"
         },
         {
             "name": "Sharsies",
-            "id": "b3"
+            "id": "b3",
+            "baseCurrency": "NZD",
+            "lastKey": 0,
+            "topupStyle": "native"
         },
         {
             "name": "Stake",

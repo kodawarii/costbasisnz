@@ -3,6 +3,14 @@ import {connect} from 'react-redux';
 import '../styles/AddDataScreens.css';
 
 class AddTopup extends Component{
+
+    // this.props.
+
+    // Other Notes
+    // There are 2 types of topups (so far...)
+    // 1. Native (IBKR, Sharsies)
+    // 2. Convert (Hatch)
+
     constructor(props){
         super(props);
 

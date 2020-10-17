@@ -14,6 +14,7 @@ export const brokersReducer = (state = {brokers: user1.brokers}, action) => { //
         case ADD_TO_BROKERS:
             return { brokers: action.payload };
         default:
+            // retrieving the default store from mock data for the front end mvp app, when we have backend API, state={}
             return state;
     }
 };
