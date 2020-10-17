@@ -35,20 +35,14 @@ class App extends Component{
       this.state ={
         isMenuHidden: true,
         screen: "home",
-        brokers: []
       }
 
     this.updateScreenName = this.updateScreenName.bind(this);
-    this.setBrokers = this.setBrokers.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   toggleMenu = () => {
     this.setState({isMenuHidden: !this.state.isMenuHidden});
-  }
-
-  setBrokers = (brokers) => {
-    this.setState({brokers});
   }
 
   updateScreenName(screen){
@@ -72,7 +66,6 @@ class App extends Component{
                   () => <Home 
                   updateScreenName={this.updateScreenName}
                   brokers={this.state.brokers}
-                  setBrokers={this.setBrokers}
                   />
                 }/>
 

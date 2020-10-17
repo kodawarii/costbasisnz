@@ -21,10 +21,9 @@ class Home extends Component{
     // this.props.<redux>
     // this.props.updateScreenName()
     // this.props.brokers
-    // this.props.setBrokers()
 
     componentDidMount(){
-        // this.props.fetchBrokers(); // API Version
+        // this.props.fetchBrokers(); // To use when we have backend API implemented
         this.props.fetchPortfolioNameToShow();
         // this.props.fetchLogs();
         this.props.updateScreenName("home");

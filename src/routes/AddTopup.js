@@ -73,6 +73,7 @@ class AddTopup extends Component{
 export default connect(
     (state) => ({
         portfolio: state.portfolioNameToShow.name,
+        brokers: state.brokers.brokers
     }),
     {
 
