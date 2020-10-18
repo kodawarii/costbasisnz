@@ -23,19 +23,42 @@ class Portfolio extends Component{
         this.state = {
             currentTab: "Log"
         }
+
+        this.getLogs = this.getLogs.bind(this);
+        this.updateCurrentTab = this.updateCurrentTab.bind(this);
+    }
+
+    componentDidMount(){
+        this.props.updateScreenName("portfolio"); // Hacky
+        // this.props.fetchLogs(this.props.portfolio); // Use for BEE app // FEE app uses local redux manipulation
+    }
+    
+    componentDidUpdate(){
+        this.props.updateScreenName("portfolio"); // todo1: create constants
     }
 
     updateCurrentTab(tab){
         this.setState({currentTab: tab});
     }
 
-    componentDidMount(){
-        this.props.updateScreenName("portfolio"); // Hacky
-        this.props.fetchLogs(this.props.portfolio);
-    }
-    
-    componentDidUpdate(){
-        this.props.updateScreenName("portfolio"); // todo1: create constants
+    // FEE function to determine which logs we want
+    getLogs(){
+        console.log(this.props.portfolio);
+        console.log(this.props.b1);
+        console.log(this.props.b2);
+        console.log(this.props.b3);
+        if(this.props.portfolio === 'Interactive Brokers'){
+            return this.props.b1.log;
+        }
+        else if(this.props.portfolio === 'Hatch'){
+            return this.props.b2.log;
+        }
+        else if(this.props.portfolio === 'Sharsies'){
+            return this.props.b3.log;
+        }
+        else{
+            console.log('>> Portfolio does not exist');
+        }
     }
 
     render(){
@@ -44,13 +67,13 @@ class Portfolio extends Component{
                 <div className="BrokerName"> {this.props.portfolio} </div>
                 <Ribbon 
                 currentTab={this.state.currentTab}
-                updateCurrentTab={this.updateCurrentTab.bind(this)} 
+                updateCurrentTab={this.updateCurrentTab} 
                 />
 
                 <DataTable 
                 portfolio={this.props.portfolio}
                 currentTab={this.state.currentTab}
-                data={this.props.logs}
+                data={this.getLogs()}
                 />
             </div>
         );
@@ -60,7 +83,14 @@ class Portfolio extends Component{
 export default connect(
     (state) => ({ 
         portfolio: state.portfolioNameToShow.name,
-        logs: state.logs.logs
+        
+        // BEE logs
+        // logs: state.logs.logs
+
+        // FEE logs
+        b1: state.logs.b1,
+        b2: state.logs.b2,
+        b3: state.logs.b3
     }),
     {
         fetchLogs

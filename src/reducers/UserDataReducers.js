@@ -20,9 +20,11 @@ export const brokersReducer = (state = {brokers: user1.brokers}, action) => { //
     }
 };
 
-export const logsReducer = ( state = {}, action ) => {
+export const logsReducer = ( state = {b1: user1.b1, b2: user1.b2, b3: user1.b3}, action ) => { // Hard coded fetching only for the FEE app
     switch(action.type){
         case FETCH_LOGS:
+            return { logs: action.payload }; // BEE app fetches specific log for current portfolio
+        case ADD_TO_LOGS:
             return { logs: action.payload };
         default:
             // return local copy of data to manipulate for the FEE app

@@ -25,7 +25,6 @@ class Home extends Component{
     componentDidMount(){
         // this.props.fetchBrokers(); // To use when we have backend API implemented
         this.props.fetchPortfolioNameToShow();
-        // this.props.fetchLogs();
         this.props.updateScreenName("home");
     }
 
@@ -67,6 +66,6 @@ export default connect(
     }),
     {
         fetchPortfolioNameToShow, updatePortfolioNameToShow,
-        fetchBrokers, addToBrokers, fetchLogs
+        fetchBrokers, addToBrokers
     }
 )(Home);

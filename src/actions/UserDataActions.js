@@ -28,8 +28,10 @@ export const addToBrokers = (oldBrokers, newBroker) => dispatch => { // We are o
     });
 }
 
-export const fetchLogs = (id) => dispatch => {
-    switch(id){
+
+// To use in BEE app
+export const fetchLogs = (portfolio) => dispatch => {
+    switch(portfolio){
         case "Interactive Brokers":
             dispatch({
                 type: FETCH_LOGS,
@@ -59,4 +61,14 @@ export const fetchLogs = (id) => dispatch => {
             console.log(">> ID DOES NOT EXIST");
             break;
     }
+}
+
+export const addToLogs = (oldLogs, newLog) => dispatch => {
+    dispatch({
+        type: ADD_TO_LOGS,
+        payload: [
+            ...oldLogs,
+            newLog
+        ]
+    });
 }
