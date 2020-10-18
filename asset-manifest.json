@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/costbasisnz/static/css/main.85320e2f.chunk.css",
-    "main.js": "/costbasisnz/static/js/main.b42cfda4.chunk.js",
-    "main.js.map": "/costbasisnz/static/js/main.b42cfda4.chunk.js.map",
+    "main.js": "/costbasisnz/static/js/main.a223e899.chunk.js",
+    "main.js.map": "/costbasisnz/static/js/main.a223e899.chunk.js.map",
     "runtime-main.js": "/costbasisnz/static/js/runtime-main.eb054fe2.js",
     "runtime-main.js.map": "/costbasisnz/static/js/runtime-main.eb054fe2.js.map",
-    "static/js/2.54b2d0d4.chunk.js": "/costbasisnz/static/js/2.54b2d0d4.chunk.js",
-    "static/js/2.54b2d0d4.chunk.js.map": "/costbasisnz/static/js/2.54b2d0d4.chunk.js.map",
+    "static/js/2.eaa06df5.chunk.js": "/costbasisnz/static/js/2.eaa06df5.chunk.js",
+    "static/js/2.eaa06df5.chunk.js.map": "/costbasisnz/static/js/2.eaa06df5.chunk.js.map",
     "index.html": "/costbasisnz/index.html",
-    "precache-manifest.9a7fbaa0e706a592193296cf00e1e46c.js": "/costbasisnz/precache-manifest.9a7fbaa0e706a592193296cf00e1e46c.js",
+    "precache-manifest.9966a02ae77c726dd51d232b0c0bd606.js": "/costbasisnz/precache-manifest.9966a02ae77c726dd51d232b0c0bd606.js",
     "service-worker.js": "/costbasisnz/service-worker.js",
     "static/css/main.85320e2f.chunk.css.map": "/costbasisnz/static/css/main.85320e2f.chunk.css.map",
-    "static/js/2.54b2d0d4.chunk.js.LICENSE.txt": "/costbasisnz/static/js/2.54b2d0d4.chunk.js.LICENSE.txt"
+    "static/js/2.eaa06df5.chunk.js.LICENSE.txt": "/costbasisnz/static/js/2.eaa06df5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.eb054fe2.js",
-    "static/js/2.54b2d0d4.chunk.js",
+    "static/js/2.eaa06df5.chunk.js",
     "static/css/main.85320e2f.chunk.css",
-    "static/js/main.b42cfda4.chunk.js"
+    "static/js/main.a223e899.chunk.js"
   ]
 }
