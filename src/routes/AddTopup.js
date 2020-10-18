@@ -7,6 +7,10 @@ import {
     fetchTopupStyle
 } from '../actions/ProgramActions';
 
+import {
+    addToLogs
+} from '../actions/UserDataActions';
+
 class AddTopup extends Component{
 
     // this.props.
@@ -36,6 +40,15 @@ class AddTopup extends Component{
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    getDate(){
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = today.getFullYear();
+
+        return yyyy.toString().substr(2,2) + '-' + mm + '-' + dd;
+    }
+
     handleChangeNotes(event){
         this.setState({notes: event.target.value});
     }
@@ -53,17 +66,47 @@ class AddTopup extends Component{
     }
 
     handleSubmit(event){
-        console.log(this.state.amountSent);
-        console.log(this.state.rate);
-        console.log(this.state.amountLanded);
-        console.log(this.state.notes);
-
         if(this.props.topupStyle === 'native'){
+            let logToAdd = {
+                type: 'reg',
+                pkey: 0,
+                date: this.getDate(),
+                action: 'Topup',
+                notes1: this.state.notes,
+
+                amount: this.state.amountLanded,
+                notes2: this.state.notes // TODO notes2 implementation
+            };
+
+            // disgusting code
+            if(this.props.portfolio==='Interactive Brokers'){
+                this.props.addToLogs(this.props.b2, this.props.b3, this.props.b1, logToAdd);
+            }
+            else if(this.props.portfolio==='Sharsies'){
+                this.props.addToLogs(this.props.b1, this.props.b3, this.props.b2, logToAdd);
+            }
         }
         else if(this.props.topupStyle === 'convert'){
+            let logToAdd = {
+                type: 'reg',
+                pkey: 0,
+                date: this.getDate(),
+                action: 'Topup',
+                notes1: this.state.notes,
+
+                amountSent: this.state.amountSent,
+                rate: this.state.rate,
+                amountLanded: this.state.amountLanded,
+                notes2: this.state.notes // TODO notes2 implementation
+            };
+            
+            // disgusting code
+            if(this.props.portfolio==='Hatch'){
+                this.props.addToLogs(this.props.b1, this.props.b2, this.props.b3, logToAdd);
+            }
         }
         else{
-
+            console.log(">> TopupStyle Does not exist: " + this.props.topupStyle);
         }
 
         event.preventDefault();
@@ -167,9 +210,18 @@ export default connect(
     (state) => ({
         portfolio: state.portfolioNameToShow.name,
         brokers: state.brokers.brokers,
-        topupStyle: state.topupStyle.topupStyle
+        topupStyle: state.topupStyle.topupStyle,
+
+        // BEE backend db logs
+        // logs: state.logs.logs // care at logs vs log lol
+
+        // FEE local redux logs
+        b1: state.logs.b1,
+        b2: state.logs.b2,
+        b3: state.logs.b3
     }),
     {
-        fetchTopupStyle
+        fetchTopupStyle,
+        addToLogs
     }
 )(AddTopup);

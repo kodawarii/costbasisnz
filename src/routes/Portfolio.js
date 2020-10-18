@@ -41,23 +41,30 @@ class Portfolio extends Component{
         this.setState({currentTab: tab});
     }
 
+    // TODO Globalize this function
+    getBrokerId(brokerName){
+        switch(brokerName){
+            case 'Interactive Brokers':
+                return 'b1';
+            case 'Hatch':
+                return 'b2';
+            case 'Sharsies':
+                return 'b3';
+            default:
+                console.log('> Broker does not exist: ' + brokerName);
+                return null;
+        }
+    }
+
     // FEE function to determine which logs we want
     getLogs(){
-        console.log(this.props.portfolio);
-        console.log(this.props.b1);
-        console.log(this.props.b2);
-        console.log(this.props.b3);
-        if(this.props.portfolio === 'Interactive Brokers'){
-            return this.props.b1.log;
-        }
-        else if(this.props.portfolio === 'Hatch'){
-            return this.props.b2.log;
-        }
-        else if(this.props.portfolio === 'Sharsies'){
-            return this.props.b3.log;
-        }
-        else{
-            console.log('>> Portfolio does not exist');
+        for(let i = 0; i < this.props.listOfProfileData.listOfProfileData.length; i++){
+            if(this.props.listOfProfileData.listOfProfileData[i].id === this.getBrokerId(this.props.portfolio)){
+                return this.props.listOfProfileData.listOfProfileData[i].data.log;
+            }
+            else{
+                console.log('>> Portfolio does not exist for user');
+            }
         }
     }
 
@@ -88,9 +95,7 @@ export default connect(
         // logs: state.logs.logs
 
         // FEE logs
-        b1: state.logs.b1,
-        b2: state.logs.b2,
-        b3: state.logs.b3
+        listOfProfileData: state.listOfProfileData
     }),
     {
         fetchLogs

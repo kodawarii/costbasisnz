@@ -63,12 +63,23 @@ export const fetchLogs = (portfolio) => dispatch => {
     }
 }
 
-export const addToLogs = (oldLogs, newLog) => dispatch => {
+export const addToLogs = (old1, old2, oldToAdd, newLog) => dispatch => {
+    let oldLogs = oldToAdd.log;
+    let newLogs = [
+        ...oldLogs,
+        newLog
+    ];
+
+    
+
+    //console.log("++++ " + JSON.stringify(payload, null, 4));
+
     dispatch({
         type: ADD_TO_LOGS,
-        payload: [
-            ...oldLogs,
-            newLog
-        ]
+        payload: {
+            ...old1,
+            ...old2,
+            ...oldToAdd.log = newLogs
+        }
     });
 }

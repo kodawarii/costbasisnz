@@ -2,7 +2,7 @@ import {createStore, applyMiddleware, compose, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
 
 // Reducers
-import { brokersReducer, logsReducer } from './reducers/UserDataReducers';
+import { brokersReducer, profileDataReducer } from './reducers/UserDataReducers';
 import { portfolioNameToShowReducer, topupStyleReducer } from './reducers/ProgramReducers';
 
 const initialState = {};
@@ -17,7 +17,8 @@ const store = createStore(
 
         // User Data
         brokers: brokersReducer,
-        logs: logsReducer
+        logs: profileDataReducer,
+        listOfProfileData: profileDataReducer
     }),
     initialState,
     composeEnhancer(applyMiddleware(thunk))

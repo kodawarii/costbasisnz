@@ -37,7 +37,7 @@ class AddBroker extends Component{
         let brokerToAdd = {
             name: this.state.value,
             id: uuidv4().substring(0, 8)
-        }
+        };
         
         this.props.addToBrokers(this.props.brokers, brokerToAdd);
         
