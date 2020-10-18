@@ -77,14 +77,8 @@ class AddTopup extends Component{
                 amount: this.state.amountLanded,
                 notes2: this.state.notes // TODO notes2 implementation
             };
-
-            // disgusting code
-            if(this.props.portfolio==='Interactive Brokers'){
-                this.props.addToLogs(this.props.b2, this.props.b3, this.props.b1, logToAdd);
-            }
-            else if(this.props.portfolio==='Sharsies'){
-                this.props.addToLogs(this.props.b1, this.props.b3, this.props.b2, logToAdd);
-            }
+            
+            this.props.addToLogs(this.props.listOfProfileData, this.props.portfolio, logToAdd);
         }
         else if(this.props.topupStyle === 'convert'){
             let logToAdd = {
@@ -100,10 +94,7 @@ class AddTopup extends Component{
                 notes2: this.state.notes // TODO notes2 implementation
             };
             
-            // disgusting code
-            if(this.props.portfolio==='Hatch'){
-                this.props.addToLogs(this.props.b1, this.props.b2, this.props.b3, logToAdd);
-            }
+            this.props.addToLogs(this.props.listOfProfileData, this.props.portfolio, logToAdd);
         }
         else{
             console.log(">> TopupStyle Does not exist: " + this.props.topupStyle);
@@ -216,9 +207,7 @@ export default connect(
         // logs: state.logs.logs // care at logs vs log lol
 
         // FEE local redux logs
-        b1: state.logs.b1,
-        b2: state.logs.b2,
-        b3: state.logs.b3
+        listOfProfileData: state.listOfProfileData
     }),
     {
         fetchTopupStyle,

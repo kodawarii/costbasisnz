@@ -25,7 +25,7 @@ export const profileDataReducer = ( state = {listOfProfileData: user1.listOfProf
         case FETCH_LOGS:
             return { logs: action.payload }; // BEE app fetches specific log for current portfolio
         case ADD_TO_LOGS:
-            return { logs: action.payload };
+            return { listOfProfileData: action.payload }; // FEE uses listOfProfileData
         default:
             return state;
     }

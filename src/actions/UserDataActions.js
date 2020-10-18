@@ -63,23 +63,34 @@ export const fetchLogs = (portfolio) => dispatch => {
     }
 }
 
-export const addToLogs = (old1, old2, oldToAdd, newLog) => dispatch => {
-    let oldLogs = oldToAdd.log;
-    let newLogs = [
-        ...oldLogs,
-        newLog
-    ];
-
+export const addToLogs = (listOfProfileData, brokerNameToAddTo, newLog) => dispatch => {
     
-
-    //console.log("++++ " + JSON.stringify(payload, null, 4));
+    // need to take care of immutables
+    for(let i = 0; i < listOfProfileData.length; i++){
+        if(listOfProfileData[i].id === getBrokerId(brokerNameToAddTo)){
+            listOfProfileData[i].data.log.push(newLog);
+        }
+    }
 
     dispatch({
         type: ADD_TO_LOGS,
         payload: {
-            ...old1,
-            ...old2,
-            ...oldToAdd.log = newLogs
+            listOfProfileData: listOfProfileData
         }
     });
+}
+
+// TODO Globalize this function
+function getBrokerId(brokerName){
+    switch(brokerName){
+        case 'Interactive Brokers':
+            return 'b1';
+        case 'Hatch':
+            return 'b2';
+        case 'Sharsies':
+            return 'b3';
+        default:
+            console.log('> Broker does not exist: ' + brokerName);
+            return null;
+    }
 }
