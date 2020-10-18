@@ -27,6 +27,7 @@ class Log extends Component {
         this.setState({showNotes: true, notes});
     }
 
+    // TODO: add feature where Show Notes Link only if there is a note
     getData(){
         if(this.props.data === undefined) return <tr><td>must fetch first</td></tr>;
 
