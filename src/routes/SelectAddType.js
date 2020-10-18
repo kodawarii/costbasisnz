@@ -26,6 +26,11 @@ class SelectAddType extends Component{
                     <Link to={'/AddSell'}><li className={liClassName+" AddSell-li"}> 5. Sell </li></Link>
                     <Link to={'/AddDividend'}><li className={liClassName+" AddDividend-li"}> 6. Dividend </li></Link>
                     <Link to={'/AddFee'}><li className={liClassName+" AddFee-li"}> 7. Fee </li></Link>
+
+                    <Link to={'/'}><li className={liClassName+" "}> 8. New Period </li></Link>
+                    <Link to={'/'}><li className={liClassName+" "}> 9. End Period </li></Link>
+                    <Link to={'/'}><li className={liClassName+" "}> 10. Period Bought </li></Link>
+                    <Link to={'/'}><li className={liClassName+" "}> 11. Period Sold </li></Link>
                 </ul>
             </div>
         );

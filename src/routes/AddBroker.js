@@ -61,7 +61,6 @@ class AddBroker extends Component{
                         <input type="text" name="name" value={this.state.value} onChange={this.handleChange} className="AddDataTextBox"/>
                     </label>
                     <br/><br/>
-                    <p className="msg"> Broker Portfolio Deletion in Settings (Todo: 1. Delete All Data, or 2. Hide from Home) </p>
                     <input type="submit" value="Add" className="submit-btn" />
                 </form> 
             </div>

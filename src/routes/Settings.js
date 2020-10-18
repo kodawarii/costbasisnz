@@ -13,6 +13,8 @@ class Settings extends Component{
         return(
             <div className="Settings Screen">
                 Settings works
+                <p className="msg"> Broker Portfolio Deletion in Settings (Todo: 1. Delete All Data, or 2. Hide from Home) </p>
+                
             </div>
         );
     }
