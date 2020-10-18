@@ -7,6 +7,9 @@ import {
     addToBrokers
 } from '../actions/UserDataActions';
 
+// Components
+import AddItemModal from '../components/AddItemModal';
+
 class AddBroker extends Component{
 
     // this.props.addBroker()
@@ -15,7 +18,8 @@ class AddBroker extends Component{
         super(props);
 
         this.state = {
-            value: ''
+            value: '',
+            showModal: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -26,7 +30,7 @@ class AddBroker extends Component{
         this.setState({value: event.target.value});
     }
 
-    handleSubmit(event){
+    async handleSubmit(event){
         function uuidv4() {
             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
               var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
@@ -40,6 +44,14 @@ class AddBroker extends Component{
         };
         
         this.props.addToBrokers(this.props.brokers, brokerToAdd);
+        
+        // Modal CSS works but actual function no longer works due to async
+        this.setState({showModal: true});
+        async function sleep(msec) {
+            return new Promise(resolve => setTimeout(resolve, msec));
+        }
+        await sleep(1000);
+        this.setState({showModal: false});
         
         event.preventDefault();
     }
@@ -63,6 +75,7 @@ class AddBroker extends Component{
                     <br/><br/>
                     <input type="submit" value="Add" className="submit-btn" />
                 </form> 
+                <AddItemModal show={this.state.showModal} prompt={"Successfully Added New Broker: " + this.state.value}/>
             </div>
         );
     }
