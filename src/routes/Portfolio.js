@@ -58,9 +58,9 @@ class Portfolio extends Component{
 
     // FEE function to determine which logs we want
     getLogs(){
-        for(let i = 0; i < this.props.listOfProfileData.listOfProfileData.length; i++){
-            if(this.props.listOfProfileData.listOfProfileData[i].id === this.getBrokerId(this.props.portfolio)){
-                return this.props.listOfProfileData.listOfProfileData[i].data.log;
+        for(let i = 0; i < this.props.profileData.listOfProfileData.length; i++){
+            if(this.props.profileData.listOfProfileData[i].id === this.getBrokerId(this.props.portfolio)){
+                return this.props.profileData.listOfProfileData[i].data.log;
             }
             else{
                 console.log('>> Portfolio does not exist for user');
@@ -95,7 +95,7 @@ export default connect(
         // logs: state.logs.logs
 
         // FEE logs
-        listOfProfileData: state.listOfProfileData
+        profileData: state.listOfProfileData
     }),
     {
         fetchLogs

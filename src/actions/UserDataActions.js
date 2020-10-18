@@ -64,19 +64,18 @@ export const fetchLogs = (portfolio) => dispatch => {
 }
 
 export const addToLogs = (listOfProfileData, brokerNameToAddTo, newLog) => dispatch => {
-    
+
     // need to take care of immutables
-    for(let i = 0; i < listOfProfileData.length; i++){
-        if(listOfProfileData[i].id === getBrokerId(brokerNameToAddTo)){
-            listOfProfileData[i].data.log.push(newLog);
+    for(let i = 0; i < listOfProfileData.listOfProfileData.length; i++){
+        if(listOfProfileData.listOfProfileData[i].id === getBrokerId(brokerNameToAddTo)){
+            listOfProfileData.listOfProfileData[i].data.log.push(newLog);
         }
     }
 
     dispatch({
         type: ADD_TO_LOGS,
-        payload: {
-            listOfProfileData: listOfProfileData
-        }
+        payload: listOfProfileData.listOfProfileData
+        
     });
 }
 
