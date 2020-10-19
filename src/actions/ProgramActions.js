@@ -1,6 +1,6 @@
 import { 
     UPDATE_PORTFOLIO_NAME_TO_SHOW,
-    FETCH_BROKERDATA,
+    UPDATE_BROKER_DATA,
     FETCH_TOPUPSTYLE
 } from '../reduxtypes';
 
@@ -13,7 +13,7 @@ export const updatePortfolioNameToShow = (portfolioNameToShow) => dispatch => { 
 
 export const fetchBrokerId = () => dispatch => {
     dispatch({
-        type: FETCH_BROKERDATA,
+        type: UPDATE_BROKER_DATA,
         payload: ''
     });
 }

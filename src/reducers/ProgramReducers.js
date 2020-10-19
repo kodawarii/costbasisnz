@@ -1,6 +1,6 @@
 import { 
     UPDATE_PORTFOLIO_NAME_TO_SHOW,
-    FETCH_BROKERDATA,
+    UPDATE_BROKER_DATA,
     FETCH_TOPUPSTYLE
 } from "../reduxtypes";
 
@@ -17,7 +17,7 @@ export const brokerDataReducer = (state = {}, action) => {
     switch(action.type){
         case FETCH_TOPUPSTYLE:
             return { topupStyle: action.payload };
-        case FETCH_BROKERDATA:
+        case UPDATE_BROKER_DATA:
             return {};
         default: 
             return state;
