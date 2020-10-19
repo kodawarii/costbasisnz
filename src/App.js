@@ -65,7 +65,6 @@ class App extends Component{
                 <Route exact path='/' component = {
                   () => <Home 
                   updateScreenName={this.updateScreenName}
-                  brokers={this.state.brokers}
                   />
                 }/>
 
