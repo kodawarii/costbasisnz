@@ -8,11 +8,10 @@ import '../styles/Home.css';
 import { 
     fetchBrokers, 
     addToBrokers,
-    fetchLogs
+    // fetchLogs
 } from '../actions/UserDataActions';
 
 import { 
-    fetchPortfolioNameToShow, 
     updatePortfolioNameToShow 
 } from '../actions/ProgramActions';
 
