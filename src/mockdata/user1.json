@@ -5,6 +5,7 @@
             "name": "Interactive Brokers",
             "id": "b1",
             "baseCurrency": "AUD",
+            "targetCurrency": "USD",
             "lastKey": 13,
             "topupStyle": "native"
         },
@@ -19,6 +20,7 @@
             "name": "Sharsies",
             "id": "b3",
             "baseCurrency": "NZD",
+            "targetCurrency": "USD",
             "lastKey": 0,
             "topupStyle": "native"
         }

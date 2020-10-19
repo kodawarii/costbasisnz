@@ -1,17 +1,9 @@
 import { 
-    FETCH_PORTFOLIO_NAME_TO_SHOW, 
     UPDATE_PORTFOLIO_NAME_TO_SHOW,
     FETCH_TOPUPSTYLE
 } from '../reduxtypes';
 
-export const fetchPortfolioNameToShow = () => dispatch => {
-    dispatch({
-        type: FETCH_PORTFOLIO_NAME_TO_SHOW,
-        payload: "redux-default"
-    });
-}
-
-export const updatePortfolioNameToShow = (portfolioNameToShow) => dispatch => {
+export const updatePortfolioNameToShow = (portfolioNameToShow) => dispatch => { // No Need to Fetch this
     dispatch({
         type: UPDATE_PORTFOLIO_NAME_TO_SHOW,
         payload: portfolioNameToShow

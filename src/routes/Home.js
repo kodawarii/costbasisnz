@@ -24,7 +24,6 @@ class Home extends Component{
 
     componentDidMount(){
         // this.props.fetchBrokers(); // To use when we have backend API implemented
-        this.props.fetchPortfolioNameToShow();
         this.props.updateScreenName("home");
     }
 
@@ -35,6 +34,7 @@ class Home extends Component{
     renderBrokers(){
         if(this.props.brokers === undefined) return "Loading Brokers";
         
+        // TODO CHANGE TO BROKER ID NOT NAME
         return this.props.brokers.map( (broker, i) => {
             return <ul key={i} className="Brokers">
                 <Link to={'/Portfolio'}>
@@ -65,7 +65,7 @@ export default connect(
         brokers: state.brokers.brokers
     }),
     {
-        fetchPortfolioNameToShow, updatePortfolioNameToShow,
+        updatePortfolioNameToShow,
         fetchBrokers, addToBrokers
     }
 )(Home);
