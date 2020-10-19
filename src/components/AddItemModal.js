@@ -11,6 +11,7 @@ class AddItemModal extends Component{
             return(
                 <div className="AddItemModal">
                     {this.props.prompt}
+                    <div>x Close</div>
                 </div>
             );
         }
