@@ -94,8 +94,8 @@ class TopupWithdraw extends Component{
         return(
             <div>
                 <div>
-                    <p>Total AUD= </p>
-                    <p>Total USD= </p>
+                    <p>Total {this.props.brokerData.baseCurrency}: </p>
+                    <p>Total {this.props.brokerData.targetCurrency}: </p>
                 </div>
                 <table>
                     <thead>
