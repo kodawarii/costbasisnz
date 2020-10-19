@@ -6,8 +6,7 @@ import '../styles/Home.css';
 
 // Redux
 import { 
-    fetchBrokers, 
-    addToBrokers,
+    fetchBrokers,
     // fetchLogs
 } from '../actions/UserDataActions';
 
@@ -33,7 +32,6 @@ class Home extends Component{
     renderBrokers(){
         if(this.props.brokers === undefined) return "Loading Brokers";
         
-        // TODO CHANGE TO BROKER ID NOT NAME
         return this.props.brokers.map( (broker, i) => {
             return <ul key={i} className="Brokers">
                 <Link to={'/Portfolio'}>
@@ -65,6 +63,6 @@ export default connect(
     }),
     {
         updatePortfolioNameToShow,
-        fetchBrokers, addToBrokers
+        fetchBrokers
     }
 )(Home);

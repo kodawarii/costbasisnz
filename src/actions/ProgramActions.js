@@ -1,9 +1,6 @@
 import { 
     UPDATE_PORTFOLIO_NAME_TO_SHOW,
-    FETCH_BROKER_ID,
-    FETCH_BASE_CURRENCY,
-    FETCH_TARGET_CURRENCY,
-    FETCH_LAST_KEY,
+    FETCH_BROKERDATA,
     FETCH_TOPUPSTYLE
 } from '../reduxtypes';
 
@@ -16,31 +13,11 @@ export const updatePortfolioNameToShow = (portfolioNameToShow) => dispatch => { 
 
 export const fetchBrokerId = () => dispatch => {
     dispatch({
-        type: FETCH_BROKER_ID,
+        type: FETCH_BROKERDATA,
         payload: ''
     });
 }
 
-export const fetchBaseCurrency = () => dispatch => {
-    dispatch({
-        type: FETCH_BASE_CURRENCY,
-        payload: ''
-    });
-}
-
-export const fetchTargetCurrency = () => dispatch => {
-    dispatch({
-        type: FETCH_TARGET_CURRENCY,
-        payload: ''
-    });
-}
-
-export const fetchLastKey = () => dispatch => {
-    dispatch({
-        type: FETCH_LAST_KEY,
-        payload: ''
-    });
-}
 
 export const fetchTopupStyle = (brokers, currentBroker) => dispatch => { // TODO Test action, heavily exposed to bugs
     let topupStyle = '';

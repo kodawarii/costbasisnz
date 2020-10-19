@@ -11,15 +11,17 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
     combineReducers({
-        // Program Data
+        // Program Data . UI Items
         portfolioNameToShow: portfolioNameToShowReducer,
+
+        // Program Data . Broker Data
         brokerId: brokerDataReducer,
         baseCurrency: brokerDataReducer,
         targetCurrency: brokerDataReducer,
         lastKey: brokerDataReducer,
         topupStyle: brokerDataReducer,
 
-        // User Data
+        // User Data . Log Data
         brokers: brokersReducer,
         logs: profileDataReducer,
         listOfProfileData: profileDataReducer

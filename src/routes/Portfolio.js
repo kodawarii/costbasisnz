@@ -5,7 +5,12 @@ import '../styles/Portfolio.css';
 
 // Redux
 import {
-    fetchLogs
+    //fetchLogs,
+    fetchBrokerId,
+    fetchBaseCurrency,
+    fetchTargetCurrency,
+    fetchLastKey,
+    fetchTopupStyle
 } from '../actions/UserDataActions';
 
 
@@ -41,7 +46,7 @@ class Portfolio extends Component{
         this.setState({currentTab: tab});
     }
 
-    // TODO Globalize this function
+    // TODO USE REDUX STORE VALUES
     getBrokerId(brokerName){
         switch(brokerName){
             case 'Interactive Brokers':
@@ -90,6 +95,7 @@ class Portfolio extends Component{
 export default connect(
     (state) => ({ 
         portfolio: state.portfolioNameToShow.name,
+        brokers: state.brokers.brokers,
         
         // BEE logs
         // logs: state.logs.logs
@@ -98,6 +104,6 @@ export default connect(
         profileData: state.listOfProfileData
     }),
     {
-        fetchLogs
+        //fetchLogs
     }
 )(Portfolio);
