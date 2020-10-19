@@ -28,16 +28,6 @@ class TopupWithdraw extends Component{
         this.setState({showNotes: true, notes});
     }
 
-    getTopupStyle(){
-        for(let i = 0; i < this.props.brokers.length; i++){
-            if(this.props.brokers[i].name === this.props.portfolioNameToShow){
-                return this.props.brokers[i].topupStyle;
-            }
-        }
-
-        return 'Could not get TopupStyle';
-    }
-
     // TODO: IBKR HATCH AND SHARIES WILL HAVE DIFFERENT FORMAT
     // --.amountAUD no longer applies here
     // 1. native topup 2. convert topup
@@ -91,11 +81,11 @@ class TopupWithdraw extends Component{
                     <td className={actionStringClassName}>{entry.action}</td>
                     <td>{entry.amountSent}</td>
                     <td>{entry.rate}</td>
-                    <td>{entry.amountUSD}</td>
+                    <td>{entry.amountLanded}</td>
                     <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes2)}> x </td>
                 </tr>
             }
-
+            
             // return something
         });
     }
@@ -113,9 +103,9 @@ class TopupWithdraw extends Component{
                         <th>Ref</th>
                         <th className="Date-topup-withdraw">Date</th>
                         <th>Action</th>
-                        <th>Base / Sent currency</th>
+                        <th>{this.props.brokerData.baseCurrency}</th>
                         <th>Rate</th>
-                        <th>Landed currency</th>
+                        <th>{this.props.brokerData.targetCurrency}</th>
                         <th>Notes</th>
                     </tr>
                     </thead>
@@ -135,8 +125,7 @@ class TopupWithdraw extends Component{
 
 export default connect(
     (state) => ({
-        portfolioNameToShow: state.portfolioNameToShow.name,
-        brokers: state.brokers.brokers
+        brokerData: state.brokerData.brokerData
     }),
     {
 

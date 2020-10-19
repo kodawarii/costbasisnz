@@ -12,7 +12,8 @@
         {
             "name": "Hatch",
             "id": "b2",
-            "baseCurrency": "USD",
+            "baseCurrency": "NZD",
+            "targetCurrency": "USD",
             "lastKey": 0,
             "topupStyle": "convert"
         },
@@ -49,8 +50,10 @@
                         "action": "Topup",
                         "notes1": "note1=This FX block is only for IBKR - Hatch and Sharsies format will be different",
                         
-                        "amount": 12000,
-                        "notes2": "note2=sssss"
+                        "amountSent": 3333,
+                        "rate": "",
+                        "amountLanded": "",
+                        "notes2": "Native topups will only have a value for amountSent, rate and amountlanded are for schema validation"
                     },
                     {
                         "type": "reg",
@@ -237,7 +240,9 @@
                         "ticker": "",
                         "notes1": "note1=SHARSIES",
                         
-                        "amount": 555,
+                        "amountSent": 555,
+                        "rate": "",
+                        "amountLanded": "",
                         "notes2": "note2=SHARSIES"
                     }
                 ]

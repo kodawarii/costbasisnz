@@ -66,6 +66,8 @@ class AddTopup extends Component{
     }
 
     handleSubmit(event){
+
+        // TODO UPDATE THIS SCHEMA
         if(this.props.topupStyle === 'native'){
             let logToAdd = {
                 type: 'reg',
@@ -201,7 +203,7 @@ export default connect(
     (state) => ({
         portfolio: state.portfolioNameToShow.name,
         brokers: state.brokers.brokers,
-        topupStyle: state.topupStyle.topupStyle,
+        topupStyle: state.topupStyle.topupStyle, // TODO REMOVE ALL TOPUPSTYLE STUFF
 
         // BEE backend db logs
         // logs: state.logs.logs // care at logs vs log lol
@@ -210,7 +212,7 @@ export default connect(
         listOfProfileData: state.listOfProfileData
     }),
     {
-        fetchTopupStyle,
+        fetchTopupStyle, // TODO USE BROKERDATA NO THIS 
         addToLogs
     }
 )(AddTopup);

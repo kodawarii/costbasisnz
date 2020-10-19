@@ -46,7 +46,7 @@ class Portfolio extends Component{
         this.setState({currentTab: tab});
     }
 
-    // TODO USE REDUX STORE VALUES
+    // TODO CHANGE TO BROKERDATA stuff now that we have it
     getBrokerId(brokerName){
         switch(brokerName){
             case 'Interactive Brokers':

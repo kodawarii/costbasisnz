@@ -1,6 +1,6 @@
 import { 
     UPDATE_PORTFOLIO_NAME_TO_SHOW,
-    UPDATE_BROKER_DATA,
+    SWITCH_BROKER_DATA_CONTEXT,
     FETCH_TOPUPSTYLE
 } from '../reduxtypes';
 
@@ -11,10 +11,15 @@ export const updatePortfolioNameToShow = (portfolioNameToShow) => dispatch => { 
     });
 }
 
-export const fetchBrokerId = () => dispatch => {
+export const switchBrokerDataContext = (listOfBrokers, id) => dispatch => {
+    let brokerData = {};
+    for(let i = 0; i < listOfBrokers.length; i++){
+        if(listOfBrokers[i].id === id) brokerData = listOfBrokers[i];
+    }
+
     dispatch({
-        type: UPDATE_BROKER_DATA,
-        payload: ''
+        type: SWITCH_BROKER_DATA_CONTEXT,
+        payload: brokerData
     });
 }
 

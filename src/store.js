@@ -15,15 +15,12 @@ const store = createStore(
         portfolioNameToShow: portfolioNameToShowReducer,
 
         // Program Data . Broker Data
-        brokerId: brokerDataReducer,
-        baseCurrency: brokerDataReducer,
-        targetCurrency: brokerDataReducer,
-        lastKey: brokerDataReducer,
+        brokerData: brokerDataReducer,
         topupStyle: brokerDataReducer,
 
         // User Data . Log Data
+        //logs: profileDataReducer, // BEE
         brokers: brokersReducer,
-        logs: profileDataReducer,
         listOfProfileData: profileDataReducer
     }),
     initialState,

@@ -6,12 +6,12 @@ import '../styles/Home.css';
 
 // Redux
 import { 
-    fetchBrokers,
-    // fetchLogs
+    // fetchBrokers,
 } from '../actions/UserDataActions';
 
 import { 
-    updatePortfolioNameToShow 
+    updatePortfolioNameToShow ,
+    switchBrokerDataContext
 } from '../actions/ProgramActions';
 
 class Home extends Component{
@@ -28,13 +28,18 @@ class Home extends Component{
         this.props.updateScreenName("home"); // todo1: create constants
     }
 
+    updatePortfolioContext(brokerName, id){
+        this.props.updatePortfolioNameToShow(brokerName);
+        this.props.switchBrokerDataContext(this.props.brokers, id);
+    }
+
     renderBrokers(){
         if(this.props.brokers === undefined) return "Loading Brokers";
         
         return this.props.brokers.map( (broker, i) => {
             return <ul key={i} className="Brokers">
                 <Link to={'/Portfolio'}>
-                    <li onClick={ () => this.props.updatePortfolioNameToShow(broker.name)} className="Broker">{broker.name}</li>
+                    <li onClick={ () => this.updatePortfolioContext(broker.name, broker.id)} className="Broker">{broker.name}</li>
                 </Link>
             </ul>
         });
@@ -61,7 +66,7 @@ export default connect(
         brokers: state.brokers.brokers
     }),
     {
-        updatePortfolioNameToShow,
-        fetchBrokers
+        updatePortfolioNameToShow, switchBrokerDataContext
+        // fetchBrokers
     }
 )(Home);
