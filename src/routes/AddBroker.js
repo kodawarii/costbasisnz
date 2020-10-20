@@ -24,6 +24,11 @@ class AddBroker extends Component{
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+    }
+
+    closeModal(){
+        this.setState({showModal: false});
     }
 
     handleChange(event){
@@ -45,7 +50,7 @@ class AddBroker extends Component{
         
         this.props.addToBrokers(this.props.brokers, brokerToAdd);
         
-        //this.setState({showModal: true});
+        this.setState({showModal: true});
         
         event.preventDefault();
     }
@@ -69,7 +74,7 @@ class AddBroker extends Component{
                     <br/><br/>
                     <input type="submit" value="Add" className="submit-btn" />
                 </form> 
-                <AddItemModal show={this.state.showModal} prompt={"Successfully Added New Broker: " + this.state.value}/>
+                <AddItemModal show={this.state.showModal} prompt={"Successfully Added New Broker: " + this.state.value} closeModal={this.closeModal}/>
             </div>
         );
     }
