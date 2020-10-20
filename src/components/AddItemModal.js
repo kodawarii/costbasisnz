@@ -12,7 +12,7 @@ class AddItemModal extends Component{
             return(
                 <div className="AddItemModal">
                     {this.props.prompt}
-                    <div onClick={this.props.closeModal}>x Close</div>
+                    <button onClick={this.props.closeModal} className="closeBtn">Close</button>
                 </div>
             );
         }

@@ -11,6 +11,9 @@ import {
     addToLogs
 } from '../actions/UserDataActions';
 
+// Components
+import AddItemModal from '../components/AddItemModal';
+
 class AddTopup extends Component{
 
     // this.props.
@@ -24,6 +27,7 @@ class AddTopup extends Component{
         super(props);
 
         this.state = {
+            //// TOPUP SCHEMA
             type: 'reg',
             pkey: 0,
             date: this.getDate(),
@@ -33,7 +37,10 @@ class AddTopup extends Component{
             amountSent: '',
             rate: '',
             amountLanded: '',
-            notes2: '' // TODO notes2 implementation
+            notes2: '', // TODO notes2 implementation
+
+            //// PROGRAM DATA
+            showModal: false
         }
 
         this.getTopupForm_TYPE_CONVERT = this.getTopupForm_TYPE_CONVERT.bind(this);
@@ -43,7 +50,13 @@ class AddTopup extends Component{
         this.handleChangeConversionRate = this.handleChangeConversionRate.bind(this);
         this.handleChangeNotes = this.handleChangeNotes.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
+
+    closeModal(){
+        this.setState({showModal: false});
+    }
+
 
     getDate(){
         var today = new Date();
@@ -85,6 +98,8 @@ class AddTopup extends Component{
         };
             
         this.props.addToLogs(this.props.listOfProfileData, this.props.portfolio, logToAdd);
+
+        this.setState({showModal: true});
        
         event.preventDefault();
     }
@@ -172,6 +187,7 @@ class AddTopup extends Component{
             <div className="AddData AddTopup Screen">
                 <h4>{this.props.portfolio}</h4>
                 {formToShow()}
+                <AddItemModal show={this.state.showModal} prompt={"Successfully Added New Topup Event to " + this.props.portfolio} closeModal={this.closeModal}/>
             </div>
         );
     }
