@@ -30,7 +30,7 @@ class AddBroker extends Component{
         this.setState({value: event.target.value});
     }
 
-    async handleSubmit(event){
+    handleSubmit(event){
         function uuidv4() {
             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
               var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
@@ -45,13 +45,7 @@ class AddBroker extends Component{
         
         this.props.addToBrokers(this.props.brokers, brokerToAdd);
         
-        // Modal CSS works but actual function no longer works due to async
-        this.setState({showModal: true});
-        async function sleep(msec) {
-            return new Promise(resolve => setTimeout(resolve, msec));
-        }
-        await sleep(1000);
-        this.setState({showModal: false});
+        //this.setState({showModal: true});
         
         event.preventDefault();
     }
