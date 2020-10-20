@@ -16,7 +16,6 @@ const store = createStore(
 
         // Program Data . Broker Data
         brokerData: brokerDataReducer,
-        topupStyle: brokerDataReducer,
 
         // User Data . Log Data
         //logs: profileDataReducer, // BEE

@@ -15,8 +15,6 @@ export const portfolioNameToShowReducer = (state = {}, action) => {
 
 export const brokerDataReducer = (state = {}, action) => {
     switch(action.type){
-        case FETCH_TOPUPSTYLE:
-            return { topupStyle: action.payload };
         case SWITCH_BROKER_DATA_CONTEXT:
             return { brokerData: action.payload };
         default: 

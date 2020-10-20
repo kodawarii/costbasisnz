@@ -1,7 +1,6 @@
 import { 
     UPDATE_PORTFOLIO_NAME_TO_SHOW,
-    SWITCH_BROKER_DATA_CONTEXT,
-    FETCH_TOPUPSTYLE
+    SWITCH_BROKER_DATA_CONTEXT
 } from '../reduxtypes';
 
 export const updatePortfolioNameToShow = (portfolioNameToShow) => dispatch => { // No Need to Fetch this // Default = {} (see reducer)
@@ -20,20 +19,5 @@ export const switchBrokerDataContext = (listOfBrokers, id) => dispatch => {
     dispatch({
         type: SWITCH_BROKER_DATA_CONTEXT,
         payload: brokerData
-    });
-}
-
-
-export const fetchTopupStyle = (brokers, currentBroker) => dispatch => { // TODO Test action, heavily exposed to bugs
-    let topupStyle = '';
-    for(let i = 0; i < brokers.length; i++){
-        if(brokers[i].name === currentBroker){ // TODO Create Broker Name <> ID Converter 
-            topupStyle = brokers[i].topupStyle;
-        }
-    }
-
-    dispatch({
-        type: FETCH_TOPUPSTYLE,
-        payload: topupStyle
     });
 }

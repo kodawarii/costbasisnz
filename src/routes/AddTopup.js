@@ -4,7 +4,7 @@ import '../styles/AddDataScreens.css';
 
 // Redux
 import { 
-    fetchTopupStyle
+    
 } from '../actions/ProgramActions';
 
 import {
@@ -24,11 +24,16 @@ class AddTopup extends Component{
         super(props);
 
         this.state = {
+            type: 'reg',
+            pkey: 0,
+            date: this.getDate(),
             action: 'Topup', // TODO: Change to Parameter string from external json constants
+            notes1: '', // TODO: Handle notes1 or notes2 - did we arrive on AddTopup Section via log ribbon OR topup/withdraw ribbon ?
+
             amountSent: '',
             rate: '',
             amountLanded: '',
-            notes: '' // TODO: Handle notes1 or notes2 - did we arrive on AddTopup Section via log ribbon OR topup/withdraw ribbon ?
+            notes2: '' // TODO notes2 implementation
         }
 
         this.getTopupForm_TYPE_CONVERT = this.getTopupForm_TYPE_CONVERT.bind(this);
@@ -50,7 +55,7 @@ class AddTopup extends Component{
     }
 
     handleChangeNotes(event){
-        this.setState({notes: event.target.value});
+        this.setState({notes1: event.target.value});
     }
 
     handleChangeConversionRate(event){
@@ -66,47 +71,25 @@ class AddTopup extends Component{
     }
 
     handleSubmit(event){
+        let logToAdd = {
+            type: 'reg',
+            pkey: 0,
+            date: this.getDate(),
+            action: 'Topup',
+            notes1: this.state.notes1,
 
-        // TODO UPDATE THIS SCHEMA
-        if(this.props.topupStyle === 'native'){
-            let logToAdd = {
-                type: 'reg',
-                pkey: 0,
-                date: this.getDate(),
-                action: 'Topup',
-                notes1: this.state.notes,
-
-                amount: this.state.amountLanded,
-                notes2: this.state.notes // TODO notes2 implementation
-            };
+            amountSent: this.state.amountSent,
+            rate: this.state.rate,
+            amountLanded: this.state.amountLanded,
+            notes2: this.state.notes2 // TODO notes2 implementation
+        };
             
-            this.props.addToLogs(this.props.listOfProfileData, this.props.portfolio, logToAdd);
-        }
-        else if(this.props.topupStyle === 'convert'){
-            let logToAdd = {
-                type: 'reg',
-                pkey: 0,
-                date: this.getDate(),
-                action: 'Topup',
-                notes1: this.state.notes,
-
-                amountSent: this.state.amountSent,
-                rate: this.state.rate,
-                amountLanded: this.state.amountLanded,
-                notes2: this.state.notes // TODO notes2 implementation
-            };
-            
-            this.props.addToLogs(this.props.listOfProfileData, this.props.portfolio, logToAdd);
-        }
-        else{
-            console.log(">> TopupStyle Does not exist: " + this.props.topupStyle);
-        }
-
+        this.props.addToLogs(this.props.listOfProfileData, this.props.portfolio, logToAdd);
+       
         event.preventDefault();
     }
 
     componentDidMount(){
-        this.props.fetchTopupStyle(this.props.brokers, this.props.portfolio); // This will be buggy af - assuiming we only access AddTopup after choosing a portfolio - URL injection will crash
         this.props.updateScreenName("AddTopup"); // Hacky
     }
     
@@ -116,17 +99,19 @@ class AddTopup extends Component{
 
     // TODO: Add Number Validations
     getTopupForm_TYPE_NATIVE(currency){
+        let notesType = "notes1"; // Determine which notes we are adding
+
         return <form onSubmit={this.handleSubmit}>
             <label>
                 
                 Topup Amount ({currency})
                 <br/><br/>
-                <input type="text" name="amountLanded" value={this.state.amountLanded} onChange={this.handleChangeAmountLanded} className="AddDataTextBox"/>
+                <input type="text" name="amountSent" value={this.state.amountSent} onChange={this.handleChangeAmountSent} className="AddDataTextBox"/>
                 <br/><br/>
 
                 Notes
                 <br/><br/>
-                <input type="text" name="amountLanded" value={this.state.notes} onChange={this.handleChangeNotes} className="AddDataTextBox"/>
+                <input type="text" name={notesType} value={this.state.notes1} onChange={this.handleChangeNotes} className="AddDataTextBox"/>
             
             </label>
             <br/><br/>
@@ -136,6 +121,8 @@ class AddTopup extends Component{
 
     // TODO: Add Number Validations
     getTopupForm_TYPE_CONVERT(currency){
+        let notesType = "notes1"; // Determine which type of notes we are adding
+
         return <form onSubmit={this.handleSubmit}>
             <label>
                 
@@ -156,7 +143,7 @@ class AddTopup extends Component{
 
                 Notes
                 <br/><br/>
-                <input type="text" name="amountLanded" value={this.state.notes} onChange={this.handleChangeNotes} className="AddDataTextBox"/>
+                <input type="text" name={notesType} value={this.state.notes1} onChange={this.handleChangeNotes} className="AddDataTextBox"/>
 
             </label>
             <br/><br/>
@@ -165,25 +152,15 @@ class AddTopup extends Component{
     }
 
     render(){
-
-        // TODO: add Base Currency to user1 data against the broker
-        let currency = '';
-        if(this.props.portfolio === 'Interactive Brokers'){
-            currency = 'AUD';
-        }
-        else if(this.props.portfolio === 'Hatch'){
-            currency = 'USD';
-        }
-        else if(this.props.portfolio === 'Sharsies'){
-            currency = 'NZD';
-        }
-        
         let formToShow;
-        if(this.props.topupStyle === 'native'){
-            formToShow = () => this.getTopupForm_TYPE_NATIVE(currency);
+        if(this.props.brokerData === undefined) {
+            formToShow = () => <div>No Broker Selected</div>;
         }
-        else if(this.props.topupStyle === 'convert'){
-            formToShow = () => this.getTopupForm_TYPE_CONVERT(currency);
+        else if(this.props.brokerData.topupStyle === 'native'){
+            formToShow = () => this.getTopupForm_TYPE_NATIVE(this.props.brokerData.baseCurrency);
+        }
+        else if(this.props.brokerData.topupStyle === 'convert'){
+            formToShow = () => this.getTopupForm_TYPE_CONVERT(this.props.brokerData.baseCurrency);
         }
         else{
             console.log('>> THAT TOPUP STYLE DOES NOT EXIST');
@@ -203,7 +180,7 @@ export default connect(
     (state) => ({
         portfolio: state.portfolioNameToShow.name,
         brokers: state.brokers.brokers,
-        topupStyle: state.topupStyle.topupStyle, // TODO REMOVE ALL TOPUPSTYLE STUFF
+        brokerData: state.brokerData.brokerData,
 
         // BEE backend db logs
         // logs: state.logs.logs // care at logs vs log lol
@@ -212,7 +189,6 @@ export default connect(
         listOfProfileData: state.listOfProfileData
     }),
     {
-        fetchTopupStyle, // TODO USE BROKERDATA NO THIS 
         addToLogs
     }
 )(AddTopup);
