@@ -82,7 +82,7 @@ class TopupWithdraw extends Component{
                     <td>{entry.amountSent}</td>
                     <td>{entry.rate}</td>
                     <td>{entry.amountLanded}</td>
-                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes2)}> x </td>
+                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes2)}> ⭦ </td>
                 </tr>
             }
             

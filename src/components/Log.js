@@ -38,7 +38,7 @@ class Log extends Component {
                     <td><b>{entry.period}</b></td>
                     <td></td>
                     <td></td>
-                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> x </td>
+                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> ⭦ </td>
                 </tr>
             }
             else if(entry.type === "reg"){
@@ -73,7 +73,7 @@ class Log extends Component {
                     <td className={actionStringClassName}>{entry.action}</td>
                     
                     <td>{entry.ticker}</td>
-                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> x </td>
+                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> ⭦ </td>
                 </tr>
             }
             else if(entry.type === "end1"){
@@ -82,7 +82,7 @@ class Log extends Component {
                     <td></td>
                     <td><b>BOUGHT</b></td>
                     <td>{entry.bought}</td>
-                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> x </td>
+                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> ⭦ </td>
                 </tr>
             }
             else if(entry.type === "end2"){
@@ -91,7 +91,7 @@ class Log extends Component {
                     <td></td>
                     <td><b>SOLD</b></td>
                     <td>{entry.sold}</td>
-                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> x </td>
+                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> ⭦ </td>
                 </tr>
             }
             else{
