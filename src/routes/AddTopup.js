@@ -109,7 +109,7 @@ class AddTopup extends Component{
                 <input type="text" name="amountSent" value={this.state.amountSent} onChange={this.handleChangeAmountSent} className="AddDataTextBox"/>
                 <br/><br/>
 
-                Notes
+                Notes1
                 <br/><br/>
                 <input type="text" name={notesType} value={this.state.notes1} onChange={this.handleChangeNotes} className="AddDataTextBox"/>
             
@@ -141,7 +141,7 @@ class AddTopup extends Component{
                 <input type="text" name="amountLanded" value={this.state.amountLanded} onChange={this.handleChangeAmountLanded} className="AddDataTextBox"/>
                 <br/><br/>
 
-                Notes
+                Notes1
                 <br/><br/>
                 <input type="text" name={notesType} value={this.state.notes1} onChange={this.handleChangeNotes} className="AddDataTextBox"/>
 
@@ -154,6 +154,7 @@ class AddTopup extends Component{
     render(){
         let formToShow;
         if(this.props.brokerData === undefined) {
+            console.log(">> Could not find broker data");
             formToShow = () => <div>No Broker Selected</div>;
         }
         else if(this.props.brokerData.topupStyle === 'native'){
