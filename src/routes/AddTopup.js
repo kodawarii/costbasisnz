@@ -57,7 +57,6 @@ class AddTopup extends Component{
         this.setState({showModal: false});
     }
 
-
     getDate(){
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
@@ -121,7 +120,7 @@ class AddTopup extends Component{
                 
                 Topup Amount ({currency})
                 <br/><br/>
-                <input type="text" name="amountSent" value={this.state.amountSent} onChange={this.handleChangeAmountSent} className="AddDataTextBox"/>
+                <input type="text" type="number" name="amountSent" value={this.state.amountSent} onChange={this.handleChangeAmountSent} className="AddDataTextBox"/>
                 <br/><br/>
 
                 Notes1
@@ -143,17 +142,20 @@ class AddTopup extends Component{
                 
                 Amount sent 
                 <br/><br/>
-                <input type="text" name="amountSent" value={this.state.amountSent} onChange={this.handleChangeAmountSent} className="AddDataTextBox"/>
+                <input type="text" type="number" name="amountSent" value={this.state.amountSent} onChange={this.handleChangeAmountSent} className="AddDataTextBox"/>
                 <br/><br/>
 
                 Conversion Rate 
                 <br/><br/>
-                <input type="text" name="rate" value={this.state.rate} onChange={this.handleChangeConversionRate} className="AddDataTextBox"/>
+                <input type="text" type="number" name="rate" value={this.state.rate} onChange={this.handleChangeConversionRate} className="AddDataTextBox"/>
+                <br/><br/>
+
+                <button> ⭣ </button>
                 <br/><br/>
                 
                 Amount Recieved ({currency})
                 <br/><br/>
-                <input type="text" name="amountLanded" value={this.state.amountLanded} onChange={this.handleChangeAmountLanded} className="AddDataTextBox"/>
+                <input type="text" type="number" name="amountLanded" value={this.state.amountLanded} onChange={this.handleChangeAmountLanded} className="AddDataTextBox"/>
                 <br/><br/>
 
                 Notes1

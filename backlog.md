@@ -9,7 +9,7 @@
 ## Must Have
 1. User Authentication
 1. Form Validation - empty, nums, special characters
-1.
+1. Edit Row
 1.
 1.
 1.
