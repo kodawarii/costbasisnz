@@ -86,6 +86,12 @@ class App extends Component{
                   />
                 }/>
 
+                <Route exact path='/AddWithdraw' component = {
+                  () => <AddWithdraw
+                  updateScreenName={this.updateScreenName}
+                  />
+                }/>
+
                 <Route exact path='/SelectAddType' component = {
                   () => <SelectAddType 
                   updateScreenName={this.updateScreenName}

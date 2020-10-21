@@ -49,6 +49,9 @@ class Nav extends Component{
         else if(this.props.screen === "AddTopup"){
             title = "Add Topup Event";
         }
+        else if(this.props.screen === "AddWithdraw"){
+            title = "Add Withdraw Event";
+        }
 
         return(
             <div className="Nav">

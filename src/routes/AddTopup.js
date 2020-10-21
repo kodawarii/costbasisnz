@@ -57,6 +57,7 @@ class AddTopup extends Component{
         this.setState({showModal: false});
     }
 
+    // TODO GLOBALIZE
     getDate(){
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
