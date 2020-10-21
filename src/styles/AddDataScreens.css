@@ -16,6 +16,16 @@
     border: 1px solid rgb(255, 36, 102);;
 }
 
+.validation-message{
+    display: block;
+    font-size: 11px;
+    color: red;
+}
+
+.validation-message-hide{
+    display: none;
+}
+
 .submit-btn{
     outline: none;
     background: none;

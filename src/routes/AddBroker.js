@@ -19,12 +19,31 @@ class AddBroker extends Component{
 
         this.state = {
             value: '',
-            showModal: false
+            showModal: false,
+            isValid: true,
+            validationString: 'default-error'
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.closeModal = this.closeModal.bind(this);
+    }
+
+    handleValidation(){
+        if(this.state.value==='' || !this.state.value.replace(/\s/g, '').length) {
+            this.setState({ validationString: '*Please enter a broker name' });
+            this.setState({isValid: false});
+            return false;
+        }
+
+        if(!this.state.value.match(/^[a-z\d\-_\s]+$/i)) {
+            this.setState({ validationString: '*Please enter only alphanumeric characters' });
+            this.setState({isValid: false});
+            return false;
+        }
+
+        this.setState({isValid: true});
+        return true;
     }
 
     closeModal(){
@@ -48,9 +67,11 @@ class AddBroker extends Component{
             id: uuidv4().substring(0, 8)
         };
         
-        this.props.addToBrokers(this.props.brokers, brokerToAdd);
+        if(this.handleValidation()){
+            this.props.addToBrokers(this.props.brokers, brokerToAdd);
         
-        this.setState({showModal: true});
+            this.setState({showModal: true});
+        }
         
         event.preventDefault();
     }
@@ -69,6 +90,7 @@ class AddBroker extends Component{
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Enter Broker <br/><br/>
+                        <p className={this.state.isValid ? "validation-message-hide" : "validation-message"}>{this.state.validationString}</p>
                         <input type="text" name="name" value={this.state.value} onChange={this.handleChange} className="AddDataTextBox"/>
                     </label>
                     <br/><br/>
