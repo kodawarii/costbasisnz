@@ -56,7 +56,7 @@ class TopupWithdraw extends Component{
                     <td></td>
                     <td></td>
                     <td></td>
-                <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> x </td>
+                <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> ⭦ </td>
             </tr>
             }
             
