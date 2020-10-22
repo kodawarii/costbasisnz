@@ -58,7 +58,8 @@ class TopupWithdraw extends Component{
                     <td></td>
                     <td></td>
                     <td></td>
-                <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> {notesArrow1} </td>
+                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> {notesArrow1} </td>
+                    <td className="Edit-row">⚙</td>
             </tr>
             }
             
@@ -85,6 +86,7 @@ class TopupWithdraw extends Component{
                     <td>{entry.rate === undefined || isNaN(parseFloat(entry.rate)) ? '' : parseFloat(entry.rate).toFixed(4)}</td>
                     <td>{entry.amountLanded === undefined || isNaN(parseInt(entry.amountLanded)) ? '' : entry.amountLanded.toLocaleString()}</td>
                     <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes2)}> {notesArrow2} </td>
+                    <td className="Edit-row">⚙</td>
                 </tr>
             }
             
@@ -109,6 +111,7 @@ class TopupWithdraw extends Component{
                         <th>Rate</th>
                         <th>{this.props.brokerData.targetCurrency}</th>
                         <th>Notes</th>
+                        <th className="Edit-row">Edit</th>
                     </tr>
                     </thead>
                     <tbody>
