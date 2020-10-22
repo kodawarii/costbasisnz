@@ -51,16 +51,13 @@
                         "notes1": "note1=This FX block is only for IBKR - Hatch and Sharsies format will be different",
                         
                         "amountSent": 3333,
-                        "rate": "",
-                        "amountLanded": "",
-                        "notes2": "Native topups will only have a value for amountSent, rate and amountlanded are for schema validation"
+                        "notes2": "Native topups will only have a value for amountSent"
                     },
                     {
                         "type": "reg",
                         "pkey": 2,
                         "date": "20-02-02",
                         "action": "FX USD",
-                        "ticker": "",
                         "notes1": "This FX block is only for IBKR, AUD>USD*",
                         "notes2": "note2=sssss",
                         
@@ -73,7 +70,6 @@
                         "pkey": 3,
                         "date": "20-02-02",
                         "action": "FX AUD",
-                        "ticker": "",
                         "notes1": "This FX block is only for IBKR, *USD>>AUD",
                         "notes2": "note2=sssss",
                         
@@ -153,7 +149,6 @@
                         "pkey": 11,
                         "date": "20-02-04",
                         "action": "Monthly Fee",
-                        "ticker": "",
                         "notes1": "",
                         "notes2": "note2=sssss"
                     },
@@ -199,7 +194,6 @@
                         "pkey": 2,
                         "date": "22-10-10",
                         "action": "Topup",
-                        "ticker": "",
                         "notes1": "note1=HATCH",
                         
                         "amountSent": 12000,
@@ -212,7 +206,6 @@
                         "pkey": 6,
                         "date": "20-02-04",
                         "action": "Withdraw",
-                        "ticker": "",
                         "notes1": "",
                         "notes2": "",
         
@@ -248,12 +241,9 @@
                         "pkey": 2,
                         "date": "22-10-10",
                         "action": "Topup",
-                        "ticker": "",
                         "notes1": "note1=SHARSIES",
                         
                         "amountSent": 555,
-                        "rate": "",
-                        "amountLanded": "",
                         "notes2": "note2=SHARSIES"
                     },
                     {
@@ -261,7 +251,6 @@
                         "pkey": 6,
                         "date": "20-02-04",
                         "action": "Withdraw",
-                        "ticker": "",
                         "notes1": "",
                         "notes2": "",
         

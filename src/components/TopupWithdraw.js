@@ -79,9 +79,9 @@ class TopupWithdraw extends Component{
                     <td>{entry.pkey}</td>
                     <td>{entry.date}</td>
                     <td className={actionStringClassName}>{entry.action}</td>
-                    <td>{entry.amountSent}</td>
-                    <td>{entry.rate}</td>
-                    <td>{entry.amountLanded}</td>
+                    <td>{entry.amountSent === undefined ? '' : entry.amountSent.toLocaleString()}</td>
+                    <td>{entry.rate === undefined || parseFloat(entry.rate) === 'NaN' ? '' : parseFloat(entry.rate).toFixed(4)}</td>
+                    <td>{entry.amountLanded === undefined ? '' : entry.amountLanded.toLocaleString()}</td>
                     <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes2)}> ⭦ </td>
                 </tr>
             }

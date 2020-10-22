@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {getFormattedDate} from '../utils/Functions';
 import '../styles/AddDataScreens.css';
 
 // Redux
@@ -30,7 +31,7 @@ class AddTopup extends Component{
             //// TOPUP SCHEMA
             type: 'reg',
             pkey: 0,
-            date: this.getDate(),
+            date: getFormattedDate(),
             action: 'Topup', // TODO: Change to Parameter string from external json constants
             notes1: '', // TODO: Handle notes1 or notes2 - did we arrive on AddTopup Section via log ribbon OR topup/withdraw ribbon ?
 
@@ -57,16 +58,6 @@ class AddTopup extends Component{
         this.setState({showModal: false});
     }
 
-    // TODO GLOBALIZE
-    getDate(){
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0');
-        var yyyy = today.getFullYear();
-
-        return yyyy.toString().substr(2,2) + '-' + mm + '-' + dd;
-    }
-
     handleChangeNotes(event){
         this.setState({notes1: event.target.value}); // NOTES1
     }
@@ -87,7 +78,7 @@ class AddTopup extends Component{
         let logToAdd = {
             type: 'reg',
             pkey: 0,
-            date: this.getDate(),
+            date: getFormattedDate(),
             action: 'Topup',
             notes1: this.state.notes1,
 
