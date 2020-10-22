@@ -6,8 +6,3 @@ export const getFormattedDate = () => {
 
     return yyyy.toString().substr(2,2) + '-' + mm + '-' + dd;
 }
-
-// Takes in number n=0.6 and returns s=0.6000
-export const convertTo4DP = (n) => {
-
-}
