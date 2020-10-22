@@ -33,7 +33,7 @@ class AddWithdraw extends Component{
 
             //// PROGRAM DATA
             showModal: false
-        }
+        };
 
         this.closeModal = this.closeModal.bind(this);
         this.handleChangeAmount = this.handleChangeAmount.bind(this);
