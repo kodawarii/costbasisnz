@@ -68,7 +68,7 @@ class AddTopup extends Component{
     }
 
     handleChangeNotes(event){
-        this.setState({notes1: event.target.value});
+        this.setState({notes1: event.target.value}); // NOTES1
     }
 
     handleChangeConversionRate(event){
