@@ -169,8 +169,11 @@ class AddFX extends Component{
                         {this.props.brokerData.targetCurrency} to {this.props.brokerData.baseCurrency}
                     </label>
                 </div>
+                
+                <br/>
+
                 {this.getFXForm()}
-                <AddItemModal show={this.state.showModal} prompt={"Successfully Added New Topup Event to " + this.props.portfolio} closeModal={this.closeModal}/>
+                <AddItemModal show={this.state.showModal} prompt={"Successfully Added New FX Event to " + this.props.portfolio} closeModal={this.closeModal}/>
             </div>
         );
     }
