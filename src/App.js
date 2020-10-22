@@ -17,6 +17,7 @@ import AddFX from './routes/AddFX';
 import AddFee from './routes/AddFee';
 import AddDividend from './routes/AddDividend';
 import SelectAddType from './routes/SelectAddType';
+import SelectAddTypeTopupWithdrawFX from './routes/SelectAddTypeTopupWithdrawFX';
 import Edit from './routes/Edit';
 import Home from './routes/Home';
 import Login from './routes/Login';
@@ -100,6 +101,12 @@ class App extends Component{
 
                 <Route exact path='/SelectAddType' component = {
                   () => <SelectAddType 
+                  updateScreenName={this.updateScreenName}
+                  />
+                }/>
+                
+                <Route exact path='/SelectAddTypeTopupWithdrawFX' component = {
+                  () => <SelectAddTypeTopupWithdrawFX 
                   updateScreenName={this.updateScreenName}
                   />
                 }/>

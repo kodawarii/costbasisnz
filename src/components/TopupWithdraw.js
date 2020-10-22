@@ -120,7 +120,7 @@ class TopupWithdraw extends Component{
                     </tbody>
                 </table>
 
-                <Link to={'/SelectAddType'}>
+                <Link to={'/SelectAddTypeTopupWithdrawFX'}>
                     <div className="AddLogBtn-wrapper">
                         <button className="AddBtn">+</button>
                     </div>
