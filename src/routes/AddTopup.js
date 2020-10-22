@@ -38,7 +38,7 @@ class AddTopup extends Component{
             amountSent: '',
             rate: '',
             amountLanded: '',
-            notes2: '', // TODO notes2 implementation
+            notes2: '',
 
             //// PROGRAM DATA
             showModal: false
