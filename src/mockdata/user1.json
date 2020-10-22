@@ -34,7 +34,7 @@
                 
                 ],
                 "holdings": [
-    
+                    
                 ],
                 "log": [
                     {
@@ -85,6 +85,10 @@
                         "action": "BUY",
                         "ticker": "TSLA",
                         "notes1": "",
+
+                        "shares": 33,
+                        "price": 250,
+                        "total": 8250,
                         "notes2": ""
                     },
                     {
@@ -94,6 +98,10 @@
                         "action": "SELL",
                         "ticker": "TSLA",
                         "notes1": "",
+
+                        "shares": 33,
+                        "price": 250,
+                        "total": 8250,
                         "notes2": ""
                     },
                     {
@@ -114,6 +122,10 @@
                         "action": "BUY",
                         "ticker": "TSLA",
                         "notes1": "",
+
+                        "shares": 33,
+                        "price": 250,
+                        "total": 8250,
                         "notes2": ""
                     },
                     {
@@ -123,6 +135,10 @@
                         "action": "SELL",
                         "ticker": "NVDA",
                         "notes1": "",
+
+                        "shares": 33,
+                        "price": 250,
+                        "total": 8250,
                         "notes2": "note2=sssss"
                     },
                     {

@@ -29,63 +29,34 @@ class BuySell extends Component{
         this.setState({showNotes: true, notes});
     }
 
-    // TODO: IBKR HATCH AND SHARIES WILL HAVE DIFFERENT FORMAT
-    // --.amountAUD no longer applies here
-    // 1. native topup 2. convert topup
     getData(){
-        if(this.props.data === undefined) return <tr>
-                <td>Must</td>
-                <td>Fetch</td>
-                <td>First</td>
-                <td>From</td>
-                <td>The</td>
-                <td>User</td>
-                <td>ok</td>
-            </tr>
-
         return this.props.data.map ((entry, i) => {
             let notesArrow1 = entry.notes1 === '' ? '' : '⭦';
             let notesArrow2 = entry.notes2 === '' ? '' : '⭦';
 
-            if(entry.type === "end1" || entry.type === "end2") {
+            if(entry.type === "end1" || entry.type === "end2" || entry.type === 'start') {
                 // Continue;
             }
-
-            else if(entry.type === "start"){ // TODO: REFACTOR START ROWS
-                return <tr key={i}>
-                    <td>{entry.pkey}</td>
-                    <td><b>{entry.period}</b></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> {notesArrow1} </td>
-                    <td className="Edit-row">⚙</td>
-            </tr>
-            }
             
-            else if(entry.action.includes("Topup") ||
-            entry.action.includes("Withdraw") ||
-            entry.action.includes("FX")){ // TODO: KEEP CONSTANTS AND SCHEMA AS CASE SENSITIVE
+            else if(entry.action.includes('BUY') ||
+            entry.action.includes('SELL')){ // TODO: KEEP CONSTANTS AND SCHEMA AS CASE SENSITIVE
                 let actionStringClassName = " "; // TODO: REFACTOR ACROSS ALL SCREENS
 
-                if(entry.action.includes("Topup")){
-                    actionStringClassName = " Topup ";
+                if(entry.action.includes("BUY")){
+                    actionStringClassName = " Buy ";
                 }
-                else if(entry.action.includes("Withdraw")){
-                    actionStringClassName = " Withdraw ";
-                }
-                else if(entry.action.includes("FX")){
-                    actionStringClassName = " FX ";
+                else if(entry.action.includes("SELL")){
+                    actionStringClassName = " Sell ";
                 }
             
                 return <tr key={i}>
                     <td>{entry.pkey}</td>
                     <td>{entry.date}</td>
                     <td className={actionStringClassName}>{entry.action}</td>
-                    <td>{entry.amountSent === undefined || isNaN(parseInt(entry.amountSent)) ? '' : entry.amountSent.toLocaleString()}</td>
-                    <td>{entry.rate === undefined || isNaN(parseFloat(entry.rate)) ? '' : parseFloat(entry.rate).toFixed(4)}</td>
-                    <td>{entry.amountLanded === undefined || isNaN(parseInt(entry.amountLanded)) ? '' : entry.amountLanded.toLocaleString()}</td>
+                    <td>{entry.ticker}</td>
+                    <td>{entry.shares.toFixed(4)}</td>
+                    <td>{entry.price.toLocaleString()}</td>
+                    <td>{entry.total.toLocaleString()}</td>
                     <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes2)}> {notesArrow2} </td>
                     <td className="Edit-row">⚙</td>
                 </tr>
@@ -96,21 +67,25 @@ class BuySell extends Component{
     }
 
     render(){
+        if(this.props.data === undefined) return <div>No Data to show / Broker not selected</div>;
+
         return(
             <div>
                 <div>
                     <p>Total NZD Est. Invested= </p>
                     <p>Total USD Invested= </p>
+                    <p> seed= </p>
                 </div>
                 <table>
                     <thead>
                     <tr>
                         <th>Ref</th>
-                        <th className="Date-topup-withdraw">Date</th>
+                        <th>Date</th>
                         <th>Action</th>
-                        <th>{this.props.brokerData.baseCurrency}</th>
-                        <th>Rate</th>
-                        <th>{this.props.brokerData.targetCurrency}</th>
+                        <th>Ticker</th>
+                        <th>Shares</th>
+                        <th>Price</th>
+                        <th>Total Price</th>
                         <th>Notes</th>
                         <th className="Edit-row">Edit</th>
                     </tr>
@@ -120,7 +95,7 @@ class BuySell extends Component{
                     </tbody>
                 </table>
 
-                <Link to={'/SelectAddTypeTopupWithdrawFX'}>
+                <Link to={'/SelectAddTypeBuySell'}>
                     <div className="AddLogBtn-wrapper">
                         <button className="AddBtn">+</button>
                     </div>

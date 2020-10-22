@@ -29,9 +29,6 @@ class TopupWithdraw extends Component{
         this.setState({showNotes: true, notes});
     }
 
-    // TODO: IBKR HATCH AND SHARIES WILL HAVE DIFFERENT FORMAT
-    // --.amountAUD no longer applies here
-    // 1. native topup 2. convert topup
     getData(){
         if(this.props.data === undefined) return <tr>
                 <td>Must</td>
