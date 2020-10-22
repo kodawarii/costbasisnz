@@ -18,6 +18,7 @@ import AddFee from './routes/AddFee';
 import AddDividend from './routes/AddDividend';
 import SelectAddType from './routes/SelectAddType';
 import SelectAddTypeTopupWithdrawFX from './routes/SelectAddTypeTopupWithdrawFX';
+import SelectAddTypeBuySell from './routes/SelectAddTypeBuySell';
 import Edit from './routes/Edit';
 import Home from './routes/Home';
 import Login from './routes/Login';
@@ -99,6 +100,18 @@ class App extends Component{
                   />
                 }/>
 
+                <Route exact path='/AddBuy' component = {
+                  () => <AddBuy
+                  updateScreenName={this.updateScreenName}
+                  />
+                }/>
+
+                <Route exact path='/AddSell' component = {
+                  () => <AddSell
+                  updateScreenName={this.updateScreenName}
+                  />
+                }/>
+
                 <Route exact path='/SelectAddType' component = {
                   () => <SelectAddType 
                   updateScreenName={this.updateScreenName}
@@ -107,6 +120,12 @@ class App extends Component{
                 
                 <Route exact path='/SelectAddTypeTopupWithdrawFX' component = {
                   () => <SelectAddTypeTopupWithdrawFX 
+                  updateScreenName={this.updateScreenName}
+                  />
+                }/>
+
+                <Route exact path='/SelectAddTypeBuySell' component = {
+                  () => <SelectAddTypeBuySell 
                   updateScreenName={this.updateScreenName}
                   />
                 }/>

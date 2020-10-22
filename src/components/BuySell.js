@@ -41,22 +41,24 @@ class BuySell extends Component{
             else if(entry.action.includes('BUY') ||
             entry.action.includes('SELL')){ // TODO: KEEP CONSTANTS AND SCHEMA AS CASE SENSITIVE
                 let actionStringClassName = " "; // TODO: REFACTOR ACROSS ALL SCREENS
+                let sellActionClassName = " ";
 
                 if(entry.action.includes("BUY")){
                     actionStringClassName = " Buy ";
                 }
                 else if(entry.action.includes("SELL")){
                     actionStringClassName = " Sell ";
+                    sellActionClassName = " Sell ";
                 }
             
                 return <tr key={i}>
                     <td>{entry.pkey}</td>
                     <td>{entry.date}</td>
                     <td className={actionStringClassName}>{entry.action}</td>
-                    <td>{entry.ticker}</td>
-                    <td>{entry.shares.toFixed(4)}</td>
-                    <td>{entry.price.toLocaleString()}</td>
-                    <td>{entry.total.toLocaleString()}</td>
+                    <td className={sellActionClassName}>{entry.ticker}</td>
+                    <td className={sellActionClassName}>{entry.shares.toFixed(4)}</td>
+                    <td className={sellActionClassName}>{entry.price.toLocaleString()}</td>
+                    <td className={sellActionClassName}>{entry.total.toLocaleString()}</td>
                     <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes2)}> {notesArrow2} </td>
                     <td className="Edit-row">⚙</td>
                 </tr>
