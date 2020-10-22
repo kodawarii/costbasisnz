@@ -97,7 +97,7 @@ class BuySell extends Component{
                     </tbody>
                 </table>
 
-                <Link to={'/SelectAddTypeBuySell'}>
+                <Link to={'/AddBuySell'}>
                     <div className="AddLogBtn-wrapper">
                         <button className="AddBtn">+</button>
                     </div>

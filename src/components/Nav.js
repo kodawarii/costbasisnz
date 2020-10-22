@@ -55,11 +55,8 @@ class Nav extends Component{
         else if(this.props.screen === "AddFX"){
             title = "Add Forex Event";
         }
-        else if(this.props.screen === "AddBuy"){
-            title = "Add Buy Event";
-        }
-        else if(this.props.screen === "AddSell"){
-            title = "Add Sell Event";
+        else if(this.props.screen === "AddBuySell"){
+            title = "Add Buy or Sell Event";
         }
 
         return(

@@ -11,14 +11,12 @@ import store from './store';
 import AddBroker from './routes/AddBroker';
 import AddTopup from './routes/AddTopup';
 import AddWithdraw from './routes/AddWithdraw';
-import AddBuy from './routes/AddBuy';
-import AddSell from './routes/AddSell';
+import AddBuySell from './routes/AddBuySell';
 import AddFX from './routes/AddFX';
 import AddFee from './routes/AddFee';
 import AddDividend from './routes/AddDividend';
 import SelectAddType from './routes/SelectAddType';
 import SelectAddTypeTopupWithdrawFX from './routes/SelectAddTypeTopupWithdrawFX';
-import SelectAddTypeBuySell from './routes/SelectAddTypeBuySell';
 import Edit from './routes/Edit';
 import Home from './routes/Home';
 import Login from './routes/Login';
@@ -100,14 +98,8 @@ class App extends Component{
                   />
                 }/>
 
-                <Route exact path='/AddBuy' component = {
-                  () => <AddBuy
-                  updateScreenName={this.updateScreenName}
-                  />
-                }/>
-
-                <Route exact path='/AddSell' component = {
-                  () => <AddSell
+                <Route exact path='/AddBuySell' component = {
+                  () => <AddBuySell
                   updateScreenName={this.updateScreenName}
                   />
                 }/>
@@ -120,12 +112,6 @@ class App extends Component{
                 
                 <Route exact path='/SelectAddTypeTopupWithdrawFX' component = {
                   () => <SelectAddTypeTopupWithdrawFX 
-                  updateScreenName={this.updateScreenName}
-                  />
-                }/>
-
-                <Route exact path='/SelectAddTypeBuySell' component = {
-                  () => <SelectAddTypeBuySell 
                   updateScreenName={this.updateScreenName}
                   />
                 }/>

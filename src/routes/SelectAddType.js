@@ -22,8 +22,7 @@ class SelectAddType extends Component{
                     <Link to={'/AddTopup'}><li className={liClassName+" AddTopup-li"}> 1. Topup </li></Link>
                     <Link to={'/AddWithdraw'}><li className={liClassName+" AddWithdraw-li"}> 2. Withdraw </li></Link>
                     <Link to={'/AddFX'}><li className={liClassName+" AddFX-li"}> 3. FX </li></Link>
-                    <Link to={'/AddBuy'}><li className={liClassName+" AddBuy-li"}> 4. Buy </li></Link>
-                    <Link to={'/AddSell'}><li className={liClassName+" AddSell-li"}> 5. Sell </li></Link>
+                    <Link to={'/AddBuySell'}><li className={liClassName+" AddBuySell-li"}> 4. Buy or Sell</li></Link>
                     <Link to={'/AddDividend'}><li className={liClassName+" AddDividend-li"}> 6. Dividend </li></Link>
                     <Link to={'/AddFee'}><li className={liClassName+" AddFee-li"}> 7. Fee </li></Link>
 

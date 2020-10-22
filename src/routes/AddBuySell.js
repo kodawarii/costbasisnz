@@ -2,17 +2,17 @@ import React, {Component} from 'react';
 
 class AddBuy extends Component{
     componentDidMount(){
-        this.props.updateScreenName("AddBuy"); // Hacky
+        this.props.updateScreenName("AddBuySell"); // Hacky
     }
     
     componentDidUpdate(){
-        this.props.updateScreenName("AddBuy"); // todo1: create constants
+        this.props.updateScreenName("AddBuySell"); // todo1: create constants
     }
 
     render(){
         return(
-            <div className="AddBuy Screen">
-                AddBuy works
+            <div className="AddBuySell Screen">
+                Add BuySell works
             </div>
         );
     }
