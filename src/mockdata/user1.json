@@ -51,6 +51,7 @@
                         "notes1": "note1=This FX block is only for IBKR - Hatch and Sharsies format will be different",
                         
                         "amountSent": 3333,
+                        "rate": "",
                         "notes2": "Native topups will only have a value for amountSent"
                     },
                     {
