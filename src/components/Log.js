@@ -15,7 +15,7 @@ class Log extends Component {
         super(props);
         this.state = {
             showNotes: false,
-            notes: ""
+            notes: ''
         }
     }
 
@@ -32,13 +32,15 @@ class Log extends Component {
         if(this.props.data === undefined) return <tr><td>must fetch first</td></tr>;
 
         return this.props.data.map( (entry, i) => {
+            let notesArrow1 = entry.notes1 === '' ? '' : '⭦';
+
             if(entry.type === "start"){
                 return <tr key={i}>
                     <td>{entry.pkey}</td>
                     <td><b>{entry.period}</b></td>
                     <td></td>
                     <td></td>
-                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> ⭦ </td>
+                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> {notesArrow1} </td>
                 </tr>
             }
             else if(entry.type === "reg"){
@@ -73,7 +75,7 @@ class Log extends Component {
                     <td className={actionStringClassName}>{entry.action}</td>
                     
                     <td>{entry.ticker}</td>
-                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> ⭦ </td>
+                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> {notesArrow1} </td>
                 </tr>
             }
             else if(entry.type === "end1"){
@@ -82,7 +84,7 @@ class Log extends Component {
                     <td></td>
                     <td><b>BOUGHT</b></td>
                     <td>{entry.bought}</td>
-                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> ⭦ </td>
+                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> {notesArrow1} </td>
                 </tr>
             }
             else if(entry.type === "end2"){
@@ -91,7 +93,7 @@ class Log extends Component {
                     <td></td>
                     <td><b>SOLD</b></td>
                     <td>{entry.sold}</td>
-                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> ⭦ </td>
+                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> {notesArrow1} </td>
                 </tr>
             }
             else{

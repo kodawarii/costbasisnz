@@ -43,6 +43,8 @@ class TopupWithdraw extends Component{
             </tr>
 
         return this.props.data.map ((entry, i) => {
+            let notesArrow1 = entry.notes1 === '' ? '' : '⭦';
+            let notesArrow2 = entry.notes2 === '' ? '' : '⭦';
 
             if(entry.type === "end1" || entry.type === "end2") {
                 // Continue;
@@ -56,7 +58,7 @@ class TopupWithdraw extends Component{
                     <td></td>
                     <td></td>
                     <td></td>
-                <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> ⭦ </td>
+                <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> {notesArrow1} </td>
             </tr>
             }
             
@@ -82,7 +84,7 @@ class TopupWithdraw extends Component{
                     <td>{entry.amountSent === undefined || isNaN(parseInt(entry.amountSent)) ? '' : entry.amountSent.toLocaleString()}</td>
                     <td>{entry.rate === undefined || isNaN(parseFloat(entry.rate)) ? '' : parseFloat(entry.rate).toFixed(4)}</td>
                     <td>{entry.amountLanded === undefined || isNaN(parseInt(entry.amountLanded)) ? '' : entry.amountLanded.toLocaleString()}</td>
-                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes2)}> ⭦ </td>
+                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes2)}> {notesArrow2} </td>
                 </tr>
             }
             
