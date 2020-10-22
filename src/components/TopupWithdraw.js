@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {HashLink as Link} from 'react-router-hash-link';
 import '../styles/DataTable.css';
 
 // Redux
@@ -118,9 +119,12 @@ class TopupWithdraw extends Component{
                         {this.getData()}
                     </tbody>
                 </table>
-                <div className="AddLog">
-                    ADD + // go direct to addTopupWithdraw page
-                </div>
+
+                <Link to={'/SelectAddType'}>
+                    <div className="AddLogBtn-wrapper">
+                        <button className="AddBtn">+</button>
+                    </div>
+                </Link>
                 
                 <Notes notes={this.state.notes} isVisible={this.state.showNotes} closeNotes={this.closeNotes.bind(this)}/>
             </div>

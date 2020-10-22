@@ -2,6 +2,10 @@
   
 }
 
+.textbox-label{
+    font-size: 14px;
+}
+
 .AddDataTextBox{
     outline: none;
     background: none;

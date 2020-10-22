@@ -16,7 +16,8 @@ export default class Notes extends Component {
                     x
                 </div>
                 <div className="Notes-content">
-                    {this.props.notes}
+                    <div>{this.props.notes}</div>
+                    <div><button>Edit</button></div>
                 </div>
             </div>
         );

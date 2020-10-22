@@ -37,7 +37,8 @@ class AddWithdraw extends Component{
 
         this.closeModal = this.closeModal.bind(this);
         this.handleChangeAmount = this.handleChangeAmount.bind(this);
-        this.handleChangeNotes = this.handleChangeNotes.bind(this);
+        this.handleChangeNotes1 = this.handleChangeNotes1.bind(this);
+        this.handleChangeNotes2 = this.handleChangeNotes2.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -49,7 +50,11 @@ class AddWithdraw extends Component{
         this.setState({amountSent: event.target.value});
     }
 
-    handleChangeNotes(event){
+    handleChangeNotes2(event){
+        this.setState({notes2: event.target.value}); // NOTES1
+    }
+
+    handleChangeNotes1(event){
         this.setState({notes1: event.target.value}); // NOTES1
     }
 
@@ -80,9 +85,7 @@ class AddWithdraw extends Component{
         this.props.updateScreenName("AddWithdraw"); // todo1: create constants
     }
     
-    getWithdrawForm(){
-        let notesType = "notes1"; // Determine which notes we are adding
-        
+    getWithdrawForm(){        
         if(this.props.brokerData === undefined) {
             console.log(">> Could not find broker data");
             return <div>No Broker Selected</div>;
@@ -91,14 +94,16 @@ class AddWithdraw extends Component{
         return <form onSubmit={this.handleSubmit}>
             <label>
                 
-                Withdraw Amount ({this.props.brokerData.baseCurrency})
-                <br/><br/>
+                <div className="textbox-label">Withdraw Amount ({this.props.brokerData.baseCurrency})</div>
                 <input type="text" type="number" name="amountSent" value={this.state.amountSent} onChange={this.handleChangeAmount} className="AddDataTextBox"/>
                 <br/><br/>
 
-                Notes1
+                <div className="textbox-label">Notes for Main Log</div>
+                <input type="text" name="notes1" value={this.state.notes1} onChange={this.handleChangeNotes1} className="AddDataTextBox"/>
                 <br/><br/>
-                <input type="text" name={notesType} value={this.state.notes1} onChange={this.handleChangeNotes} className="AddDataTextBox"/>
+
+                <div className="textbox-label">Notes for Topup/Withdraw Log</div>
+                <input type="text" name="notes2" value={this.state.notes2} onChange={this.handleChangeNotes2} className="AddDataTextBox"/>
             
             </label>
             <br/><br/>

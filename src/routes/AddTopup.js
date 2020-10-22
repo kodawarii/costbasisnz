@@ -49,7 +49,8 @@ class AddTopup extends Component{
         this.handleChangeAmountSent = this.handleChangeAmountSent.bind(this);
         this.handleChangeAmountLanded = this.handleChangeAmountLanded.bind(this);
         this.handleChangeConversionRate = this.handleChangeConversionRate.bind(this);
-        this.handleChangeNotes = this.handleChangeNotes.bind(this);
+        this.handleChangeNotes1 = this.handleChangeNotes1.bind(this);
+        this.handleChangeNotes2 = this.handleChangeNotes2.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.closeModal = this.closeModal.bind(this);
     }
@@ -58,8 +59,12 @@ class AddTopup extends Component{
         this.setState({showModal: false});
     }
 
-    handleChangeNotes(event){
-        this.setState({notes1: event.target.value}); // NOTES1
+    handleChangeNotes1(event){
+        this.setState({notes1: event.target.value});
+    }
+
+    handleChangeNotes2(event){
+        this.setState({notes2: event.target.value});
     }
 
     handleChangeConversionRate(event){
@@ -85,7 +90,7 @@ class AddTopup extends Component{
             amountSent: this.state.amountSent,
             rate: this.state.rate,
             amountLanded: this.state.amountLanded,
-            notes2: this.state.notes2 // TODO notes2 implementation
+            notes2: this.state.notes2
         };
             
         this.props.addToLogs(this.props.listOfProfileData, this.props.portfolio, logToAdd);
@@ -105,19 +110,19 @@ class AddTopup extends Component{
 
     // TODO: Add Number Validations
     getTopupForm_TYPE_NATIVE(currency){
-        let notesType = "notes1"; // Determine which notes we are adding
-
         return <form onSubmit={this.handleSubmit}>
             <label>
                 
-                Topup Amount ({currency})
-                <br/><br/>
+                <div className="textbox-label">Topup Amount ({currency})</div>
                 <input type="text" type="number" name="amountSent" value={this.state.amountSent} onChange={this.handleChangeAmountSent} className="AddDataTextBox"/>
                 <br/><br/>
 
-                Notes1
+                <div className="textbox-label">Log Screen Notes</div>
+                <input type="text" name={"notes1"} value={this.state.notes1} onChange={this.handleChangeNotes1} className="AddDataTextBox"/>
                 <br/><br/>
-                <input type="text" name={notesType} value={this.state.notes1} onChange={this.handleChangeNotes} className="AddDataTextBox"/>
+
+                <div className="textbox-label">Topup/Withdraw Screen Notes</div>
+                <input type="text" name={"notes2"} value={this.state.notes2} onChange={this.handleChangeNotes2} className="AddDataTextBox"/>
             
             </label>
             <br/><br/>
@@ -127,32 +132,30 @@ class AddTopup extends Component{
 
     // TODO: Add Number Validations
     getTopupForm_TYPE_CONVERT(currency){
-        let notesType = "notes1"; // Determine which type of notes we are adding
-
         return <form onSubmit={this.handleSubmit}>
             <label>
                 
-                Amount sent 
-                <br/><br/>
+                <div className="textbox-label">Amount sent </div>
                 <input type="text" type="number" name="amountSent" value={this.state.amountSent} onChange={this.handleChangeAmountSent} className="AddDataTextBox"/>
                 <br/><br/>
 
-                Conversion Rate 
-                <br/><br/>
+                <div className="textbox-label">Conversion Rate </div>
                 <input type="text" type="number" name="rate" value={this.state.rate} onChange={this.handleChangeConversionRate} className="AddDataTextBox"/>
                 <br/><br/>
 
                 <button> ⭣ </button>
                 <br/><br/>
                 
-                Amount Recieved ({currency})
-                <br/><br/>
+                <div className="textbox-label">Amount Recieved ({currency})</div>
                 <input type="text" type="number" name="amountLanded" value={this.state.amountLanded} onChange={this.handleChangeAmountLanded} className="AddDataTextBox"/>
                 <br/><br/>
 
-                Notes1
+                <div className="textbox-label">Log Screen Notes</div>
+                <input type="text" name={"notes1"} value={this.state.notes1} onChange={this.handleChangeNotes1} className="AddDataTextBox"/>
                 <br/><br/>
-                <input type="text" name={notesType} value={this.state.notes1} onChange={this.handleChangeNotes} className="AddDataTextBox"/>
+
+                <div className="textbox-label">Topup/Withdraw Screen Notes</div>
+                <input type="text" name={"notes2"} value={this.state.notes2} onChange={this.handleChangeNotes2} className="AddDataTextBox"/>
 
             </label>
             <br/><br/>
