@@ -8,7 +8,7 @@ import {connect} from 'react-redux';
 // Components
 import Notes from './Notes';
 
-class TopupWithdraw extends Component{
+class BuySell extends Component{
 
     // this.props.data
 
@@ -96,13 +96,11 @@ class TopupWithdraw extends Component{
     }
 
     render(){
-        if(this.props.brokerData === undefined) return <div>No Data to show / Broker not selected</div>;
-        
         return(
             <div>
                 <div>
-                    <p>Total {this.props.brokerData.baseCurrency}: </p>
-                    <p>Total {this.props.brokerData.targetCurrency}: </p>
+                    <p>Total NZD Est. Invested= </p>
+                    <p>Total USD Invested= </p>
                 </div>
                 <table>
                     <thead>
@@ -141,4 +139,4 @@ export default connect(
     {
 
     }
-)(TopupWithdraw);
+)(BuySell);

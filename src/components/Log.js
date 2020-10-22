@@ -8,7 +8,7 @@ import Notes from './Notes';
 
 class Log extends Component {
     
-    // this.props.data
+    // this.props.data // TODO---------------USE BROKER DATA NOT LOCAL PROPS DATA
     // this.props.portfolio
 
     constructor(props){
@@ -29,8 +29,6 @@ class Log extends Component {
 
     // TODO: add feature where Show Notes Link only if there is a note
     getData(){
-        if(this.props.data === undefined) return <tr><td>must fetch first</td></tr>;
-
         return this.props.data.map( (entry, i) => {
             let notesArrow1 = entry.notes1 === '' ? '' : '⭦';
 
@@ -109,6 +107,8 @@ class Log extends Component {
     }
 
     render(){
+        if(this.props.data === undefined) return <div>No Data to show / Broker not selected</div>;
+
         return(
             <div>
                 <table>
