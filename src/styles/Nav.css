@@ -52,12 +52,12 @@
 .hamburger:hover{
     cursor: pointer;
 
-    animation: MenuAnimation 0.3s;
+    animation: MenuBtnAnimation 0.3s;
     opacity: 0.25;
     transform: scale(0.8) rotate(90deg);
 }
 
-@keyframes MenuAnimation {
+@keyframes MenuBtnAnimation {
     0%{
         opacity: 1;
         transform: scale(1) rotate(0deg);
