@@ -23,7 +23,7 @@ class Portfolio extends Component{
             currentTab: "Log"
         }
 
-        this.getLogs = this.getLogs.bind(this);
+        this.getData = this.getData.bind(this);
         this.updateCurrentTab = this.updateCurrentTab.bind(this);
     }
 
@@ -50,32 +50,19 @@ class Portfolio extends Component{
             case 'Sharsies':
                 return 'b3';
             default:
-                console.log('> Broker does not exist: ' + brokerName);
                 return null;
         }
     }
 
-    getHoldings(){
-        for(let i = 0; i < this.props.profileData.listOfProfileData.length; i++){
-            if(this.props.profileData.listOfProfileData[i].id === this.getBrokerId(this.props.portfolio)){
-                return this.props.profileData.listOfProfileData[i].data.holdings;
-            }
-            else{
-                console.log('>> Portfolio does not exist for user');
-            }
-        }
-    }
-
     // FEE function to determine which logs we want
-    getLogs(){
+    getData(typeOfData){
         for(let i = 0; i < this.props.profileData.listOfProfileData.length; i++){
             if(this.props.profileData.listOfProfileData[i].id === this.getBrokerId(this.props.portfolio)){
-                return this.props.profileData.listOfProfileData[i].data.log;
-            }
-            else{
-                console.log('>> Portfolio does not exist for user');
+                if(typeOfData === 'logs') return this.props.profileData.listOfProfileData[i].data.log;
+                else if(typeOfData === 'holdings') return this.props.profileData.listOfProfileData[i].data.holdings;
             }
         }
+        return;
     }
 
     render(){
@@ -90,8 +77,8 @@ class Portfolio extends Component{
                 <DataTable 
                 portfolio={this.props.portfolio}
                 currentTab={this.state.currentTab}
-                data={this.getLogs()}
-                holdings={this.getHoldings()}
+                logs={this.getData("logs")}
+                holdings={this.getData("holdings")}
                 />
             </div>
         );

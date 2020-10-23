@@ -3,6 +3,9 @@ import React, {Component} from 'react';
 import {HashLink as Link} from 'react-router-hash-link';
 import '../styles/DataTable.css';
 
+// Redux
+import {connect} from 'react-redux';
+
 // Components 
 import Notes from './Notes';
 
@@ -26,7 +29,7 @@ class Holdings extends Component {
         this.setState({showNotes: true, notes});
     }
 
-    getData(){
+    getRows(){
         return this.props.holdings.map( (entry, i) => {
             let notesArrow1 = entry.notes1 === '' ? '' : '⭦';
 
@@ -56,7 +59,7 @@ class Holdings extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.getData()}
+                        {this.getRows()}
                     </tbody>
                 </table>
                 
@@ -66,4 +69,11 @@ class Holdings extends Component {
     }
 }
 
-export default Holdings;
+export default connect(
+    (state) => ({
+        brokerData: state.brokerData.brokerData
+    }),
+    {
+
+    }
+)(Holdings);

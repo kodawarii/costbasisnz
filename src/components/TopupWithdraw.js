@@ -10,7 +10,7 @@ import Notes from './Notes';
 
 class TopupWithdraw extends Component{
 
-    // this.props.data
+    // this.props.logs
 
     constructor(props){
         super(props);
@@ -29,18 +29,8 @@ class TopupWithdraw extends Component{
         this.setState({showNotes: true, notes});
     }
 
-    getData(){
-        if(this.props.data === undefined) return <tr>
-                <td>Must</td>
-                <td>Fetch</td>
-                <td>First</td>
-                <td>From</td>
-                <td>The</td>
-                <td>User</td>
-                <td>ok</td>
-            </tr>
-
-        return this.props.data.map ((entry, i) => {
+    getRows(){
+        return this.props.logs.map ((entry, i) => {
             let notesArrow1 = entry.notes1 === '' ? '' : '⭦';
             let notesArrow2 = entry.notes2 === '' ? '' : '⭦';
 
@@ -115,7 +105,7 @@ class TopupWithdraw extends Component{
                     </tr>
                     </thead>
                     <tbody>
-                        {this.getData()}
+                        {this.getRows()}
                     </tbody>
                 </table>
 

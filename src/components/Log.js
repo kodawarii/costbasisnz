@@ -3,12 +3,15 @@ import React, {Component} from 'react';
 import {HashLink as Link} from 'react-router-hash-link';
 import '../styles/DataTable.css';
 
+// Redux
+import {connect} from 'react-redux';
+
 // Components 
 import Notes from './Notes';
 
 class Log extends Component {
     
-    // this.props.data // TODO---------------USE BROKER DATA NOT LOCAL PROPS DATA
+    // this.props.logs
     // this.props.portfolio
 
     constructor(props){
@@ -27,9 +30,8 @@ class Log extends Component {
         this.setState({showNotes: true, notes});
     }
 
-    // TODO: add feature where Show Notes Link only if there is a note
-    getData(){
-        return this.props.data.map( (entry, i) => {
+    getRows(){
+        return this.props.logs.map( (entry, i) => {
             let notesArrow1 = entry.notes1 === '' ? '' : '⭦';
 
             if(entry.type === "start"){
@@ -107,7 +109,7 @@ class Log extends Component {
     }
 
     render(){
-        if(this.props.data === undefined) return <div>No Data to show / Broker not selected</div>;
+        if(this.props.brokerData === undefined) return <div>No Data to show / Broker not selected</div>;
 
         return(
             <div>
@@ -123,7 +125,7 @@ class Log extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.getData()}
+                        {this.getRows()}
                     </tbody>
                 </table>
 
@@ -139,4 +141,11 @@ class Log extends Component {
     }
 }
 
-export default Log;
+export default connect(
+    (state) => ({
+        brokerData: state.brokerData.brokerData
+    }),
+    {
+
+    }
+)(Log);

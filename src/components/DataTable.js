@@ -10,7 +10,8 @@ import BuySell from './BuySell';
 class DataTable extends Component {
 
     // this.props.currentTab
-    // this.props.data // ---------------- TODO: USE REDUX BROKERDATA NOT THIS LOCAL COPY
+    // this.props.logs
+    // this.props.holdings
 
     constructor(props){
         super(props);
@@ -24,13 +25,13 @@ class DataTable extends Component {
     
         switch(this.props.currentTab){
             case "Log":
-                showTable = () => { return <Log data={this.props.data}/> }
+                showTable = () => { return <Log logs={this.props.logs}/> }
                 break;
             case "Topup / Withdraw":
-                showTable = () => { return <TopupWithdraw data={this.props.data}/> }
+                showTable = () => { return <TopupWithdraw logs={this.props.logs}/> }
                 break;
             case "Buy / Sell":
-                showTable = () => {return <BuySell data={this.props.data} />}
+                showTable = () => {return <BuySell logs={this.props.logs} />}
                 break;
             case "Holdings":
                 showTable = () => {return <Holdings holdings={this.props.holdings}/>}

@@ -10,7 +10,7 @@ import Notes from './Notes';
 
 class BuySell extends Component{
 
-    // this.props.data
+    // this.props.logs
 
     constructor(props){
         super(props);
@@ -29,8 +29,8 @@ class BuySell extends Component{
         this.setState({showNotes: true, notes});
     }
 
-    getData(){
-        return this.props.data.map ((entry, i) => {
+    getRows(){
+        return this.props.logs.map ((entry, i) => {
             let notesArrow1 = entry.notes1 === '' ? '' : '⭦';
             let notesArrow2 = entry.notes2 === '' ? '' : '⭦';
 
@@ -69,7 +69,7 @@ class BuySell extends Component{
     }
 
     render(){
-        if(this.props.data === undefined) return <div>No Data to show / Broker not selected</div>;
+        if(this.props.brokerData === undefined) return <div>No Data to show / Broker not selected</div>;
 
         return(
             <div>
@@ -93,7 +93,7 @@ class BuySell extends Component{
                     </tr>
                     </thead>
                     <tbody>
-                        {this.getData()}
+                        {this.getRows()}
                     </tbody>
                 </table>
 
