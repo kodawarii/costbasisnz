@@ -56,9 +56,9 @@ class BuySell extends Component{
                     <td>{entry.date}</td>
                     <td className={actionStringClassName}>{entry.action}</td>
                     <td className={sellActionClassName}>{entry.ticker}</td>
-                    <td className={sellActionClassName}>{entry.shares.toFixed(4)}</td>
-                    <td className={sellActionClassName}>{entry.price.toLocaleString()}</td>
-                    <td className={sellActionClassName}>{entry.total.toLocaleString()}</td>
+                    <td className={sellActionClassName}>{parseFloat(entry.shares).toFixed(4).toLocaleString()}</td>
+                    <td className={sellActionClassName}>{parseFloat(entry.price).toFixed(4).toLocaleString()}</td>
+                    <td className={sellActionClassName}>{parseFloat(entry.total).toFixed(4).toLocaleString()}</td>
                     <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes2)}> {notesArrow2} </td>
                     <td className="Edit-row">⚙</td>
                 </tr>
