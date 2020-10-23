@@ -34,7 +34,13 @@
                 
                 ],
                 "holdings": [
-                    
+                    {
+                        "ticker": "UBER",
+                        "shares": 200,
+                        "totalInvested": 500000,
+                        "portfolioPercentage": 100,
+                        "notes1": "holdings notes"
+                    }
                 ],
                 "log": [
                     {
