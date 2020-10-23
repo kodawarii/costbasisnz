@@ -64,7 +64,7 @@ class BuySell extends Component{
                 </tr>
             }
             
-            // return something
+            return;
         });
     }
 

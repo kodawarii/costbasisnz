@@ -40,7 +40,6 @@ class Portfolio extends Component{
         this.setState({currentTab: tab});
     }
 
-    // FEE function to determine which logs we want
     getData(typeOfData){
         for(let i = 0; i < this.props.profileData.listOfProfileData.length; i++){
             if(this.props.profileData.listOfProfileData[i].id === this.props.portfolioId){

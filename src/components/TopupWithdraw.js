@@ -78,7 +78,7 @@ class TopupWithdraw extends Component{
                 </tr>
             }
             
-            // return something
+            return;
         });
     }
 

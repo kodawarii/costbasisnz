@@ -114,7 +114,7 @@ class AddTopup extends Component{
             <label>
                 
                 <div className="textbox-label">Topup Amount ({currency})</div>
-                <input type="text" type="number" name="amountSent" value={this.state.amountSent} onChange={this.handleChangeAmountSent} className="AddDataTextBox"/>
+                <input type="number" name="amountSent" value={this.state.amountSent} onChange={this.handleChangeAmountSent} className="AddDataTextBox"/>
                 <br/><br/>
 
                 <div className="textbox-label">Log Screen Notes</div>
@@ -136,18 +136,18 @@ class AddTopup extends Component{
             <label>
                 
                 <div className="textbox-label">Amount sent </div>
-                <input type="text" type="number" name="amountSent" value={this.state.amountSent} onChange={this.handleChangeAmountSent} className="AddDataTextBox"/>
+                <input type="number" name="amountSent" value={this.state.amountSent} onChange={this.handleChangeAmountSent} className="AddDataTextBox"/>
                 <br/><br/>
 
                 <div className="textbox-label">Conversion Rate </div>
-                <input type="text" type="number" name="rate" value={this.state.rate} onChange={this.handleChangeConversionRate} className="AddDataTextBox"/>
+                <input type="number" name="rate" value={this.state.rate} onChange={this.handleChangeConversionRate} className="AddDataTextBox"/>
                 <br/><br/>
 
                 <button> ⭣ </button>
                 <br/><br/>
                 
                 <div className="textbox-label">Amount Recieved ({currency})</div>
-                <input type="text" type="number" name="amountLanded" value={this.state.amountLanded} onChange={this.handleChangeAmountLanded} className="AddDataTextBox"/>
+                <input type="number" name="amountLanded" value={this.state.amountLanded} onChange={this.handleChangeAmountLanded} className="AddDataTextBox"/>
                 <br/><br/>
 
                 <div className="textbox-label">Log Screen Notes</div>

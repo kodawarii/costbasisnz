@@ -97,7 +97,7 @@ class AddWithdraw extends Component{
             <label>
                 
                 <div className="textbox-label">Withdraw Amount ({this.props.brokerData.baseCurrency})</div>
-                <input type="text" type="number" name="amountSent" value={this.state.amountSent} onChange={this.handleChangeAmount} className="AddDataTextBox"/>
+                <input type="number" name="amountSent" value={this.state.amountSent} onChange={this.handleChangeAmount} className="AddDataTextBox"/>
                 <br/><br/>
 
                 <div className="textbox-label">Notes for Main Log</div>
