@@ -104,7 +104,7 @@ class AddBuySell extends Component{
                 <br/><br/>
 
                 <div className="textbox-label">Total</div>
-                <div> {this.state.total}</div>
+                <div>{this.state.total.toFixed(4)}</div>
                 <br/>
 
                 <div className="textbox-label">Notes for Main Log</div>
@@ -162,24 +162,28 @@ class AddBuySell extends Component{
             return <div className="AddBuySell AddFX Screen"> No Broker Selected </div>;
         }
 
-        return(
-            <div className="AddBuySell Screen">
-                <h4>{this.props.portfolio}</h4>
-                <div>
-                    <label>
-                        <input type="radio" value="BUY" checked={this.state.action === "BUY"} onChange={this.onValueChange}/> 
-                        BUY
-                    </label>
-                    <label>
-                        <input type="radio" value="SELL" checked={this.state.action === "SELL"} onChange={this.onValueChange}/>
-                        SELL
-                    </label>
-                </div>
-                
-                <br/>
+        let areWeBuyingOrSelling = this.state.action === 'BUY' ? " weAreBuying ":" weAreSelling ";
 
-                {this.getBuySellForm()}
-                <AddItemModal show={this.state.showModal} prompt={"Successfully Added New " + this.state.action + " event to " + this.props.portfolio} closeModal={this.closeModal}/>
+        return(
+            <div className=" AddBuySell Screen ">
+                <div className={areWeBuyingOrSelling + " "}>
+                    <h4>{this.props.portfolio}</h4>
+                    <div>
+                        <label>
+                            <input type="radio" value="BUY" checked={this.state.action === "BUY"} onChange={this.onValueChange}/> 
+                            BUY
+                        </label>
+                        <label>
+                            <input type="radio" value="SELL" checked={this.state.action === "SELL"} onChange={this.onValueChange}/>
+                            SELL
+                        </label>
+                    </div>
+                    
+                    <br/>
+
+                    {this.getBuySellForm()}
+                    <AddItemModal show={this.state.showModal} prompt={"Successfully Added New " + this.state.action + " event to " + this.props.portfolio} closeModal={this.closeModal}/>
+                </div>
             </div>
         );
     }

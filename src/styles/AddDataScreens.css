@@ -1,5 +1,5 @@
 .AddData{
-  
+  margin: 1px;
 }
 
 .textbox-label{
@@ -80,4 +80,20 @@
 
 .AddItemModal-hide{
     display: none;
+}
+
+.AddBuySell{
+    padding-top: 50px;
+}
+
+.weAreBuying{
+    padding: 12px 50px 12px 50px;
+    border: 2px solid rgba(0, 255, 0, 0.60);
+    border-radius: 20px;
+}
+
+.weAreSelling{
+    padding: 12px 50px 12px 50px;
+    border: 2px solid rgba(255, 0, 0, 0.600);
+    border-radius: 20px;
 }
