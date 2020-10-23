@@ -51,7 +51,6 @@ class Portfolio extends Component{
     }
 
     render(){
-        console.log(">> " + this.props.portfolio);
         return(
             <div className="Portfolio Screen"> 
                 <div className="BrokerName"> {this.props.portfolio} </div>
