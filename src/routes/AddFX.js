@@ -158,22 +158,24 @@ class AddFX extends Component{
 
         return(
             <div className="AddData AddFX Screen">
-                <h4>{this.props.portfolio}</h4>
-                <div>
-                    <label>
-                        <input type="radio" value="RIGHT" checked={this.state.fxDirection === "RIGHT"} onChange={this.onValueChange}/> 
-                        {this.props.brokerData.baseCurrency} to {this.props.brokerData.targetCurrency}
-                    </label>
-                    <label>
-                        <input type="radio" value="LEFT" checked={this.state.fxDirection === "LEFT"} onChange={this.onValueChange}/>
-                        {this.props.brokerData.targetCurrency} to {this.props.brokerData.baseCurrency}
-                    </label>
-                </div>
-                
-                <br/>
+                <div className="weAreFXing weAreAdding">
+                    <h4>{this.props.portfolio}</h4>
+                    <div>
+                        <label>
+                            <input type="radio" value="RIGHT" checked={this.state.fxDirection === "RIGHT"} onChange={this.onValueChange}/> 
+                            {this.props.brokerData.baseCurrency} to {this.props.brokerData.targetCurrency}
+                        </label>
+                        <label>
+                            <input type="radio" value="LEFT" checked={this.state.fxDirection === "LEFT"} onChange={this.onValueChange}/>
+                            {this.props.brokerData.targetCurrency} to {this.props.brokerData.baseCurrency}
+                        </label>
+                    </div>
+                    
+                    <br/>
 
-                {this.getFXForm()}
-                <AddItemModal show={this.state.showModal} prompt={"Successfully Added New FX Event to " + this.props.portfolio} closeModal={this.closeModal}/>
+                    {this.getFXForm()}
+                    <AddItemModal show={this.state.showModal} prompt={"Successfully Added New FX Event to " + this.props.portfolio} closeModal={this.closeModal}/>
+                </div>
             </div>
         );
     }

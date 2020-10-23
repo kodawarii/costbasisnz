@@ -4,6 +4,7 @@
 1. [done] AddWithdraw screen
 1. [done] AddFX screen
 1. [done] Buy/Sell screen
+1. Able to go back to most recent screen (need asap for quick e2e/exploratory tests)
 1. Fees Screen
 1. Dividend screen
 1. AddBuy screen

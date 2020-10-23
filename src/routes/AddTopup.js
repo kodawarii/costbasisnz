@@ -182,9 +182,11 @@ class AddTopup extends Component{
 
         return(
             <div className="AddData AddTopup Screen">
-                <h4>{this.props.portfolio}</h4>
-                {formToShow()}
-                <AddItemModal show={this.state.showModal} prompt={"Successfully Added New Topup Event to " + this.props.portfolio} closeModal={this.closeModal}/>
+                <div className="weAreToppingUp weAreAdding">
+                    <h4>{this.props.portfolio}</h4>
+                    {formToShow()}
+                    <AddItemModal show={this.state.showModal} prompt={"Successfully Added New Topup Event to " + this.props.portfolio} closeModal={this.closeModal}/>
+                </div>
             </div>
         );
     }

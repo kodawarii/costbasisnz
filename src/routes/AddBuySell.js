@@ -166,7 +166,7 @@ class AddBuySell extends Component{
 
         return(
             <div className=" AddBuySell Screen ">
-                <div className={areWeBuyingOrSelling + " "}>
+                <div className={areWeBuyingOrSelling + " weAreAdding"}>
                     <h4>{this.props.portfolio}</h4>
                     <div>
                         <label>

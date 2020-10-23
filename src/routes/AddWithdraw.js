@@ -116,9 +116,11 @@ class AddWithdraw extends Component{
     render(){
         return(
             <div className="AddData AddWithdraw Screen">
-                <h4>{this.props.portfolio}</h4>
-                {this.getWithdrawForm()}
-                <AddItemModal show={this.state.showModal} prompt={"Successfully Added New Topup Event to " + this.props.portfolio} closeModal={this.closeModal}/>
+                <div className="weAreWithdrawing weAreAdding">
+                    <h4>{this.props.portfolio}</h4>
+                    {this.getWithdrawForm()}
+                    <AddItemModal show={this.state.showModal} prompt={"Successfully Added New Topup Event to " + this.props.portfolio} closeModal={this.closeModal}/>
+                </div>
             </div>
         );
     }

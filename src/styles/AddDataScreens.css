@@ -86,14 +86,27 @@
     padding-top: 50px;
 }
 
-.weAreBuying{
+.weAreAdding{
     padding: 12px 50px 12px 50px;
-    border: 2px solid rgba(0, 255, 0, 0.60);
     border-radius: 20px;
 }
 
+.weAreToppingUp{
+    border: 2px solid rgba(255, 252, 79, 0.6);
+}
+
+.weAreWithdrawing{
+    border: 2px solid rgba(79, 249, 255, 0.6);
+}
+
+.weAreFXing{
+    border: 2px solid rgba(255, 195, 64, 0.6);
+}
+
+.weAreBuying{
+    border: 2px solid rgba(0, 255, 0, 0.60);
+}
+
 .weAreSelling{
-    padding: 12px 50px 12px 50px;
     border: 2px solid rgba(255, 0, 0, 0.600);
-    border-radius: 20px;
 }
