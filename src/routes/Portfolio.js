@@ -5,14 +5,8 @@ import '../styles/Portfolio.css';
 
 // Redux
 import {
-    //fetchLogs,
-    fetchBrokerId,
-    fetchBaseCurrency,
-    fetchTargetCurrency,
-    fetchLastKey,
-    fetchTopupStyle
+    
 } from '../actions/UserDataActions';
-
 
 // Components
 import Ribbon from '../components/Ribbon';
@@ -61,6 +55,17 @@ class Portfolio extends Component{
         }
     }
 
+    getHoldings(){
+        for(let i = 0; i < this.props.profileData.listOfProfileData.length; i++){
+            if(this.props.profileData.listOfProfileData[i].id === this.getBrokerId(this.props.portfolio)){
+                return this.props.profileData.listOfProfileData[i].data.holdings;
+            }
+            else{
+                console.log('>> Portfolio does not exist for user');
+            }
+        }
+    }
+
     // FEE function to determine which logs we want
     getLogs(){
         for(let i = 0; i < this.props.profileData.listOfProfileData.length; i++){
@@ -86,6 +91,7 @@ class Portfolio extends Component{
                 portfolio={this.props.portfolio}
                 currentTab={this.state.currentTab}
                 data={this.getLogs()}
+                holdings={this.getHoldings()}
                 />
             </div>
         );

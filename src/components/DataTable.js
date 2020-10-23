@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import '../styles/DataTable.css';
 
 // Components
+import Holdings from './Holdings';
 import Log from './Log';
 import TopupWithdraw from './TopupWithdraw';
 import BuySell from './BuySell';
@@ -30,6 +31,9 @@ class DataTable extends Component {
                 break;
             case "Buy / Sell":
                 showTable = () => {return <BuySell data={this.props.data} />}
+                break;
+            case "Holdings":
+                showTable = () => {return <Holdings holdings={this.props.holdings}/>}
                 break;
             default:
                 showTable = () => { return "Invalid Choice" }
