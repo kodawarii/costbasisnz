@@ -192,7 +192,8 @@ class AddTopup extends Component{
 
 export default connect(
     (state) => ({
-        portfolio: state.portfolioNameToShow.name,
+        portfolioId: state.brokerData.id,
+        portfolio: state.brokerData.broker,
         brokers: state.brokers.brokers,
         brokerData: state.brokerData.brokerData,
 

@@ -181,7 +181,8 @@ class AddFX extends Component{
 
 export default connect(
     (state) => ({
-        portfolio: state.portfolioNameToShow.name,
+        portfolioId: state.brokerData.id,
+        portfolio: state.brokerData.broker,
         brokerData: state.brokerData.brokerData,
 
         listOfProfileData: state.listOfProfileData

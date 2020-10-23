@@ -1,31 +1,18 @@
 import { 
-    UPDATE_PORTFOLIO_NAME_TO_SHOW,
     SWITCH_BROKER_DATA_CONTEXT,
-    UPDATE_PORTFOLIO_ID_IN_USE
 } from '../reduxtypes';
 
-export const updatePortfolioNameToShow = (portfolioNameToShow) => dispatch => { // No Need to Fetch this // Default = {} (see reducer)
-    dispatch({
-        type: UPDATE_PORTFOLIO_NAME_TO_SHOW,
-        payload: portfolioNameToShow
-    });
-}
-
-export const updatePortfolioIdInUse = (id) => dispatch => {
-    dispatch({
-        type: UPDATE_PORTFOLIO_ID_IN_USE,
-        payload: id
-    });
-}
-
-export const switchBrokerDataContext = (listOfBrokers, id) => dispatch => {
+export const switchBrokerDataContext = (listOfBrokers, broker, id) => dispatch => {
     let brokerData = {};
     for(let i = 0; i < listOfBrokers.length; i++){
         if(listOfBrokers[i].id === id) brokerData = listOfBrokers[i];
+        break;
     }
 
     dispatch({
         type: SWITCH_BROKER_DATA_CONTEXT,
-        payload: brokerData
+        brokerData: brokerData,
+        broker: broker,
+        id: id
     });
 }

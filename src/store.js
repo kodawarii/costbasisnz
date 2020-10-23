@@ -12,11 +12,8 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
     combineReducers({
         // Program Data . UI Items
-        portfolioNameToShow: portfolioContextReducer,
-        portfolioIdInUse: portfolioContextReducer,
-
         // Program Data . Broker Data
-        brokerData: brokerDataReducer,
+        brokerData: brokerDataReducer, // has your brokers, current broker context (name and id)
 
         // User Data . Log Data
         //logs: profileDataReducer, // BEE

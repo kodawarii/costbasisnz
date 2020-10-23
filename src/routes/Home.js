@@ -10,8 +10,6 @@ import {
 } from '../actions/UserDataActions';
 
 import { 
-    updatePortfolioNameToShow,
-    updatePortfolioIdInUse,
     switchBrokerDataContext
 } from '../actions/ProgramActions';
 
@@ -30,9 +28,7 @@ class Home extends Component{
     }
 
     updatePortfolioContext(brokerName, id){
-        this.props.updatePortfolioNameToShow(brokerName);
-        this.props.updatePortfolioIdInUse(id);
-        this.props.switchBrokerDataContext(this.props.brokers, id);
+        this.props.switchBrokerDataContext(this.props.brokers, brokerName, id);
     }
 
     renderBrokers(){
@@ -65,10 +61,10 @@ class Home extends Component{
 
 export default connect(
     (state) => ({ 
-        brokers: state.brokers.brokers
+        brokers: state.brokers.brokers,
     }),
     {
-        updatePortfolioNameToShow, updatePortfolioIdInUse, switchBrokerDataContext
+        switchBrokerDataContext
         // fetchBrokers
     }
 )(Home);

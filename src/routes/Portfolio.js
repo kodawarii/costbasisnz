@@ -51,6 +51,7 @@ class Portfolio extends Component{
     }
 
     render(){
+        console.log(">> " + this.props.portfolio);
         return(
             <div className="Portfolio Screen"> 
                 <div className="BrokerName"> {this.props.portfolio} </div>
@@ -72,8 +73,8 @@ class Portfolio extends Component{
 
 export default connect(
     (state) => ({ 
-        portfolioId: state.portfolioIdInUse.id,
-        portfolio: state.portfolioNameToShow.name,
+        portfolioId: state.brokerData.id,
+        portfolio: state.brokerData.broker,
         brokers: state.brokers.brokers,
         
         // BEE logs
