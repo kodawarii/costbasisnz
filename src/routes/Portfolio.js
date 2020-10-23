@@ -40,24 +40,10 @@ class Portfolio extends Component{
         this.setState({currentTab: tab});
     }
 
-    // TODO CHANGE TO BROKERDATA stuff now that we have it
-    getBrokerId(brokerName){
-        switch(brokerName){
-            case 'Interactive Brokers':
-                return 'b1';
-            case 'Hatch':
-                return 'b2';
-            case 'Sharsies':
-                return 'b3';
-            default:
-                return null;
-        }
-    }
-
     // FEE function to determine which logs we want
     getData(typeOfData){
         for(let i = 0; i < this.props.profileData.listOfProfileData.length; i++){
-            if(this.props.profileData.listOfProfileData[i].id === this.getBrokerId(this.props.portfolio)){
+            if(this.props.profileData.listOfProfileData[i].id === this.props.portfolioId){
                 if(typeOfData === 'logs') return this.props.profileData.listOfProfileData[i].data.log;
                 else if(typeOfData === 'holdings') return this.props.profileData.listOfProfileData[i].data.holdings;
             }
@@ -87,6 +73,7 @@ class Portfolio extends Component{
 
 export default connect(
     (state) => ({ 
+        portfolioId: state.portfolioIdInUse.id,
         portfolio: state.portfolioNameToShow.name,
         brokers: state.brokers.brokers,
         

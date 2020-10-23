@@ -10,7 +10,8 @@ import {
 } from '../actions/UserDataActions';
 
 import { 
-    updatePortfolioNameToShow ,
+    updatePortfolioNameToShow,
+    updatePortfolioIdInUse,
     switchBrokerDataContext
 } from '../actions/ProgramActions';
 
@@ -30,6 +31,7 @@ class Home extends Component{
 
     updatePortfolioContext(brokerName, id){
         this.props.updatePortfolioNameToShow(brokerName);
+        this.props.updatePortfolioIdInUse(id);
         this.props.switchBrokerDataContext(this.props.brokers, id);
     }
 
@@ -66,7 +68,7 @@ export default connect(
         brokers: state.brokers.brokers
     }),
     {
-        updatePortfolioNameToShow, switchBrokerDataContext
+        updatePortfolioNameToShow, updatePortfolioIdInUse, switchBrokerDataContext
         // fetchBrokers
     }
 )(Home);

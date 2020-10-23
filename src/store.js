@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 
 // Reducers
 import { brokersReducer, profileDataReducer } from './reducers/UserDataReducers';
-import { portfolioNameToShowReducer, brokerDataReducer } from './reducers/ProgramReducers';
+import { portfolioContextReducer, brokerDataReducer } from './reducers/ProgramReducers';
 
 const initialState = {};
 
@@ -12,7 +12,8 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
     combineReducers({
         // Program Data . UI Items
-        portfolioNameToShow: portfolioNameToShowReducer,
+        portfolioNameToShow: portfolioContextReducer,
+        portfolioIdInUse: portfolioContextReducer,
 
         // Program Data . Broker Data
         brokerData: brokerDataReducer,
