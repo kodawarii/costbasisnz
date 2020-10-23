@@ -3,8 +3,8 @@
 1. [done] Clean up Topup/Withdraw rendering to show either native / convert values
 1. [done] AddWithdraw screen
 1. [done] AddFX screen
-1. Buy/Sell screen
-1. Feed Screen
+1. [done] Buy/Sell screen
+1. Fees Screen
 1. Dividend screen
 1. AddBuy screen
 1. AddSell screen
@@ -19,7 +19,7 @@
 1. User Authentication
 1. Form Validation - empty, nums, special characters
 1. Edit Row
-1.
+1. Export Comprehensive Excel Report
 1.
 1.
 1.
