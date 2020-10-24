@@ -35,9 +35,14 @@ class Holdings extends Component {
 
             return <tr key={i}>
                 <td>{entry.ticker}</td>
-                <td>{entry.shares}</td>
-                <td>{entry.totalInvested}</td>
-                <td>{entry.portfolioPercentage}</td>
+                <td>//DIST</td>
+                <td>{entry.shares.toFixed(4)}</td>
+                <td>{entry.totalInvested.toFixed(4)}</td>
+                <td>{entry.currentPrice.toFixed(4)}</td>
+                <td>{(entry.shares * entry.currentPrice).toFixed(4)}</td>
+                <td>{(entry.shares * entry.currentPrice - entry.totalInvested).toFixed(4)}</td>
+                <td>{(((entry.shares * entry.currentPrice - entry.totalInvested)/entry.totalInvested)*100).toFixed(2)}%</td>
+                <td>//GAIN%</td>
                 <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> {notesArrow1} </td>
             </tr>
         });
@@ -52,9 +57,14 @@ class Holdings extends Component {
                     <thead>
                         <tr>
                             <th>Ticker Symbol</th>
+                            <th>% Distribution</th>
                             <th>Shares</th>
                             <th>Total Invested</th>
-                            <th>% of Portfolio</th>
+                            <th>Curr Price</th>
+                            <th>Total Book</th>
+                            <th>$ G/L</th>
+                            <th>% G/L</th>
+                            <th>% of Gains</th>
                             <th>Notes</th>
                         </tr>
                     </thead>
