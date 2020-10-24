@@ -31,6 +31,10 @@ class Holdings extends Component {
 
     getRows(){
         return this.props.holdings.map( (entry, i) => {
+            let totalBookValue = (entry.shares * entry.currentPrice).toFixed(4);
+            let totalGainsDollars = (totalBookValue - entry.totalInvested).toFixed(4);
+            let totalGainsPercent = ((totalGainsDollars/entry.totalInvested)*100).toFixed(2);
+
             let notesArrow1 = entry.notes1 === '' ? '' : '⭦';
 
             return <tr key={i}>
@@ -39,9 +43,9 @@ class Holdings extends Component {
                 <td>{entry.shares.toFixed(4)}</td>
                 <td>{entry.totalInvested.toFixed(4)}</td>
                 <td>{entry.currentPrice.toFixed(4)}</td>
-                <td>{(entry.shares * entry.currentPrice).toFixed(4)}</td>
-                <td>{(entry.shares * entry.currentPrice - entry.totalInvested).toFixed(4)}</td>
-                <td>{(((entry.shares * entry.currentPrice - entry.totalInvested)/entry.totalInvested)*100).toFixed(2)}%</td>
+                <td>{totalBookValue}</td>
+                <td>{totalGainsDollars}</td>
+                <td>{totalGainsPercent}%</td>
                 <td>//GAIN%</td>
                 <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> {notesArrow1} </td>
             </tr>

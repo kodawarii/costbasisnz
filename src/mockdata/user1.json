@@ -36,10 +36,24 @@
                 "holdings": [
                     {
                         "ticker": "UBER",
-                        "shares": 100,
-                        "totalInvested": 500,
-                        "currentPrice": 6,
+                        "shares": 10,
+                        "totalInvested": 280,
+                        "currentPrice": 32,
                         "notes1": "holdings notes"
+                    },
+                    {
+                        "ticker": "TSLA",
+                        "shares": 23,
+                        "totalInvested": 9200,
+                        "currentPrice": 420,
+                        "notes1": "tsla note"
+                    },
+                    {
+                        "ticker": "FB",
+                        "shares": 55,
+                        "totalInvested": 9900,
+                        "currentPrice": 270,
+                        "notes1": "fb note"
                     }
                 ],
                 "log": [
