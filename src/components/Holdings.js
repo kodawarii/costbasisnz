@@ -53,6 +53,7 @@ class Holdings extends Component {
 
         return(
             <div>
+                <h4>Current Holdings Summary</h4>
                 <table>
                     <thead>
                         <tr>
