@@ -29,6 +29,11 @@ class BuySell extends Component{
         this.setState({showNotes: true, notes});
     }
 
+    // Notes
+    // foreach (stock in holdings)
+    //      foreach (buy for that stock)
+    //      foreach (sell for that stock)
+    // <empty tr/>
     getRows(){
         return this.props.logs.map ((entry, i) => {
             let notesArrow1 = entry.notes1 === '' ? '' : '⭦';
