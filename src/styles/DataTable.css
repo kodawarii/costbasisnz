@@ -30,6 +30,12 @@ table tr:hover{
     color: rgb(116, 255, 162);
 }
 
+.holdings-cash-row{
+    font-weight: bold;
+    color: rgba(255, 205, 129, 0.85);
+    background-color: rgba(17, 0, 29, 0.712);
+}
+
 /* For Mobile */
 @media only screen and (max-width: 768px) {
     tbody td{

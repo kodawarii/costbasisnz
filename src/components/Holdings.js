@@ -75,7 +75,7 @@ class Holdings extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="holdings-row">
+                        <tr className="holdings-row holdings-cash-row">
                             <td> AUD Bank</td>
                             <td>-</td>
                             <td>-</td>
@@ -90,7 +90,7 @@ class Holdings extends Component {
                         
                         {this.getRows()}
 
-                        <tr className="holdings-row">
+                        <tr className="holdings-row holdings-cash-row">
                             <td> USD Cash </td>
                             <td className="holdings-distribution"><span className="holdings-distribution-wrapper">15%</span></td>
                             <td>-</td>
@@ -103,7 +103,7 @@ class Holdings extends Component {
                             <td>-</td>
                         </tr>
 
-                        <tr className="holdings-row">
+                        <tr className="holdings-row holdings-cash-row">
                             <td> AUD Cash </td>
                             <td className="holdings-distribution"><span className="holdings-distribution-wrapper">15%</span></td>
                             <td>-</td>
