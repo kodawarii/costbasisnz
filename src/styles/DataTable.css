@@ -20,40 +20,6 @@ table tr:hover{
     background-color: rgb(32, 32, 32);
 }
 
-.holdings-table-headers th{
-    font-weight: bold;
-    font-size: 10px;
-    background-color: rgb(32, 32, 32);
-}
-
-.holdings-distribution-wrapper{
-    padding: 0 10px 0 10px;
-    background-color: rgb(56, 56, 56);
-    border-radius: 8px;
-}
-
-.holdings-gains-dollars{
-    color: rgb(116, 255, 162);
-}
-
-.holdings-percentOfGains-wrapper{
-    padding: 0 10px 0 10px;
-    background-color: rgba(116, 255, 162, 0.692);
-    border-radius: 8px;
-    color: rgb(255, 255, 255);
-}
-
-.holdings-percentOfLosses-wrapper{
-    padding: 0 8px 0 8px;
-    background-color: rgba(255, 116, 116, 0.692);
-    border-radius: 8px;
-    color: rgb(255, 255, 255);
-}
-
-.holdings-final-row td{
-    padding: 12px;
-    font-weight: bold;
-}
 
 /* For Mobile */
 @media only screen and (max-width: 768px) {
@@ -62,8 +28,8 @@ table tr:hover{
         border-bottom: 1px solid rgb(30, 30, 30);
     }
 
-    .holdings-row td{
-        padding: 8px;
+    .holdings-table-headers th{
+        font-size: 10px;
     }
 }
 
@@ -76,6 +42,41 @@ table tr:hover{
     
     .holdings-row td{
         padding: 12px;
+    }
+
+    .holdings-table-headers th{
+        font-weight: bold;
+        font-size: 10px;
+        background-color: rgb(32, 32, 32);
+    }
+    
+    .holdings-distribution-wrapper{
+        padding: 0 10px 0 10px;
+        background-color: rgb(56, 56, 56);
+        border-radius: 8px;
+    }
+    
+    .holdings-gains-dollars{
+        color: rgb(116, 255, 162);
+    }
+    
+    .holdings-percentOfGains-wrapper{
+        padding: 0 10px 0 10px;
+        background-color: rgba(116, 255, 162, 0.692);
+        border-radius: 8px;
+        color: rgb(255, 255, 255);
+    }
+    
+    .holdings-percentOfLosses-wrapper{
+        padding: 0 8px 0 8px;
+        background-color: rgba(255, 116, 116, 0.692);
+        border-radius: 8px;
+        color: rgb(255, 255, 255);
+    }
+    
+    .holdings-final-row td{
+        padding: 12px;
+        font-weight: bold;
     }
 }
 
