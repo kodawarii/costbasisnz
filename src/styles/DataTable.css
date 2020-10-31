@@ -94,6 +94,7 @@ table tr:hover{
     }
     
     .holdings-row td{
+        font-size: 15px;
         padding: 12px;
     }
 
