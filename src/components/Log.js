@@ -110,6 +110,7 @@ class Log extends Component {
 
     render(){
         if(this.props.brokerData === undefined) return <div>No Data to show / Broker not selected</div>;
+        if(this.props.logs === undefined) return <div>No Data to show / Broker not selected</div>;
 
         return(
             <div>
