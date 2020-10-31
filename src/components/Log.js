@@ -47,17 +47,29 @@ class Log extends Component {
                     <td className="Edit-row">⚙</td>
                 </tr>
             }
-            else if(entry.type === "reg"){
-                let actionStringClassName = " "; // TODO: REFACTOR ACROSS ALL SCREENS
+            else if(entry.type === "reg"){ // TODO: make functions for specialzed styles instead of c+p code
+
+
+                let actionStringClassName = " "; // TODO: REFACTOR ALL CSS CLASSNAMES ACROSS ALL SCREENS
+                // CONSIDER USING SASS
 
                 if(entry.action.includes("Topup")){
                     actionStringClassName = " Topup ";
                 }
-                else if(entry.action.includes("BUY")){
-                    actionStringClassName = " Buy ";
-                }
-                else if(entry.action.includes("SELL")){
-                    actionStringClassName = " Sell ";
+                else if(entry.action.includes("BUY") || // Specialized styling for BUY or SELL
+                entry.action.includes("SELL")){
+                    return <tr key={i} className={_CLASSNAME_DATAROW}>
+                        <td>{entry.pkey}</td>
+                        <td>{entry.date}</td>
+                        
+                        <td className={entry.action.includes("BUY") ? "Buy-outer":"Sell-outer"}>
+                            <span className={entry.action.includes("BUY") ? "Buy":"Sell"}>{entry.action}</span>
+                        </td>
+                        
+                        <td>{entry.ticker}</td>
+                        <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> {notesArrow1} </td>
+                        <td className="Edit-row">⚙</td>
+                    </tr>
                 }
                 else if(entry.action.includes("Withdraw")){
                     actionStringClassName = " Withdraw ";
@@ -119,13 +131,13 @@ class Log extends Component {
             <div>
                 <table className="log-table">
                     <thead>
-                        <tr>
-                            <th>Ref</th>
-                            <th>Date</th>
-                            <th>Action</th>
-                            <th>Symbol</th>
-                            <th>Notes</th>
-                            <th className="Edit-row">Edit</th>
+                        <tr className="table-headers">
+                            <th>REF</th>
+                            <th>DATE</th>
+                            <th>ACTION</th>
+                            <th>TICKER</th>
+                            <th>NOTES</th>
+                            <th className="Edit-row">EDIT</th>
                         </tr>
                     </thead>
                     <tbody>

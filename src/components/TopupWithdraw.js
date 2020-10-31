@@ -96,15 +96,15 @@ class TopupWithdraw extends Component{
                 </div>
                 <table className="log-table">
                     <thead>
-                    <tr>
-                        <th>Ref</th>
-                        <th>Date</th>
-                        <th>Action</th>
+                    <tr className="table-headers">
+                        <th>REF</th>
+                        <th>DATE</th>
+                        <th>ACTION</th>
                         <th>{this.props.brokerData.baseCurrency}</th>
-                        <th>Rate</th>
+                        <th>RATE</th>
                         <th>{this.props.brokerData.targetCurrency}</th>
-                        <th>Notes</th>
-                        <th className="Edit-row">Edit</th>
+                        <th>NOTES</th>
+                        <th className="Edit-row">EDIT</th>
                     </tr>
                     </thead>
                     <tbody>

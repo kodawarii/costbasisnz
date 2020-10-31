@@ -44,8 +44,8 @@ class Holdings extends Component {
                 <td>{entry.totalInvested.toFixed(0)}</td>
                 <td>{entry.currentPrice.toFixed(2)}</td>
                 <td>{totalCurrValue}</td>
-                <td className="holdings-gains-dollars">+ {totalGainsDollars}</td>
-                <td className="holdings-percentOfGains"><span className="holdings-percentOfGains-wrapper"><b>{totalGainsPercent}%</b></span></td>
+                <td className="gains-dollars">+ {totalGainsDollars}</td>
+                <td className="percentOfGains"><span className="percentOfGains-wrapper"><b>{totalGainsPercent}%</b></span></td>
                 <td>12.54%</td>
                 <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> {notesArrow1} </td>
             </tr>
@@ -61,7 +61,7 @@ class Holdings extends Component {
                 <h4>Portfolio</h4>
                 <table>
                     <thead>
-                        <tr className="holdings-table-headers">
+                        <tr className="table-headers">
                             <th>TICKER ⯅</th>
                             <th>% DISTRIBUTION ⯆</th>
                             <th>POSITION ⯆</th>
@@ -124,7 +124,7 @@ class Holdings extends Component {
                             <td></td>
                             <td>34,000</td>
                             <td>+ 14,000</td>
-                            <td className="holdings-percentOfLosses"><span className="holdings-percentOfLosses-wrapper">- 3.66%</span></td>
+                            <td className="percentOfLosses"><span className="percentOfLosses-wrapper">- 3.66%</span></td>
                             <td></td>
                             <td></td>
                         </tr>

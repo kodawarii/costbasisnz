@@ -114,6 +114,32 @@
                     {
                         "type": "reg",
                         "pkey": 5,
+                        "date": "20-02-05",
+                        "action": "BUY",
+                        "ticker": "TSLA",
+                        "notes1": "",
+
+                        "shares": 12,
+                        "price": 267,
+                        "total": 5675,
+                        "notes2": ""
+                    },
+                    {
+                        "type": "reg",
+                        "pkey": 7,
+                        "date": "20-02-06",
+                        "action": "BUY",
+                        "ticker": "TSLA",
+                        "notes1": "",
+
+                        "shares": 8,
+                        "price": 300,
+                        "total": 2400,
+                        "notes2": ""
+                    },
+                    {
+                        "type": "reg",
+                        "pkey": 5,
                         "date": "20-02-04",
                         "action": "SELL",
                         "ticker": "TSLA",

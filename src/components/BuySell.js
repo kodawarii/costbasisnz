@@ -33,6 +33,7 @@ class BuySell extends Component{
     // foreach (stock in holdings)
     //      foreach (buy in logs)
     //      foreach (sell in logs)
+    //    Cost Basis Info: << Add this as a <td> element
     //      Show Average Price
     //      Show total Invested
     // <empty tr/>
@@ -51,24 +52,26 @@ class BuySell extends Component{
             else if(entry.action.includes('BUY') ||
             entry.action.includes('SELL')){ // TODO: KEEP CONSTANTS AND SCHEMA AS CASE SENSITIVE
                 let actionStringClassName = " "; // TODO: REFACTOR ACROSS ALL SCREENS
-                let sellActionClassName = " ";
 
                 if(entry.action.includes("BUY")){
-                    actionStringClassName = " Buy ";
+                    actionStringClassName = "Buy";
                 }
                 else if(entry.action.includes("SELL")){
-                    actionStringClassName = " Sell ";
-                    sellActionClassName = " Sell ";
+                    actionStringClassName = "Sell";
                 }
             
                 return <tr key={i} className={_CLASSNAME_DATAROW}>
                     <td>{entry.pkey}</td>
                     <td>{entry.date}</td>
-                    <td className={actionStringClassName}>{entry.action}</td>
-                    <td className={sellActionClassName}>{entry.ticker}</td>
-                    <td className={sellActionClassName}>{parseFloat(entry.shares).toFixed(4).toLocaleString()}</td>
-                    <td className={sellActionClassName}>{parseFloat(entry.price).toFixed(4).toLocaleString()}</td>
-                    <td className={sellActionClassName}>{parseFloat(entry.total).toFixed(4).toLocaleString()}</td>
+                    <td className={actionStringClassName + "-outer"}><span className={actionStringClassName}>{entry.action}</span></td>
+                    <td>{entry.ticker}</td>
+                    <td>{parseFloat(entry.shares).toFixed(4).toLocaleString()}</td>
+                    <td>{parseFloat(entry.price).toFixed(4).toLocaleString()}</td>
+                    <td>{parseFloat(entry.total).toFixed(4).toLocaleString()}</td>
+                    <td>899.45</td>
+                    <td>2,450.33</td>
+                    <td className="gains-dollars"><span className="">+ 55.67</span></td>
+                    <td className="percentOfLosses"><span className="percentOfLosses-wrapper">- 19.20%</span></td>
                     <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes2)}> {notesArrow2} </td>
                     <td className="Edit-row">⚙</td>
                 </tr>
@@ -90,16 +93,20 @@ class BuySell extends Component{
                 </div>
                 <table className="log-table">
                     <thead>
-                        <tr>
-                            <th>Ref</th>
-                            <th>Date</th>
-                            <th>Action</th>
-                            <th>Ticker</th>
-                            <th>Shares</th>
-                            <th>Price</th>
-                            <th>Total Price</th>
-                            <th>Notes</th>
-                            <th className="Edit-row">Edit</th>
+                        <tr className="table-headers">
+                            <th>REF</th>
+                            <th>DATE</th>
+                            <th>ACTION</th>
+                            <th>TICKER</th>
+                            <th>SHARES</th>
+                            <th>PRICE</th>
+                            <th>TOT PRICE</th>
+                            <th>CURR PRICE</th>
+                            <th>MKT VAL</th>
+                            <th>$ P/L</th>
+                            <th>% P/L</th>
+                            <th>NOTES</th>
+                            <th className="Edit-row">EDIT</th>
                         </tr>
                     </thead>
                     <tbody>
