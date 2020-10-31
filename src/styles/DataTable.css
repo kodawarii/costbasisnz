@@ -37,14 +37,13 @@ table tr:hover{
     }
 
     .holdings-table-headers th{
-        padding: 0 12px 0 12px;
         font-weight: bold;
         font-size: 10px;
-        background-color: rgba(32, 32, 32, 0.7);
+        transform: scale(0.6);
     }
 
-    .holdings-firstCol{
-        position: absolute;
+    .holdings-distribution{
+        transform: scale(0.7);
     }
 
     .holdings-distribution-wrapper{
@@ -52,12 +51,20 @@ table tr:hover{
         background-color: rgb(56, 56, 56);
         border-radius: 8px;
     }
+    
+    .holdings-percentOfGains{
+        transform: scale(0.7);
+    }
 
     .holdings-percentOfGains-wrapper{
         padding: 0 8px 0 8px;
         background-color: rgba(116, 255, 162, 0.692);
         border-radius: 8px;
         color: rgb(255, 255, 255);
+    }
+
+    .holdings-percentOfLosses{
+        transform: scale(0.7);
     }
 
     .holdings-percentOfLosses-wrapper{

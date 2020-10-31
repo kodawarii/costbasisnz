@@ -39,13 +39,13 @@ class Holdings extends Component {
 
             return <tr key={i} className="holdings-row">
                 <td className="holdings-firstCol">{entry.ticker}</td>
-                <td><span className="holdings-distribution-wrapper">22%</span></td>
+                <td className="holdings-distribution"><span className="holdings-distribution-wrapper">22%</span></td>
                 <td><b>{entry.shares.toFixed(0)}</b></td>
                 <td>{entry.totalInvested.toFixed(0)}</td>
                 <td>{entry.currentPrice.toFixed(2)}</td>
                 <td>{totalCurrValue}</td>
                 <td className="holdings-gains-dollars">+ {totalGainsDollars}</td>
-                <td><span className="holdings-percentOfGains-wrapper"><b>{totalGainsPercent}%</b></span></td>
+                <td className="holdings-percentOfGains"><span className="holdings-percentOfGains-wrapper"><b>{totalGainsPercent}%</b></span></td>
                 <td>12.54%</td>
                 <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes1)}> {notesArrow1} </td>
             </tr>
@@ -61,7 +61,7 @@ class Holdings extends Component {
                 <table>
                     <thead>
                         <tr className="holdings-table-headers">
-                            <th className="holdings-firstCol">TICKER ⯅</th>
+                            <th>TICKER ⯅</th>
                             <th>% DISTRIBUTION ⯆</th>
                             <th>POSITION ⯆</th>
                             <th>INVESTED ⯆</th>
@@ -86,7 +86,7 @@ class Holdings extends Component {
                             <td></td>
                             <td>34,000</td>
                             <td>+ 14,000</td>
-                            <td><span className="holdings-percentOfLosses-wrapper">- 3.66%</span></td>
+                            <td className="holdings-percentOfLosses"><span className="holdings-percentOfLosses-wrapper">- 3.66%</span></td>
                             <td></td>
                             <td></td>
                         </tr>
