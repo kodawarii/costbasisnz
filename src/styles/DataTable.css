@@ -36,6 +36,10 @@ table tr:hover{
         font-size: 10px;
     }
 
+    .holdings-table-headers{
+        background-color: rgba(32, 32, 32, 0.699);
+    }
+
     .holdings-table-headers th{
         font-weight: bold;
         font-size: 10px;
