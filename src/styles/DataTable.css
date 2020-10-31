@@ -6,14 +6,18 @@
 table{
     border-collapse: collapse;
     margin: 0 auto; /* Align table within a div */
+
+    overflow-x: scroll
 }
 
 table th{
     white-space: nowrap;
+    border-bottom: 1px solid rgb(30, 30, 30);
     color: rgb(172, 172, 172);
 }
 
 tbody td{
+    white-space: nowrap;
     border-bottom: 1px solid rgb(30, 30, 30);
 }
 
@@ -37,6 +41,10 @@ table tr:hover{
         font-weight: bold;
         font-size: 10px;
         background-color: rgba(32, 32, 32, 0.7);
+    }
+
+    .holdings-firstCol{
+        position: absolute;
     }
 
     .holdings-distribution-wrapper{

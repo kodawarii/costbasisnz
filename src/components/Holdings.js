@@ -38,7 +38,7 @@ class Holdings extends Component {
             let notesArrow1 = entry.notes1 === '' ? '' : '⭦';
 
             return <tr key={i} className="holdings-row">
-                <td>{entry.ticker}</td>
+                <td className="holdings-firstCol">{entry.ticker}</td>
                 <td><span className="holdings-distribution-wrapper">22%</span></td>
                 <td><b>{entry.shares.toFixed(0)}</b></td>
                 <td>{entry.totalInvested.toFixed(0)}</td>
@@ -61,7 +61,7 @@ class Holdings extends Component {
                 <table>
                     <thead>
                         <tr className="holdings-table-headers">
-                            <th className="test">TICKER ⯅</th>
+                            <th className="holdings-firstCol">TICKER ⯅</th>
                             <th>% DISTRIBUTION ⯆</th>
                             <th>POSITION ⯆</th>
                             <th>INVESTED ⯆</th>
