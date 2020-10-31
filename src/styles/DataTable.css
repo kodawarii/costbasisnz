@@ -82,11 +82,20 @@ table tr:hover{
         font-weight: bold;
     }
 
+    /*
+    .log-row td{
+        padding: 0 12px 0 12px;
+    }
+
     .topupwithdraw-row td{
         padding: 0 12px 0 12px;
     }
 
     .buysell-row td{
+        padding: 0 12px 0 12px;
+    }
+    */
+    .dataTable-row td{
         padding: 0 12px 0 12px;
     }
 }

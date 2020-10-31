@@ -91,7 +91,7 @@ class Log extends Component {
                 </tr>
             }
             else if(entry.type === "end2"){
-                return <tr key={i}>
+                return <tr key={i} className="dataTable-row log-row">
                     <td>{entry.pkey}</td>
                     <td></td>
                     <td><b>SOLD</b></td>
