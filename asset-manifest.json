@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/costbasisnz/static/css/main.56501d5c.chunk.css",
-    "main.js": "/costbasisnz/static/js/main.e90cdffc.chunk.js",
-    "main.js.map": "/costbasisnz/static/js/main.e90cdffc.chunk.js.map",
+    "main.css": "/costbasisnz/static/css/main.aef854ba.chunk.css",
+    "main.js": "/costbasisnz/static/js/main.17769716.chunk.js",
+    "main.js.map": "/costbasisnz/static/js/main.17769716.chunk.js.map",
     "runtime-main.js": "/costbasisnz/static/js/runtime-main.eb054fe2.js",
     "runtime-main.js.map": "/costbasisnz/static/js/runtime-main.eb054fe2.js.map",
     "static/js/2.22061ea5.chunk.js": "/costbasisnz/static/js/2.22061ea5.chunk.js",
     "static/js/2.22061ea5.chunk.js.map": "/costbasisnz/static/js/2.22061ea5.chunk.js.map",
     "index.html": "/costbasisnz/index.html",
-    "precache-manifest.260ab3a5503bbc29329446b85f8a8c50.js": "/costbasisnz/precache-manifest.260ab3a5503bbc29329446b85f8a8c50.js",
+    "precache-manifest.a44e8a86c51a86e3f4e2272e78906f70.js": "/costbasisnz/precache-manifest.a44e8a86c51a86e3f4e2272e78906f70.js",
     "service-worker.js": "/costbasisnz/service-worker.js",
-    "static/css/main.56501d5c.chunk.css.map": "/costbasisnz/static/css/main.56501d5c.chunk.css.map",
+    "static/css/main.aef854ba.chunk.css.map": "/costbasisnz/static/css/main.aef854ba.chunk.css.map",
     "static/js/2.22061ea5.chunk.js.LICENSE.txt": "/costbasisnz/static/js/2.22061ea5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.eb054fe2.js",
     "static/js/2.22061ea5.chunk.js",
-    "static/css/main.56501d5c.chunk.css",
-    "static/js/main.e90cdffc.chunk.js"
+    "static/css/main.aef854ba.chunk.css",
+    "static/js/main.17769716.chunk.js"
   ]
 }
