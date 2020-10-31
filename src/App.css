@@ -60,3 +60,17 @@ a{
   border: 1px solid rgb(255, 129, 129);
   color: rgb(255, 129, 129);
 }
+
+::-webkit-scrollbar {
+  width: 1px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(36, 36, 36);
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(75, 75, 75);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 129, 129, 0.45);
+}
