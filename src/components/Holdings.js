@@ -55,9 +55,10 @@ class Holdings extends Component {
     render(){
         if(this.props.holdings === undefined) return <div>No Holdings to show / Broker not selected</div>;
 
+        // TODO: Paramertize classNames - redux store (for dynamic capabilities)?
         return(
             <div>
-                <h4>Current Holdings Summary</h4>
+                <h4>Portfolio</h4>
                 <table>
                     <thead>
                         <tr className="holdings-table-headers">
@@ -74,10 +75,47 @@ class Holdings extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.getRows()}
-                        <tr>
-
+                        <tr className="holdings-row">
+                            <td> AUD Bank</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>2,000</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                         </tr>
+                        
+                        {this.getRows()}
+
+                        <tr className="holdings-row">
+                            <td> USD Cash </td>
+                            <td className="holdings-distribution"><span className="holdings-distribution-wrapper">15%</span></td>
+                            <td>-</td>
+                            <td>3,450</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+
+                        <tr className="holdings-row">
+                            <td> AUD Cash </td>
+                            <td className="holdings-distribution"><span className="holdings-distribution-wrapper">15%</span></td>
+                            <td>-</td>
+                            <td>2,332</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        
                         <tr className="holdings-final-row">
                             <td>Totals</td>
                             <td></td>

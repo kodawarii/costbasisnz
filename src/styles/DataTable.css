@@ -166,7 +166,7 @@ table tr:hover{
 .OpenNotes:hover{
     cursor: pointer;
     color: white;
-    border: 1px solid rgb(255, 36, 102);
+    border-right: 1px solid rgba(255, 36, 102);
 }
 
 .AddLogBtn-wrapper{
