@@ -30,6 +30,9 @@ class TopupWithdraw extends Component{
     }
 
     getRows(){
+        // TODO: have config file, setState in componentDidMount for these class names
+        let _CLASSNAME_DATAROW="topupwithdraw-row";
+
         return this.props.logs.map ((entry, i) => {
             let notesArrow1 = entry.notes1 === '' ? '' : '⭦';
             let notesArrow2 = entry.notes2 === '' ? '' : '⭦';
@@ -39,7 +42,7 @@ class TopupWithdraw extends Component{
             }
 
             else if(entry.type === "start"){ // TODO: REFACTOR START ROWS
-                return <tr key={i}>
+                return <tr key={i} className={_CLASSNAME_DATAROW}>
                     <td>{entry.pkey}</td>
                     <td><b>{entry.period}</b></td>
                     <td></td>
@@ -66,7 +69,7 @@ class TopupWithdraw extends Component{
                     actionStringClassName = " FX ";
                 }
             
-                return <tr key={i} className="dataTable-row topupwithdraw-row">
+                return <tr key={i} className={_CLASSNAME_DATAROW}>
                     <td>{entry.pkey}</td>
                     <td>{entry.date}</td>
                     <td className={actionStringClassName}>{entry.action}</td>
@@ -91,11 +94,11 @@ class TopupWithdraw extends Component{
                     <p>Total {this.props.brokerData.baseCurrency}: </p>
                     <p>Total {this.props.brokerData.targetCurrency}: </p>
                 </div>
-                <table>
+                <table className="log-table">
                     <thead>
                     <tr>
                         <th>Ref</th>
-                        <th className="Date-topup-withdraw">Date</th>
+                        <th>Date</th>
                         <th>Action</th>
                         <th>{this.props.brokerData.baseCurrency}</th>
                         <th>Rate</th>

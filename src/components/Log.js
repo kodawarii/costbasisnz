@@ -31,11 +31,14 @@ class Log extends Component {
     }
 
     getRows(){
+        // TODO: have config file, setState in componentDidMount for these class names
+        let _CLASSNAME_DATAROW="log-row";
+
         return this.props.logs.map( (entry, i) => {
             let notesArrow1 = entry.notes1 === '' ? '' : '⭦';
 
             if(entry.type === "start"){
-                return <tr key={i}>
+                return <tr key={i} className={_CLASSNAME_DATAROW}>
                     <td>{entry.pkey}</td>
                     <td><b>{entry.period}</b></td>
                     <td></td>
@@ -69,7 +72,7 @@ class Log extends Component {
                     actionStringClassName = " FX ";
                 }
 
-                return <tr key={i}>
+                return <tr key={i} className={_CLASSNAME_DATAROW}>
                     <td>{entry.pkey}</td>
                     <td>{entry.date}</td>
                     
@@ -81,7 +84,7 @@ class Log extends Component {
                 </tr>
             }
             else if(entry.type === "end1"){
-                return <tr key={i}>
+                return <tr key={i} className={_CLASSNAME_DATAROW}>
                     <td>{entry.pkey}</td>
                     <td></td>
                     <td><b>BOUGHT</b></td>
@@ -91,7 +94,7 @@ class Log extends Component {
                 </tr>
             }
             else if(entry.type === "end2"){
-                return <tr key={i} className="dataTable-row log-row">
+                return <tr key={i} className={_CLASSNAME_DATAROW}>
                     <td>{entry.pkey}</td>
                     <td></td>
                     <td><b>SOLD</b></td>
@@ -114,7 +117,7 @@ class Log extends Component {
 
         return(
             <div>
-                <table>
+                <table className="log-table">
                     <thead>
                         <tr>
                             <th>Ref</th>

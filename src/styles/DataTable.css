@@ -36,6 +36,10 @@ table tr:hover{
     background-color: rgba(17, 0, 29, 0.712);
 }
 
+.log-table td{
+    text-align: left;
+}
+
 /* For Mobile */
 @media only screen and (max-width: 768px) {
     tbody td{
@@ -92,22 +96,18 @@ table tr:hover{
         font-weight: bold;
     }
 
-    /*
     .log-row td{
-        padding: 0 12px 0 12px;
+        padding: 0 10px 0 10px;
     }
 
     .topupwithdraw-row td{
-        padding: 0 12px 0 12px;
+        padding: 0 8px 0 8px;
     }
 
     .buysell-row td{
-        padding: 0 12px 0 12px;
+        padding: 0 10px 0 10px;
     }
-    */
-    .dataTable-row td{
-        padding: 0 12px 0 12px;
-    }
+    
 }
 
 /* For Desktop */
@@ -152,11 +152,6 @@ table tr:hover{
         padding: 12px;
         font-weight: bold;
     }
-}
-
-.Date-topup-withdraw{
-    /* color: lime; */
-    padding: 0 30px 0 30px; /* Very hacky */
 }
 
 .Topup{

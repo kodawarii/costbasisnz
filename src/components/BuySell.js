@@ -31,10 +31,15 @@ class BuySell extends Component{
 
     // Notes
     // foreach (stock in holdings)
-    //      foreach (buy for that stock)
-    //      foreach (sell for that stock)
+    //      foreach (buy in logs)
+    //      foreach (sell in logs)
+    //      Show Average Price
+    //      Show total Invested
     // <empty tr/>
     getRows(){
+        // TODO: have config file, setState in componentDidMount for these class names
+        let _CLASSNAME_DATAROW="buysell-row";
+
         return this.props.logs.map ((entry, i) => {
             let notesArrow1 = entry.notes1 === '' ? '' : '⭦';
             let notesArrow2 = entry.notes2 === '' ? '' : '⭦';
@@ -56,7 +61,7 @@ class BuySell extends Component{
                     sellActionClassName = " Sell ";
                 }
             
-                return <tr key={i} className="dataTable-row buysell-row">
+                return <tr key={i} className={_CLASSNAME_DATAROW}>
                     <td>{entry.pkey}</td>
                     <td>{entry.date}</td>
                     <td className={actionStringClassName}>{entry.action}</td>
@@ -83,19 +88,19 @@ class BuySell extends Component{
                     <p>Total USD Invested= </p>
                     <p> seed= </p>
                 </div>
-                <table>
+                <table className="log-table">
                     <thead>
-                    <tr>
-                        <th>Ref</th>
-                        <th>Date</th>
-                        <th>Action</th>
-                        <th>Ticker</th>
-                        <th>Shares</th>
-                        <th>Price</th>
-                        <th>Total Price</th>
-                        <th>Notes</th>
-                        <th className="Edit-row">Edit</th>
-                    </tr>
+                        <tr>
+                            <th>Ref</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                            <th>Ticker</th>
+                            <th>Shares</th>
+                            <th>Price</th>
+                            <th>Total Price</th>
+                            <th>Notes</th>
+                            <th className="Edit-row">Edit</th>
+                        </tr>
                     </thead>
                     <tbody>
                         {this.getRows()}
