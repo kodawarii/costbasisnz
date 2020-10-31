@@ -81,10 +81,14 @@ table tr:hover{
     .holdings-final-row td{
         font-weight: bold;
     }
-}
 
-.test th{
-    position: absolute
+    .topupwithdraw-row td{
+        padding: 0 12px 0 12px;
+    }
+
+    .buysell-row td{
+        padding: 0 12px 0 12px;
+    }
 }
 
 /* For Desktop */

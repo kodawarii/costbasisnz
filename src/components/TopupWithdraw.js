@@ -66,7 +66,7 @@ class TopupWithdraw extends Component{
                     actionStringClassName = " FX ";
                 }
             
-                return <tr key={i}>
+                return <tr key={i} className="topupwithdraw-row">
                     <td>{entry.pkey}</td>
                     <td>{entry.date}</td>
                     <td className={actionStringClassName}>{entry.action}</td>

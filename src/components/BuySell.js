@@ -51,7 +51,7 @@ class BuySell extends Component{
                     sellActionClassName = " Sell ";
                 }
             
-                return <tr key={i}>
+                return <tr key={i} className="buysell-row">
                     <td>{entry.pkey}</td>
                     <td>{entry.date}</td>
                     <td className={actionStringClassName}>{entry.action}</td>
