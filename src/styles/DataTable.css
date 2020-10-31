@@ -9,10 +9,12 @@ table{
 }
 
 table th{
-    font-size: calc(10px + 1.1vmin);
-    font-weight: 100;
+    white-space: nowrap;
     color: rgb(172, 172, 172);
-    padding: 0 30px 0 30px; /* Very hacky */
+}
+
+tbody td{
+    border-bottom: 1px solid rgb(30, 30, 30);
 }
 
 table tr:hover{
@@ -20,24 +22,56 @@ table tr:hover{
     background-color: rgb(32, 32, 32);
 }
 
+.holdings-gains-dollars{
+    color: rgb(116, 255, 162);
+}
 
 /* For Mobile */
 @media only screen and (max-width: 768px) {
     tbody td{
         font-size: 10px;
-        border-bottom: 1px solid rgb(30, 30, 30);
     }
 
     .holdings-table-headers th{
+        padding: 0 12px 0 12px;
+        font-weight: bold;
         font-size: 10px;
+        background-color: rgba(32, 32, 32, 0.7);
     }
+
+    .holdings-distribution-wrapper{
+        padding: 0 8px 0 8px;
+        background-color: rgb(56, 56, 56);
+        border-radius: 8px;
+    }
+
+    .holdings-percentOfGains-wrapper{
+        padding: 0 8px 0 8px;
+        background-color: rgba(116, 255, 162, 0.692);
+        border-radius: 8px;
+        color: rgb(255, 255, 255);
+    }
+
+    .holdings-percentOfLosses-wrapper{
+        padding: 0 8px 0 8px;
+        background-color: rgba(255, 116, 116, 0.692);
+        border-radius: 8px;
+        color: rgb(255, 255, 255);
+    }
+
+    .holdings-final-row td{
+        font-weight: bold;
+    }
+}
+
+.test th{
+    position: absolute
 }
 
 /* For Desktop */
 @media only screen and (min-width: 768px) {
     tbody td{
         padding: 0 20px 0 20px;
-        border-bottom: 1px solid rgb(30, 30, 30);
     }
     
     .holdings-row td{
@@ -45,6 +79,7 @@ table tr:hover{
     }
 
     .holdings-table-headers th{
+        padding: 0 20px 0 20px;
         font-weight: bold;
         font-size: 10px;
         background-color: rgb(32, 32, 32);
@@ -54,10 +89,6 @@ table tr:hover{
         padding: 0 10px 0 10px;
         background-color: rgb(56, 56, 56);
         border-radius: 8px;
-    }
-    
-    .holdings-gains-dollars{
-        color: rgb(116, 255, 162);
     }
     
     .holdings-percentOfGains-wrapper{

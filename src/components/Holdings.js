@@ -61,7 +61,7 @@ class Holdings extends Component {
                 <table>
                     <thead>
                         <tr className="holdings-table-headers">
-                            <th>TICKER ⯅</th>
+                            <th className="test">TICKER ⯅</th>
                             <th>% DISTRIBUTION ⯆</th>
                             <th>POSITION ⯆</th>
                             <th>INVESTED ⯆</th>
