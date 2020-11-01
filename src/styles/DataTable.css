@@ -169,11 +169,11 @@ table tr:hover{
 }
 
 .Buy{
-    background-color: rgba(0, 255, 0, 0.7);
+    background-color: rgba(0, 190, 0, 0.6);
 }
 
 .Sell{
-    background-color: rgba(255, 59, 118, 0.8);
+    background-color: rgba(194, 43, 88, 0.7);
 }
 
 .Withdraw{
