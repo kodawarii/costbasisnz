@@ -11,6 +11,7 @@ import Notes from './Notes';
 class BuySell extends Component{
 
     // this.props.logs
+    // this.props.holdings
 
     constructor(props){
         super(props);
@@ -29,6 +30,35 @@ class BuySell extends Component{
         this.setState({showNotes: true, notes});
     }
 
+    processLog(){
+        let processedLog = [];
+
+        for(let i = 0; i < this.props.holdings.length; i++){
+            let stockName = this.props.holdings[i].ticker;
+
+            // Get all BUYS
+            for(let j = 0; j < this.props.logs.length; j++){
+                if(this.props.logs[j].action === 'BUY' && this.props.logs[j].ticker === stockName){
+                    processedLog.push(this.props.logs[j]);
+                }
+            }
+
+            // Get all SELLS
+            for(let j = 0; j < this.props.logs.length; j++){
+                if(this.props.logs[j].action === 'SELL' && this.props.logs[j].ticker === stockName){
+                    processedLog.push(this.props.logs[j]);
+                }
+            }
+
+            processedLog.push({
+                type: 'stockEnd',
+                action: 'none'
+            });
+        }
+
+        return processedLog;
+    }
+
     // Notes
     // foreach (stock in holdings)
     //      foreach (buy in logs)
@@ -40,16 +70,15 @@ class BuySell extends Component{
     getRows(){
         // TODO: have config file, setState in componentDidMount for these class names
         let _CLASSNAME_DATAROW="buysell-row";
+        
+        let processedLog = this.processLog();
 
-        return this.props.logs.map ((entry, i) => {
+        return processedLog.map ((entry, i) => {
             let notesArrow1 = entry.notes1 === '' ? '' : '⭦';
             let notesArrow2 = entry.notes2 === '' ? '' : '⭦';
-
-            if(entry.type === "end1" || entry.type === "end2" || entry.type === 'start') {
-                // Continue;
-            }
             
-            else if(entry.action.includes('BUY') ||
+            console.log(JSON.stringify(entry, null, 4));
+            if(entry.action.includes('BUY') ||
             entry.action.includes('SELL')){ // TODO: KEEP CONSTANTS AND SCHEMA AS CASE SENSITIVE
                 let actionStringClassName = " "; // TODO: REFACTOR ACROSS ALL SCREENS
 
@@ -74,6 +103,11 @@ class BuySell extends Component{
                     <td className="percentOfLosses"><span className="percentOfLosses-wrapper">- 19.20%</span></td>
                     <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes2)}> {notesArrow2} </td>
                     <td className="Edit-row">⚙</td>
+                </tr>
+            }
+            else if(entry.action.includes('stockEnd')){
+                return <tr>
+                    <td> Total==== </td>
                 </tr>
             }
             

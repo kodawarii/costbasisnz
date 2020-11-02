@@ -31,7 +31,7 @@ class DataTable extends Component {
                 showTable = () => { return <TopupWithdraw logs={this.props.logs}/> }
                 break;
             case "Buy / Sell":
-                showTable = () => {return <BuySell logs={this.props.logs} />}
+                showTable = () => {return <BuySell logs={this.props.logs} holdings={this.props.holdings} />}
                 break;
             case "Holdings":
                 showTable = () => {return <Holdings holdings={this.props.holdings}/>}

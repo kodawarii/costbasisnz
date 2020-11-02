@@ -39,7 +39,7 @@
                         "shares": 10,
                         "totalInvested": 280,
                         "currentPrice": 32,
-                        "notes1": "holdings notes"
+                        "notes1": "TODO: Ordering of holdings, user order, asc/desc by certain value etc"
                     },
                     {
                         "ticker": "TSLA",
@@ -139,6 +139,97 @@
                     },
                     {
                         "type": "reg",
+                        "pkey": 4,
+                        "date": "20-02-04",
+                        "action": "BUY",
+                        "ticker": "UBER",
+                        "notes1": "",
+
+                        "shares": 33,
+                        "price": 250,
+                        "total": 8250,
+                        "notes2": ""
+                    },
+                    {
+                        "type": "reg",
+                        "pkey": 4,
+                        "date": "20-02-04",
+                        "action": "SELL",
+                        "ticker": "UBER",
+                        "notes1": "",
+
+                        "shares": 33,
+                        "price": 250,
+                        "total": 8250,
+                        "notes2": ""
+                    },
+                    {
+                        "type": "reg",
+                        "pkey": 4,
+                        "date": "20-02-04",
+                        "action": "SELL",
+                        "ticker": "FB",
+                        "notes1": "",
+
+                        "shares": 33,
+                        "price": 250,
+                        "total": 8250,
+                        "notes2": ""
+                    },
+                    {
+                        "type": "reg",
+                        "pkey": 4,
+                        "date": "20-02-04",
+                        "action": "SELL",
+                        "ticker": "FB",
+                        "notes1": "",
+
+                        "shares": 33,
+                        "price": 250,
+                        "total": 8250,
+                        "notes2": ""
+                    },
+                    {
+                        "type": "reg",
+                        "pkey": 4,
+                        "date": "20-02-04",
+                        "action": "BUY",
+                        "ticker": "FB",
+                        "notes1": "",
+
+                        "shares": 33,
+                        "price": 250,
+                        "total": 8250,
+                        "notes2": ""
+                    },
+                    {
+                        "type": "reg",
+                        "pkey": 4,
+                        "date": "20-02-04",
+                        "action": "SELL",
+                        "ticker": "UBER",
+                        "notes1": "",
+
+                        "shares": 33,
+                        "price": 250,
+                        "total": 8250,
+                        "notes2": ""
+                    },
+                    {
+                        "type": "reg",
+                        "pkey": 4,
+                        "date": "20-02-04",
+                        "action": "BUY",
+                        "ticker": "UBER",
+                        "notes1": "",
+
+                        "shares": 33,
+                        "price": 250,
+                        "total": 8250,
+                        "notes2": ""
+                    },
+                    {
+                        "type": "reg",
                         "pkey": 5,
                         "date": "20-02-04",
                         "action": "SELL",
@@ -204,7 +295,7 @@
                         "ticker": "NVDA",
                         "notes1": "IBKR Liquidate topup = ticker in log-tab, just amount in usd in topup/withdraw-tab",
         
-                        "amountUSD": 32000,
+                        "amountSent": 32000,
                         "notes2": "note2=sssss"
                     },
                     {
