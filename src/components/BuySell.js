@@ -65,11 +65,11 @@ class BuySell extends Component{
                     <td>{entry.date}</td>
                     <td className={actionStringClassName + "-outer"}><span className={actionStringClassName}>{entry.action}</span></td>
                     <td>{entry.ticker}</td>
-                    <td>{parseFloat(entry.shares).toFixed(4).toLocaleString()}</td>
-                    <td>{parseFloat(entry.price).toFixed(4).toLocaleString()}</td>
-                    <td>{parseFloat(entry.total).toFixed(4).toLocaleString()}</td>
-                    <td>899.45</td>
-                    <td>2,450.33</td>
+                    <td className="shares"><b>{parseFloat(entry.shares).toFixed(0).toLocaleString()}</b></td>
+                    <td className="price1">{parseFloat(entry.price).toFixed(2).toLocaleString()}</td>
+                    <td className="price1">{parseFloat(entry.total).toFixed(2).toLocaleString()}</td>
+                    <td className="price2">899.45</td>
+                    <td className="price2">2,450.33</td>
                     <td className="gains-dollars"><span className="">+ 55.67</span></td>
                     <td className="percentOfLosses"><span className="percentOfLosses-wrapper">- 19.20%</span></td>
                     <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes2)}> {notesArrow2} </td>
@@ -87,6 +87,7 @@ class BuySell extends Component{
         return(
             <div>
                 <div>
+                    <h5> CostBasisNZ </h5>
                     <p>Total NZD Est. Invested= </p>
                     <p>Total USD Invested= </p>
                     <p> seed= </p>

@@ -114,6 +114,11 @@ table tr:hover{
         border-radius: 8px;
         color: rgb(255, 255, 255);
     }
+
+    .shares{
+        transform: scale(0.9);
+    }
+   
 }
 
 /* For Desktop */
@@ -162,6 +167,12 @@ table tr:hover{
         border-radius: 8px;
         color: rgb(255, 255, 255);
     }
+
+    .shares{
+        font-size: 14px;
+    }
+
+    
 }
 
 .Topup{
@@ -190,6 +201,14 @@ table tr:hover{
 
 .FX{
     color: rgb(255, 205, 129);
+}
+
+.price1{
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.price2{
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .OpenNotes:hover{
