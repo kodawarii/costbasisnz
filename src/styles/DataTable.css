@@ -37,11 +37,15 @@ table tr:hover{
 .holdings-cash-row{
     font-weight: bold;
     color: rgba(255, 205, 129, 0.85);
-    background-color: rgba(10, 0, 20, 0.375);
+    background-color: rgba(10, 0, 20, 0.3);
 }
 
 .log-table td{
     text-align: left;
+}
+
+.buysell-summarizer-row{
+    background-color: rgba(10, 0, 20, 0.3);
 }
 
 /* For Mobile */
@@ -119,6 +123,9 @@ table tr:hover{
         transform: scale(0.9);
     }
    
+    .buysell-summarizer-row td{
+        transform: scale(0.8);
+    }
 }
 
 /* For Desktop */
@@ -172,7 +179,9 @@ table tr:hover{
         font-size: 14px;
     }
 
-    
+    .buysell-summarizer-row{
+        font-size: 14px;
+    }
 }
 
 .Topup{

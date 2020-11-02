@@ -35,11 +35,27 @@ class BuySell extends Component{
 
         for(let i = 0; i < this.props.holdings.length; i++){
             let stockName = this.props.holdings[i].ticker;
+            let summarizer = {
+                type: 'stockEnd',
+                action: 'none',
+                ticker: stockName,
+                totalShares: 0,
+                totalSpent: 0,
+                totalCurrVal: 0,
+                totalDollarGains: 0,
+                avgPercentGains: 0
+            };
 
             // Get all BUYS
             for(let j = 0; j < this.props.logs.length; j++){
                 if(this.props.logs[j].action === 'BUY' && this.props.logs[j].ticker === stockName){
                     processedLog.push(this.props.logs[j]);
+
+                    summarizer.totalShares += this.props.logs[j].shares;
+                    summarizer.totalSpent += this.props.logs[j].total;
+                    summarizer.totalCurrVal += 200;
+                    summarizer.totalDollarGains += 33;
+                    summarizer.avgPercentGains = 17.8;
                 }
             }
 
@@ -50,10 +66,7 @@ class BuySell extends Component{
                 }
             }
 
-            processedLog.push({
-                type: 'stockEnd',
-                action: 'none'
-            });
+            processedLog.push(summarizer);
         }
 
         return processedLog;
@@ -105,9 +118,21 @@ class BuySell extends Component{
                     <td className="Edit-row">⚙</td>
                 </tr>
             }
-            else if(entry.action.includes('stockEnd')){
-                return <tr>
-                    <td> Total==== </td>
+            else if(entry.type.includes('stockEnd')){
+                return <tr className="buysell-summarizer-row">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><b>{entry.ticker}</b></td>
+                    <td><b>{parseFloat(entry.totalShares).toLocaleString()}</b></td>
+                    <td></td>
+                    <td><b>{parseFloat(entry.totalSpent).toFixed(2).toLocaleString()}</b></td>
+                    <td></td>
+                    <td><b>{parseFloat(entry.totalCurrVal).toFixed(2).toLocaleString()}</b></td>
+                    <td><b>{parseFloat(entry.totalDollarGains).toFixed(2).toLocaleString()}</b></td>
+                    <td><b>{parseFloat(entry.avgPercentGains).toFixed(2)}</b></td>
+                    <td></td>
+                    <td><br/><br/></td>
                 </tr>
             }
             
