@@ -103,19 +103,19 @@ class BuySell extends Component{
                 }
             
                 return <tr key={i} className={_CLASSNAME_DATAROW}>
-                    <td>{entry.pkey}</td>
-                    <td>{entry.date}</td>
-                    <td className={actionStringClassName + "-outer"}><span className={actionStringClassName}>{entry.action}</span></td>
-                    <td>{entry.ticker}</td>
-                    <td className="shares"><b>{parseFloat(entry.shares).toFixed(0).toLocaleString()}</b></td>
-                    <td className="price1">{parseFloat(entry.price).toFixed(2).toLocaleString()}</td>
-                    <td className="price1">{parseFloat(entry.total).toFixed(2).toLocaleString()}</td>
-                    <td className="price2">899.45</td>
-                    <td className="price2">2,450.33</td>
-                    <td className="gains-dollars"><span className="">+ 55.67</span></td>
-                    <td className="percentOfLosses"><span className="percentOfLosses-wrapper">- 19.20%</span></td>
-                    <td className="OpenNotes" onClick={ () => this.openNotes(entry.notes2)}> {notesArrow2} </td>
-                    <td className="Edit-row">⚙</td>
+                    <td className={"REF_COL "}>{entry.pkey}</td>
+                    <td className={"DATE_COL "}>{entry.date}</td>
+                    <td className={"ACTION_COL" + actionStringClassName + "-outer"}><span className={actionStringClassName}>{entry.action}</span></td>
+                    <td className={"TICKER_COL"}>{entry.ticker}</td>
+                    <td className={"SHARES_COL shares"}><b>{parseFloat(entry.shares).toFixed(0).toLocaleString()}</b></td>
+                    <td className={"PRICE_COL price1"}>{parseFloat(entry.price).toFixed(2).toLocaleString()}</td>
+                    <td className={"TOT_PRICE_COL price1"}>{parseFloat(entry.total).toFixed(2).toLocaleString()}</td>
+                    <td className={"CURR_PRICE_COL price2"}>899.45</td>
+                    <td className={"MTK_VAL_COL price2"}>2,450.33</td>
+                    <td className={"DOLLAR_PL_COL gains-dollars"}><span className="">+ 55.67</span></td>
+                    <td className={"PERCENT_PL_COL percentOfLosses"}><span className="percentOfLosses-wrapper">- 19.20%</span></td>
+                    <td className={"NOTES_COL OpenNotes"} onClick={ () => this.openNotes(entry.notes2)}> {notesArrow2} </td>
+                    <td className={"EDIT_COL Edit-row"}>⚙</td>
                 </tr>
             }
             else if(entry.type.includes('stockEnd')){
