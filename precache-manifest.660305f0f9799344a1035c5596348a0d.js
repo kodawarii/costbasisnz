@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8ae6cece82c675ed9c59b84ed06e82df",
+    "revision": "f4a7be2346f291909e1904fa3fdf7fa8",
     "url": "/costbasisnz/index.html"
   },
   {
-    "revision": "a03ed5c1876d96eeac52",
+    "revision": "fbc76ce8efaa54ea2c62",
     "url": "/costbasisnz/static/css/main.681a0381.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/costbasisnz/static/js/2.22061ea5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a03ed5c1876d96eeac52",
-    "url": "/costbasisnz/static/js/main.6f75ab18.chunk.js"
+    "revision": "fbc76ce8efaa54ea2c62",
+    "url": "/costbasisnz/static/js/main.5e15d623.chunk.js"
   },
   {
     "revision": "95466843d4511188cf71",
