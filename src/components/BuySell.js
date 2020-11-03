@@ -90,31 +90,49 @@ class BuySell extends Component{
             let notesArrow1 = entry.notes1 === '' ? '' : '⭦';
             let notesArrow2 = entry.notes2 === '' ? '' : '⭦';
             
-            console.log(JSON.stringify(entry, null, 4));
-            if(entry.action.includes('BUY') ||
-            entry.action.includes('SELL')){ // TODO: KEEP CONSTANTS AND SCHEMA AS CASE SENSITIVE
-                let actionStringClassName = " "; // TODO: REFACTOR ACROSS ALL SCREENS
+            if(entry.action.includes('BUY') || entry.action.includes('SELL')){ // TODO: KEEP CONSTANTS AND SCHEMA AS CASE SENSITIVE
+                let _CLASSNAME_ACTION_COL = " "; // TODO: REFACTOR ACROSS ALL SCREENS
+                let _CLASSNAME_PERCENT_PL = "";
+                let _CLASSNAME_PERCENT_PL_WRAPPER = "";
+
+                let currPrice = "-";
+                let mktVal = "-";
+                let dollarPL = "-";
+                let percentPL = "-";
 
                 if(entry.action.includes("BUY")){
-                    actionStringClassName = "Buy";
+                    _CLASSNAME_ACTION_COL = "Buy";
+                    currPrice = 350;
+                    mktVal = 4556.23;
+                    dollarPL = "+25.60";
+                    percentPL = -24.01;
+
+                    if(percentPL < 0){
+                        percentPL += "%";
+                        _CLASSNAME_PERCENT_PL = " percentOfLosses ";
+                        _CLASSNAME_PERCENT_PL_WRAPPER = " percentOfLosses-wrapper ";
+                    }
+                    else{
+                        // TODO: gains css styles
+                    }
                 }
                 else if(entry.action.includes("SELL")){
-                    actionStringClassName = "Sell";
+                    _CLASSNAME_ACTION_COL = "Sell";
                 }
             
                 return <tr key={i} className={_CLASSNAME_DATAROW}>
                     <td className={"REF_COL "}>{entry.pkey}</td>
                     <td className={"DATE_COL "}>{entry.date}</td>
-                    <td className={"ACTION_COL" + actionStringClassName + "-outer"}><span className={actionStringClassName}>{entry.action}</span></td>
+                    <td className={"ACTION_COL" + _CLASSNAME_ACTION_COL + "-outer"}><span className={_CLASSNAME_ACTION_COL}>{entry.action}</span></td>
                     <td className={"TICKER_COL"}>{entry.ticker}</td>
                     <td className={"SHARES_COL shares"}><b>{parseFloat(entry.shares).toFixed(0).toLocaleString()}</b></td>
                     <td className={"PRICE_COL price1"}>{parseFloat(entry.price).toFixed(2).toLocaleString()}</td>
                     <td className={"TOT_PRICE_COL price1"}>{parseFloat(entry.total).toFixed(2).toLocaleString()}</td>
-                    <td className={"CURR_PRICE_COL price2"}>899.45</td>
-                    <td className={"MTK_VAL_COL price2"}>2,450.33</td>
-                    <td className={"DOLLAR_PL_COL gains-dollars"}><span className="">+ 55.67</span></td>
-                    <td className={"PERCENT_PL_COL percentOfLosses"}><span className="percentOfLosses-wrapper">- 19.20%</span></td>
-                    <td className={"NOTES_COL OpenNotes"} onClick={ () => this.openNotes(entry.notes2)}> {notesArrow2} </td>
+                    <td className={"CURR_PRICE_COL price2"}>{currPrice}</td>
+                    <td className={"MTK_VAL_COL price2"}>{mktVal}</td>
+                    <td className={"DOLLAR_PL_COL gains-dollars"}><span className="">{dollarPL}</span></td>
+                    <td className={"PERCENT_PL_COL " + _CLASSNAME_PERCENT_PL}><span className={_CLASSNAME_PERCENT_PL_WRAPPER}>{percentPL}</span></td>
+                    <td className={"NOTES_COL OpenNotes"} onClick={ () => this.openNotes(entry.notes2)}>{notesArrow2}</td>
                     <td className={"EDIT_COL Edit-row"}>⚙</td>
                 </tr>
             }
