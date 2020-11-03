@@ -105,6 +105,7 @@
                         "action": "BUY",
                         "ticker": "TSLA",
                         "notes1": "",
+                        "sold": 0,
 
                         "shares": 33,
                         "price": 250,
@@ -118,6 +119,7 @@
                         "action": "BUY",
                         "ticker": "TSLA",
                         "notes1": "",
+                        "sold": 0,
 
                         "shares": 12,
                         "price": 267,
@@ -131,6 +133,7 @@
                         "action": "BUY",
                         "ticker": "TSLA",
                         "notes1": "",
+                        "sold": 0,
 
                         "shares": 8,
                         "price": 300,
@@ -144,6 +147,7 @@
                         "action": "BUY",
                         "ticker": "UBER",
                         "notes1": "",
+                        "sold": 100,
 
                         "shares": 33,
                         "price": 250,
@@ -157,6 +161,7 @@
                         "action": "SELL",
                         "ticker": "UBER",
                         "notes1": "",
+                        "seed": "3",
 
                         "shares": 33,
                         "price": 250,
@@ -170,6 +175,7 @@
                         "action": "SELL",
                         "ticker": "FB",
                         "notes1": "",
+                        "seed": "3",
 
                         "shares": 33,
                         "price": 250,
@@ -183,6 +189,7 @@
                         "action": "SELL",
                         "ticker": "FB",
                         "notes1": "",
+                        "seed": "3",
 
                         "shares": 33,
                         "price": 250,
@@ -196,6 +203,7 @@
                         "action": "BUY",
                         "ticker": "FB",
                         "notes1": "",
+                        "sold": 12,
 
                         "shares": 33,
                         "price": 250,
@@ -209,6 +217,7 @@
                         "action": "SELL",
                         "ticker": "UBER",
                         "notes1": "",
+                        "seed": "3",
 
                         "shares": 33,
                         "price": 250,
@@ -222,6 +231,7 @@
                         "action": "BUY",
                         "ticker": "UBER",
                         "notes1": "",
+                        "sold": 70,
 
                         "shares": 33,
                         "price": 250,
@@ -235,6 +245,7 @@
                         "action": "SELL",
                         "ticker": "TSLA",
                         "notes1": "",
+                        "seed": "3",
 
                         "shares": 33,
                         "price": 250,
@@ -259,6 +270,7 @@
                         "action": "BUY",
                         "ticker": "TSLA",
                         "notes1": "",
+                        "sold": 45,
 
                         "shares": 33,
                         "price": 250,
@@ -272,6 +284,7 @@
                         "action": "SELL",
                         "ticker": "NVDA",
                         "notes1": "",
+                        "seed": "3",
 
                         "shares": 33,
                         "price": 250,

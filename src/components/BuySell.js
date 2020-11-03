@@ -92,8 +92,10 @@ class BuySell extends Component{
             
             if(entry.action.includes('BUY') || entry.action.includes('SELL')){ // TODO: KEEP CONSTANTS AND SCHEMA AS CASE SENSITIVE
                 let _CLASSNAME_ACTION_COL = " "; // TODO: REFACTOR ACROSS ALL SCREENS
-                let _CLASSNAME_PERCENT_PL = "";
-                let _CLASSNAME_PERCENT_PL_WRAPPER = "";
+                let _CLASSNAME_SELL_FONTCOLOR = " ";
+                let _CLASSNAME_PRICE1_FONTCOLOR = " ";
+                let _CLASSNAME_PERCENT_PL = " ";
+                let _CLASSNAME_PERCENT_PL_WRAPPER = " ";
 
                 let currPrice = "-";
                 let mktVal = "-";
@@ -102,8 +104,10 @@ class BuySell extends Component{
 
                 if(entry.action.includes("BUY")){
                     _CLASSNAME_ACTION_COL = "Buy";
+                    _CLASSNAME_PRICE1_FONTCOLOR = "price1";
+
                     currPrice = 350;
-                    mktVal = 4556.23;
+                    mktVal = 4556.23; // = (shares - sold ) * currPrice
                     dollarPL = "+25.60";
                     percentPL = -24.01;
 
@@ -118,22 +122,54 @@ class BuySell extends Component{
                 }
                 else if(entry.action.includes("SELL")){
                     _CLASSNAME_ACTION_COL = "Sell";
+                    _CLASSNAME_SELL_FONTCOLOR = " sell-font ";
+                    _CLASSNAME_PRICE1_FONTCOLOR = " sell-font ";
                 }
             
                 return <tr key={i} className={_CLASSNAME_DATAROW}>
-                    <td className={"REF_COL "}>{entry.pkey}</td>
-                    <td className={"DATE_COL "}>{entry.date}</td>
-                    <td className={"ACTION_COL" + _CLASSNAME_ACTION_COL + "-outer"}><span className={_CLASSNAME_ACTION_COL}>{entry.action}</span></td>
-                    <td className={"TICKER_COL"}>{entry.ticker}</td>
-                    <td className={"SHARES_COL shares"}><b>{parseFloat(entry.shares).toFixed(0).toLocaleString()}</b></td>
-                    <td className={"PRICE_COL price1"}>{parseFloat(entry.price).toFixed(2).toLocaleString()}</td>
-                    <td className={"TOT_PRICE_COL price1"}>{parseFloat(entry.total).toFixed(2).toLocaleString()}</td>
-                    <td className={"CURR_PRICE_COL price2"}>{currPrice}</td>
-                    <td className={"MTK_VAL_COL price2"}>{mktVal}</td>
-                    <td className={"DOLLAR_PL_COL gains-dollars"}><span className="">{dollarPL}</span></td>
-                    <td className={"PERCENT_PL_COL " + _CLASSNAME_PERCENT_PL}><span className={_CLASSNAME_PERCENT_PL_WRAPPER}>{percentPL}</span></td>
-                    <td className={"NOTES_COL OpenNotes"} onClick={ () => this.openNotes(entry.notes2)}>{notesArrow2}</td>
-                    <td className={"EDIT_COL Edit-row"}>⚙</td>
+                    <td className={"REF_COL "}>
+                        {entry.pkey}
+                    </td>
+                    <td className={"DATE_COL "}>
+                        {entry.date}
+                    </td>
+                    <td className={"ACTION_COL" + _CLASSNAME_ACTION_COL + "-outer"}>
+                        <span className={_CLASSNAME_ACTION_COL}>{entry.action}</span>
+                    </td>
+                    <td className={"TICKER_COL " + _CLASSNAME_SELL_FONTCOLOR}>
+                        {entry.ticker}
+                    </td>
+                    <td className={"SHARES_COL shares " + _CLASSNAME_SELL_FONTCOLOR}>
+                        <b>{parseFloat(entry.shares).toFixed(0).toLocaleString()}</b> {entry.sold === undefined ? "" : "("+entry.sold+")"}
+                    </td>
+                    <td className={"PRICE_COL " + _CLASSNAME_PRICE1_FONTCOLOR}>
+                        {parseFloat(entry.price).toFixed(2).toLocaleString()}
+                    </td>
+                    <td className={"TOT_PRICE_COL " + _CLASSNAME_PRICE1_FONTCOLOR}>
+                        {parseFloat(entry.total).toFixed(2).toLocaleString()}
+                    </td>
+                    <td className={"CURR_PRICE_COL price2"}>
+                        {currPrice}
+                    </td>
+                    <td className={"MTK_VAL_COL price2"}>
+                        {mktVal}
+                    </td>
+                    <td className={"DOLLAR_PL_COL gains-dollars"}>
+                        <span className="">{dollarPL}</span>
+                    </td>
+                    <td className={"PERCENT_PL_COL " + _CLASSNAME_PERCENT_PL}>
+                        <span className={_CLASSNAME_PERCENT_PL_WRAPPER}>{percentPL}</span>
+                    </td>
+                    <td className={"SEED_COL "}>
+                        {entry.seed === undefined ? '' : entry.seed}
+                    </td>
+                    <td className={"NOTES_COL OpenNotes"} 
+                        onClick={ () => this.openNotes(entry.notes2)}>
+                        {notesArrow2}
+                    </td>
+                    <td className={"EDIT_COL Edit-row"}>
+                        {"⚙"}
+                    </td>
                 </tr>
             }
             else if(entry.type.includes('stockEnd')){
@@ -149,6 +185,7 @@ class BuySell extends Component{
                     <td><b>{parseFloat(entry.totalCurrVal).toFixed(2).toLocaleString()}</b></td>
                     <td><b>{parseFloat(entry.totalDollarGains).toFixed(2).toLocaleString()}</b></td>
                     <td><b>{parseFloat(entry.avgPercentGains).toFixed(2)}</b></td>
+                    <td></td>
                     <td></td>
                     <td><br/><br/></td>
                 </tr>
@@ -176,13 +213,14 @@ class BuySell extends Component{
                             <th>DATE</th>
                             <th>ACTION</th>
                             <th>TICKER</th>
-                            <th>SHARES</th>
+                            <th>SHARES (SOLD)</th>
                             <th>PRICE</th>
                             <th>TOT PRICE</th>
                             <th>CURR PRICE</th>
                             <th>MKT VAL</th>
                             <th>$ P/L</th>
                             <th>% P/L</th>
+                            <th>SEED</th>
                             <th>NOTES</th>
                             <th className="Edit-row">EDIT</th>
                         </tr>
