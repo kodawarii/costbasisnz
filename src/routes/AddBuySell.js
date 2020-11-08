@@ -66,6 +66,9 @@ class AddBuySell extends Component{
             
         this.props.addToLogs(this.props.listOfProfileData, this.props.portfolio, logToAdd);
 
+        // TODO: If not exist in Holings, add to holdings
+        
+
         this.setState({showModal: true});
 
         event.preventDefault();

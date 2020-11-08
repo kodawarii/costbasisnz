@@ -29,6 +29,9 @@
 1. Protected Routes
 1. AddItem success message modals and go back to original screen - 1. brokers 2. log item
 1. Settings to have delete broker
+1. thinkorswim - tables cols are adjustable
+1. thinkorswim - buy/sell entire row has color
+1. 
 
 ## Nice to Have
 1. Hide all Dollar figures
